@@ -91,7 +91,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         btnShowCalendar = (Button) findViewById(R.id.btnShowCalendar);
         btnShowCalendar.setText(new SimpleDateFormat("yyyy년 MM월 dd일", Locale.getDefault()).format(currentTime));
 
-
+        Button button;
+        button = findViewById(R.id.buttons);
+        button.performClick();
 
         findViewById(R.id.btnShowCalendar).setOnClickListener(new View.OnClickListener() {
             @Override
