@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 import ru.slybeaver.slycalendarview.SlyCalendarDialog;
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     int ih = 0;
     TabHost tabHost;
 
+    Button btnShowCalendar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +85,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         ledText = findViewById(R.id.ledText2);
         ledText3 = findViewById(R.id.ledText3);
         ledText4 = findViewById(R.id.ledText4);
+
+        Date currentTime = Calendar.getInstance().getTime();
+        String date_text = new SimpleDateFormat("yyyy년 MM월 dd일", Locale.getDefault()).format(currentTime);
+        btnShowCalendar = (Button) findViewById(R.id.btnShowCalendar);
+        btnShowCalendar.setText(new SimpleDateFormat("yyyy년 MM월 dd일", Locale.getDefault()).format(currentTime));
+
 
 
         findViewById(R.id.btnShowCalendar).setOnClickListener(new View.OnClickListener() {
@@ -337,26 +346,36 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     @Override
     public void onDataSelected(Calendar firstDate, Calendar secondDate, int hours, int minutes) {
         if (firstDate != null) {
-            if (secondDate == null) {
+            if (secondDate == null) {   //범위 없이 하루만 설정될 경우..
                 firstDate.set(Calendar.HOUR_OF_DAY, hours);
                 firstDate.set(Calendar.MINUTE, minutes);
                 Toast.makeText(
                         this,
-                        new SimpleDateFormat(getString(R.string.timeFormat), Locale.getDefault()).format(firstDate.getTime()),
+                        new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime()),
                         Toast.LENGTH_LONG
 
                 ).show();
-            } else {
+
+                btnShowCalendar.setText(new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime()));
+
+            } else {    //범위 설정이 된 상태에서 저장이 된다면..
                 Toast.makeText(
                         this,
                         getString(
                                 R.string.period,
-                                new SimpleDateFormat(getString(R.string.dateFormat), Locale.getDefault()).format(firstDate.getTime()),
-                                new SimpleDateFormat(getString(R.string.timeFormat), Locale.getDefault()).format(secondDate.getTime())
+                                new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime()),
+                                new SimpleDateFormat("yyyy년 MM월 dd일").format(secondDate.getTime())
                         ),
                         Toast.LENGTH_LONG
 
                 ).show();
+
+
+                btnShowCalendar.setText(getString(
+                        R.string.period,
+                        new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime()),
+                        new SimpleDateFormat("yyyy년 MM월 dd일").format(secondDate.getTime())
+                ));
             }
         }
     }

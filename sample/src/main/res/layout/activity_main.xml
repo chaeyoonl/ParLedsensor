@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
     <TabHost
         android:id="@+id/tabhost1"
         android:layout_width="match_parent"
@@ -14,7 +15,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <!-- TabWidget의 id값이 반드시 "tabs"로 지정되어야 함. -->
             <TabWidget
@@ -36,7 +38,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:background="@color/colorWhite">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -56,7 +59,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.131" />
+                            app:layout_constraintVertical_bias="0.131"
+                            android:textColor="@color/colorBlack"/>
 
                         <TextView
                             android:layout_weight="1"
@@ -65,6 +69,7 @@
                             android:layout_height="47dp"
                             android:gravity="center"
                             android:text="PAR1"
+                            android:textColor="@color/colorBlack"
                             android:textAlignment="center"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toTopOf="@+id/button"
@@ -95,7 +100,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.217" />
+                            app:layout_constraintVertical_bias="0.217"
+                            android:textColor="@color/colorBlack"/>
                         <TextView
                             android:layout_weight="1"
                             android:id="@+id/usdText"
@@ -110,7 +116,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.217" />
+                            app:layout_constraintVertical_bias="0.217"
+                            android:textColor="@color/colorBlack"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -133,7 +140,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.305" />
+                            app:layout_constraintVertical_bias="0.305"
+                            android:textColor="@color/colorBlack"/>
                         <TextView
                             android:layout_weight="1"
                             android:id="@+id/jpyText"
@@ -148,7 +156,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.305" />
+                            app:layout_constraintVertical_bias="0.305"
+                            android:textColor="@color/colorBlack"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -171,7 +180,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.387" />
+                            app:layout_constraintVertical_bias="0.387"
+                            android:textColor="@color/colorBlack"/>
                         <TextView
                             android:layout_weight="1"
                             android:id="@+id/tryText"
@@ -186,7 +196,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.387" />
+                            app:layout_constraintVertical_bias="0.387"
+                            android:textColor="@color/colorBlack"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -209,7 +220,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.473" />
+                            app:layout_constraintVertical_bias="0.473"
+                            android:textColor="@color/colorBlack"/>
                         <TextView
                             android:layout_weight="1"
                             android:id="@+id/cadText"
@@ -224,7 +236,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.473" />
+                            app:layout_constraintVertical_bias="0.473"
+                            android:textColor="@color/colorBlack"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -247,7 +260,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.555" />
+                            app:layout_constraintVertical_bias="0.555"
+                            android:textColor="@color/colorBlack"/>
                         <TextView
                             android:layout_weight="1"
                             android:id="@+id/ledText2"
@@ -262,7 +276,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.555" />
+                            app:layout_constraintVertical_bias="0.555"
+                            android:textColor="@color/colorBlack"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -285,7 +300,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.638" />
+                            app:layout_constraintVertical_bias="0.638"
+                            android:textColor="@color/colorBlack"/>
                         <TextView
                             android:layout_weight="1"
                             android:id="@+id/ledText3"
@@ -300,7 +316,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.638" />
+                            app:layout_constraintVertical_bias="0.638"
+                            android:textColor="@color/colorBlack"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -323,7 +340,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.723" />
+                            app:layout_constraintVertical_bias="0.723"
+                            android:textColor="@color/colorBlack"/>
                         <TextView
                             android:layout_weight="1"
                             android:id="@+id/ledText4"
@@ -338,7 +356,8 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.723" />
+                            app:layout_constraintVertical_bias="0.723"
+                            android:textColor="@color/colorBlack"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -353,7 +372,8 @@
                             android:onClick="getRates"
                             android:text="REQUEST"
                             app:layout_constraintTop_toBottomOf="@+id/chfText"
-                            tools:layout_editor_absoluteX="0dp" />
+                            tools:layout_editor_absoluteX="0dp"
+                            android:background="@drawable/buttonshape"/>
                     </LinearLayout>
                 </LinearLayout>
                 <!-- 두 번째 페이지. content2 -->
@@ -362,19 +382,21 @@
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@color/colorWhite">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:background="#474945"
-                        android:layout_weight="6">
+                        android:layout_weight="8.5">
                         <Button
                             android:id="@+id/btnShowCalendar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:text="Show Calendar"
+                            android:background="@drawable/buttonshape"
                             />
 
                     </LinearLayout>
@@ -387,7 +409,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="text"/>
+                            android:text="text"
+                            android:textColor="@color/colorBlack"/>
                     </LinearLayout>
 
 
