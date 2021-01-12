@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" group="slycalendarview-dev/sample" />
-      <module fileurl="file://$PROJECT_DIR$/slycalendarview/slycalendarview.iml" filepath="$PROJECT_DIR$/slycalendarview/slycalendarview.iml" group="slycalendarview-dev/slycalendarview" />
-      <module fileurl="file://$PROJECT_DIR$/slycalendarview-dev.iml" filepath="$PROJECT_DIR$/slycalendarview-dev.iml" group="slycalendarview-dev" />
+      <module fileurl="file://$PROJECT_DIR$/ABCLABS.iml" filepath="$PROJECT_DIR$/ABCLABS.iml" group="ABCLABS" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" group="ABCLABS/sample" />
+      <module fileurl="file://$PROJECT_DIR$/slycalendarview/slycalendarview.iml" filepath="$PROJECT_DIR$/slycalendarview/slycalendarview.iml" group="ABCLABS/slycalendarview" />
     </modules>
   </component>
 </project>
