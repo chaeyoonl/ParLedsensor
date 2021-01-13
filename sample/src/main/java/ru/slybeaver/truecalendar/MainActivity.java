@@ -2,7 +2,12 @@ package ru.slybeaver.truecalendar;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.CookieSyncManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -61,10 +66,22 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     Button btnShowCalendar;
 
+    private WebView webView;
+    private String url = "http://yakyong.dataponic.site/dataponic_ALC/main";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //자동로그인 하기위해서 쿠키값 onResume, OnPeuse에도 있음
+        CookieSyncManager.createInstance(this);
+
+        webView = (WebView) findViewById(R.id.webView);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl(url);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.setWebViewClient(new WebViewClientClass());
 
         tabHost = (TabHost) findViewById(R.id.tabhost1);
         tabHost.setup();
@@ -73,8 +90,11 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         TabHost.TabSpec tab2 = tabHost.newTabSpec("2").setContent(R.id.tab2).setIndicator("조회");
 
+        TabHost.TabSpec tab3 = tabHost.newTabSpec("3").setContent(R.id.tab3).setIndicator("ALC");
+
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
+        tabHost.addTab(tab3);
 
 
         tryText = findViewById(R.id.tryText);
@@ -105,6 +125,37 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         .show(getSupportFragmentManager(), "TAG_SLYCALENDAR");
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CookieSyncManager.getInstance().startSync();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        CookieSyncManager.getInstance().stopSync();
+
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
+            webView.goBack();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private class WebViewClientClass extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
     }
 
     public void getRates(View view) {
