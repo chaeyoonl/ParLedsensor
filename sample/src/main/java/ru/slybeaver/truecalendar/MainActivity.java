@@ -1,5 +1,9 @@
 package ru.slybeaver.truecalendar;
 
+import android.app.AlertDialog;
+import android.app.TimePickerDialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -8,6 +12,7 @@ import android.webkit.CookieSyncManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -41,6 +46,15 @@ import java.net.URL;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
+    int y=0, m=0, d=0, h=0, mi=0;
+    int y2=0, m2=0, d2=0, h2=0, mi2=0;
+    int y3=0, m3=0, d3=0, h3=0, mi3=0;
+    int y4=0, m4=0, d4=0, h4=0, mi4=0;
+    int y5=0, m5=0, d5=0, h5=0, mi5=0;
+    int y6=0, m6=0, d6=0, h6=0, mi6=0;
+    int y7=0, m7=0, d7=0, h7=0, mi7=0;
+    int y8=0, m8=0, d8=0, h8=0, mi8=0;
+
     TextView tryText;
     TextView cadText;
     TextView usdText;
@@ -62,12 +76,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     String resultss="";
 
     int ih = 0;
-    TabHost tabHost;
+    TabHost tabHost, tabHost2;
 
-    Button btnShowCalendar;
+    Button btnShowCalendar, btn_section, time_1, time_2, time_3, time_4, time_5, time_6, time_7, time_8, set_light, set_LED;
 
     private WebView webView;
-    private String url = "http://yakyong.dataponic.site/dataponic_ALC/main";
+    private String url = "http://yakyong.dataponic.site/dataponic_ALC/login/check?userId=test&passwd=test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +106,161 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         TabHost.TabSpec tab3 = tabHost.newTabSpec("3").setContent(R.id.tab3).setIndicator("ALC");
 
+        TabHost.TabSpec tab4 = tabHost.newTabSpec("4").setContent(R.id.tab4).setIndicator("제어");
+
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+        tabHost.addTab(tab4);
+
+        /////////////////////////////////////
+        tabHost2 = (TabHost) findViewById(R.id.tabhost2);
+        tabHost2.setup();
+
+        TabHost.TabSpec tab_sub1 = tabHost2.newTabSpec("1").setContent(R.id.tab_sub1).setIndicator("수동");
+
+        TabHost.TabSpec tab_sub2 = tabHost2.newTabSpec("2").setContent(R.id.tab_sub2).setIndicator("타이머");
+
+        TabHost.TabSpec tab_sub3 = tabHost2.newTabSpec("3").setContent(R.id.tab_sub3).setIndicator("자동");
+
+        tabHost2.addTab(tab_sub1);
+        tabHost2.addTab(tab_sub2);
+        tabHost2.addTab(tab_sub3);
+
+        //////////////////////////////////////
+
+        final int[] selectedItem = {0};
+        final String[] items = new String[] {"1구역", "2구역", "3구역", "4구역"};
+
+        btn_section = (Button) findViewById(R.id.btn_section);
+        btn_section.setText(items[selectedItem[0]]);
+        btn_section.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog .setTitle("구역을 선택하시오.")
+                        .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                selectedItem[0] = which;
+
+                            }
+                        })
+                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                Toast.makeText(MainActivity.this
+                                , items[selectedItem[0]]
+                                , Toast.LENGTH_SHORT).show();
+
+                                btn_section.setText(items[selectedItem[0]]);
+                            }
+                        })
+                        .setNeutralButton("취소", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(MainActivity.this
+                                , " 취소 버튼을 눌렀습니다."
+                                , Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                           dialog.create();
+                           dialog.show();
+
+
+            }
+        });
+
+        ////////////////////////////////////
+        time_1 = (Button) findViewById(R.id.time_1);
+        time_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime();
+
+            }
+
+        });
+
+        ///////////////////////////////////
+        time_2 = (Button) findViewById(R.id.time_2);
+        time_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime2();
+
+            }
+
+        });
+
+        ///////////////////////////////////
+        time_3 = (Button) findViewById(R.id.time_3);
+        time_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime3();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_4 = (Button) findViewById(R.id.time_4);
+        time_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime4();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_5 = (Button) findViewById(R.id.time_5);
+        time_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime5();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_6 = (Button) findViewById(R.id.time_6);
+        time_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime6();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_7 = (Button) findViewById(R.id.time_7);
+        time_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime7();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_8 = (Button) findViewById(R.id.time_8);
+        time_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime8();
+
+            }
+
+        });
+
+
+
+
 
 
         tryText = findViewById(R.id.tryText);
@@ -125,7 +291,210 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         .show(getSupportFragmentManager(), "TAG_SLYCALENDAR");
             }
         });
+
+        final Button btn_bulb1, btn_bulb2;
+        btn_bulb1 = findViewById(R.id.btn_bulb1);
+        btn_bulb2 = findViewById(R.id.btn_bulb2);
+
+        btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+        btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+        btn_bulb1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape);
+                btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+            }
+        });
+
+
+        btn_bulb2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape);
+                btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+            }
+        });
+
+        ////////////////////////////
+        set_light = (Button) findViewById(R.id.set_light);
+        final Button main_label = (Button) findViewById(R.id.set_light);
+        set_light.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 커스텀 다이얼로그를 생성한다. 사용자가 만든 클래스이다.
+                CustomDialog customDialog = new CustomDialog(MainActivity.this);
+
+                // 커스텀 다이얼로그를 호출한다.
+                // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.
+                customDialog.callFunction(main_label);
+            }
+        });
+
+
+
+        set_LED = (Button) findViewById(R.id.set_LED);
+        final Button main_labe2 = (Button) findViewById(R.id.set_LED);
+        set_LED.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // 커스텀 다이얼로그를 생성한다. 사용자가 만든 클래스이다.
+                CustomDialog customDialog = new CustomDialog(MainActivity.this);
+
+                // 커스텀 다이얼로그를 호출한다.
+                // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.
+                customDialog.callFunction(main_labe2);
+            }
+        });
+
     }
+
+    void showTime() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h = hourOfDay;
+                mi = minute;
+                time_1.setText(h+":" + mi);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+
+
+    }
+
+    void showTime2() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h2 = hourOfDay;
+                mi2 = minute;
+                time_2.setText(h2+":" + mi2);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+
+
+    }
+
+    void showTime3() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h3 = hourOfDay;
+                mi3 = minute;
+                time_3.setText(h3+":" + mi3);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+
+
+    }
+
+    void showTime4() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h4 = hourOfDay;
+                mi4 = minute;
+                time_4.setText(h4+":" + mi4);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+
+
+    }
+
+    void showTime5() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h5 = hourOfDay;
+                mi5 = minute;
+                time_5.setText(h5+":" + mi5);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+
+
+    }
+
+    void showTime6() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h6 = hourOfDay;
+                mi6 = minute;
+                time_6.setText(h6+":" + mi6);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+
+
+    }
+
+    void showTime7() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h7 = hourOfDay;
+                mi7 = minute;
+                time_7.setText(h7+":" + mi7);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+
+
+    }
+
+    void showTime8() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h8 = hourOfDay;
+                mi8 = minute;
+                time_8.setText(h8+":" + mi8);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+
+
+    }
+
+
 
     @Override
     protected void onResume() {
