@@ -16,6 +16,8 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:replace="android:icon">
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

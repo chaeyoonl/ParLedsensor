@@ -592,7 +592,6 @@
                                     <!--두번째 패이지, 타이머-->
 
 
-
                                     <LinearLayout
                                         android:id="@+id/tab_sub2"
                                         android:layout_width="match_parent"
@@ -614,46 +613,53 @@
                                                 android:id="@+id/time_1"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="50dp"
-                                                android:background="@drawable/btn_time_shape"
-                                                android:textColor="@color/colorBlack"
                                                 android:layout_gravity="center"
-                                                android:gravity="center"/>
+                                                android:background="@drawable/btn_time_shape"
+                                                android:gravity="center"
+                                                android:textColor="@color/colorBlack" />
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="30dp"/>
+                                                android:layout_height="30dp" />
+
                                             <Button
                                                 android:id="@+id/time_2"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="50dp"
-                                                android:background="@drawable/btn_time_shape"
-                                                android:textColor="@color/colorBlack"
                                                 android:layout_gravity="center"
-                                                android:gravity="center"/>
+                                                android:background="@drawable/btn_time_shape"
+                                                android:gravity="center"
+                                                android:textColor="@color/colorBlack" />
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="30dp"/>
+                                                android:layout_height="30dp" />
+
                                             <Button
                                                 android:id="@+id/time_3"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="50dp"
-                                                android:background="@drawable/btn_time_shape"
-                                                android:textColor="@color/colorBlack"
                                                 android:layout_gravity="center"
-                                                android:gravity="center"/>
+                                                android:background="@drawable/btn_time_shape"
+                                                android:gravity="center"
+                                                android:textColor="@color/colorBlack" />
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="30dp"/>
+                                                android:layout_height="30dp" />
+
                                             <Button
                                                 android:id="@+id/time_4"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="50dp"
-                                                android:background="@drawable/btn_time_shape"
-                                                android:textColor="@color/colorBlack"
                                                 android:layout_gravity="center"
-                                                android:gravity="center"/>
+                                                android:background="@drawable/btn_time_shape"
+                                                android:gravity="center"
+                                                android:textColor="@color/colorBlack" />
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="30dp"/>
+                                                android:layout_height="30dp" />
 
                                         </LinearLayout>
                                         <!-- 중간 -->
@@ -671,6 +677,7 @@
                                                 android:gravity="center"
                                                 android:text="~"
                                                 android:textColor="@color/colorBlack" />
+
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="80dp"
@@ -678,6 +685,7 @@
                                                 android:gravity="center"
                                                 android:text="~"
                                                 android:textColor="@color/colorBlack" />
+
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="80dp"
@@ -685,6 +693,7 @@
                                                 android:gravity="center"
                                                 android:text="~"
                                                 android:textColor="@color/colorBlack" />
+
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="80dp"
@@ -707,49 +716,53 @@
                                                 android:id="@+id/time_5"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="50dp"
-                                                android:background="@drawable/btn_time_shape"
-                                                android:textColor="@color/colorBlack"
                                                 android:layout_gravity="center"
-                                                android:gravity="center"/>
+                                                android:background="@drawable/btn_time_shape"
+                                                android:gravity="center"
+                                                android:textColor="@color/colorBlack" />
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="30dp"/>
+                                                android:layout_height="30dp" />
+
                                             <Button
                                                 android:id="@+id/time_6"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="50dp"
-                                                android:background="@drawable/btn_time_shape"
-                                                android:textColor="@color/colorBlack"
                                                 android:layout_gravity="center"
-                                                android:gravity="center"/>
+                                                android:background="@drawable/btn_time_shape"
+                                                android:gravity="center"
+                                                android:textColor="@color/colorBlack" />
 
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="30dp"/>
+                                                android:layout_height="30dp" />
+
                                             <Button
                                                 android:id="@+id/time_7"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="50dp"
-                                                android:background="@drawable/btn_time_shape"
-                                                android:textColor="@color/colorBlack"
                                                 android:layout_gravity="center"
-                                                android:gravity="center"/>
+                                                android:background="@drawable/btn_time_shape"
+                                                android:gravity="center"
+                                                android:textColor="@color/colorBlack" />
 
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="30dp"/>
+                                                android:layout_height="30dp" />
+
                                             <Button
                                                 android:id="@+id/time_8"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="50dp"
-                                                android:background="@drawable/btn_time_shape"
-                                                android:textColor="@color/colorBlack"
                                                 android:layout_gravity="center"
-                                                android:gravity="center"/>
+                                                android:background="@drawable/btn_time_shape"
+                                                android:gravity="center"
+                                                android:textColor="@color/colorBlack" />
 
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="30dp"/>
+                                                android:layout_height="30dp" />
                                         </LinearLayout>
 
 

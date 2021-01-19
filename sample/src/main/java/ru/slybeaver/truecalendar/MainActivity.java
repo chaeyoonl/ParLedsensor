@@ -23,7 +23,6 @@ import java.util.Locale;
 import ru.slybeaver.slycalendarview.SlyCalendarDialog;
 
 
-
 import android.app.DatePickerDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -46,14 +45,14 @@ import java.net.URL;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
-    int y=0, m=0, d=0, h=0, mi=0;
-    int y2=0, m2=0, d2=0, h2=0, mi2=0;
-    int y3=0, m3=0, d3=0, h3=0, mi3=0;
-    int y4=0, m4=0, d4=0, h4=0, mi4=0;
-    int y5=0, m5=0, d5=0, h5=0, mi5=0;
-    int y6=0, m6=0, d6=0, h6=0, mi6=0;
-    int y7=0, m7=0, d7=0, h7=0, mi7=0;
-    int y8=0, m8=0, d8=0, h8=0, mi8=0;
+    int h = 0, mi = 0;
+    int h2 = 0, mi2 = 0;
+    int h3 = 0, mi3 = 0;
+    int h4 = 0, mi4 = 0;
+    int h5 = 0, mi5 = 0;
+    int h6 = 0, mi6 = 0;
+    int h7 = 0, mi7 = 0;
+    int h8 = 0, mi8 = 0;
 
     TextView tryText;
     TextView cadText;
@@ -64,16 +63,16 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     TextView ledText3;
     TextView ledText4;
 
-    String ss="";
-    String ss2="";
-    String ss3="";
-    String ss4="";
-    String ss5="";
-    String ss6="";
-    String ss7="";
-    String ss8="";
+    String ss = "";
+    String ss2 = "";
+    String ss3 = "";
+    String ss4 = "";
+    String ss5 = "";
+    String ss6 = "";
+    String ss7 = "";
+    String ss8 = "";
 
-    String resultss="";
+    String resultss = "";
 
     int ih = 0;
     TabHost tabHost, tabHost2;
@@ -130,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         //////////////////////////////////////
 
         final int[] selectedItem = {0};
-        final String[] items = new String[] {"1구역", "2구역", "3구역", "4구역"};
+        final String[] items = new String[]{"1구역", "2구역", "3구역", "4구역"};
 
         btn_section = (Button) findViewById(R.id.btn_section);
         btn_section.setText(items[selectedItem[0]]);
@@ -141,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
                 AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                dialog .setTitle("구역을 선택하시오.")
+                dialog.setTitle("구역을 선택하시오.")
                         .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -154,8 +153,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                             public void onClick(DialogInterface dialog, int which) {
 
                                 Toast.makeText(MainActivity.this
-                                , items[selectedItem[0]]
-                                , Toast.LENGTH_SHORT).show();
+                                        , items[selectedItem[0]]
+                                        , Toast.LENGTH_SHORT).show();
 
                                 btn_section.setText(items[selectedItem[0]]);
                             }
@@ -164,12 +163,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(MainActivity.this
-                                , " 취소 버튼을 눌렀습니다."
-                                , Toast.LENGTH_SHORT).show();
+                                        , " 취소 버튼을 눌렀습니다."
+                                        , Toast.LENGTH_SHORT).show();
                             }
                         });
-                           dialog.create();
-                           dialog.show();
+                dialog.create();
+                dialog.show();
 
 
             }
@@ -259,10 +258,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
 
-
-
-
-
         tryText = findViewById(R.id.tryText);
         cadText = findViewById(R.id.cadText);
         usdText = findViewById(R.id.usdText);
@@ -332,7 +327,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
 
-
         set_LED = (Button) findViewById(R.id.set_LED);
         final Button main_labe2 = (Button) findViewById(R.id.set_LED);
         set_LED.setOnClickListener(new View.OnClickListener() {
@@ -356,14 +350,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h = hourOfDay;
                 mi = minute;
-                time_1.setText(h+":" + mi);
+                time_1.setText(h + ":" + mi);
             }
         }, 21, 12, true);
 
         timePickerDialog.setMessage("메시지");
         timePickerDialog.show();
-
-
 
 
     }
@@ -374,14 +366,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h2 = hourOfDay;
                 mi2 = minute;
-                time_2.setText(h2+":" + mi2);
+                time_2.setText(h2 + ":" + mi2);
             }
         }, 21, 12, true);
 
         timePickerDialog.setMessage("메시지");
         timePickerDialog.show();
-
-
 
 
     }
@@ -392,14 +382,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h3 = hourOfDay;
                 mi3 = minute;
-                time_3.setText(h3+":" + mi3);
+                time_3.setText(h3 + ":" + mi3);
             }
         }, 21, 12, true);
 
         timePickerDialog.setMessage("메시지");
         timePickerDialog.show();
-
-
 
 
     }
@@ -410,14 +398,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h4 = hourOfDay;
                 mi4 = minute;
-                time_4.setText(h4+":" + mi4);
+                time_4.setText(h4 + ":" + mi4);
             }
         }, 21, 12, true);
 
         timePickerDialog.setMessage("메시지");
         timePickerDialog.show();
-
-
 
 
     }
@@ -428,14 +414,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h5 = hourOfDay;
                 mi5 = minute;
-                time_5.setText(h5+":" + mi5);
+                time_5.setText(h5 + ":" + mi5);
             }
         }, 21, 12, true);
 
         timePickerDialog.setMessage("메시지");
         timePickerDialog.show();
-
-
 
 
     }
@@ -446,14 +430,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h6 = hourOfDay;
                 mi6 = minute;
-                time_6.setText(h6+":" + mi6);
+                time_6.setText(h6 + ":" + mi6);
             }
         }, 21, 12, true);
 
         timePickerDialog.setMessage("메시지");
         timePickerDialog.show();
-
-
 
 
     }
@@ -464,14 +446,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h7 = hourOfDay;
                 mi7 = minute;
-                time_7.setText(h7+":" + mi7);
+                time_7.setText(h7 + ":" + mi7);
             }
         }, 21, 12, true);
 
         timePickerDialog.setMessage("메시지");
         timePickerDialog.show();
-
-
 
 
     }
@@ -482,7 +462,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h8 = hourOfDay;
                 mi8 = minute;
-                time_8.setText(h8+":" + mi8);
+                time_8.setText(h8 + ":" + mi8);
             }
         }, 21, 12, true);
 
@@ -490,10 +470,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         timePickerDialog.show();
 
 
-
-
     }
-
 
 
     @Override
@@ -536,7 +513,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             downloadData.execute(url);
 
         } catch (Exception e) {
-            Log.i("MyTag","Fail");
+            Log.i("MyTag", "Fail");
         }
 
         try {
@@ -544,20 +521,20 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getLedData";
             downloadData2.execute(url);
         } catch (Exception e) {
-            Log.i("MyTag","Fail");
+            Log.i("MyTag", "Fail");
         }
 
 
     }
 
-    private class DownloadData extends AsyncTask<String,Void,String> {
+    private class DownloadData extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... strings) {
             String result = "";
             URL url;
             HttpURLConnection httpURLConnection;
-            Log.i("MyTag","http");
+            Log.i("MyTag", "http");
 
             try {
                 url = new URL(strings[0]);
@@ -567,11 +544,10 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
 
 
-
                 int data = inputStreamReader.read();
 
                 while (data > 0) {
-                    char character =(char) data;
+                    char character = (char) data;
                     result += character;
 
                     data = inputStreamReader.read();
@@ -590,7 +566,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             //Log.i("Results_string",s);
             super.onPostExecute(s);
 
-            Log.i("MyTag",s);
+            Log.i("MyTag", s);
             //jpyText.setText(s);
 
             //System.out.println("Alınan data:" + s);
@@ -652,15 +628,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         Log.i("MyTag", "parser start");
                         Log.i("My Tag", ss);
                     }
-                }else {
+                } else {
                     for (int i = 0; i < jsonArray2.length(); i++) {
                         JSONObject jo = jsonArray2.getJSONObject(i);
 
 
                         String led1 = jo.getString("led1");
-                        String led2= jo.getString("led2");
+                        String led2 = jo.getString("led2");
                         String led3 = jo.getString("led3");
-                        String led4= jo.getString("led4");
+                        String led4 = jo.getString("led4");
 
                         Log.i("My Tags", led1);
                         Log.i("My Tags", led2);
@@ -669,33 +645,33 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                         if (led1.contains("0")) {
                             ss5 = "OFF";
-                        }else if (led1.contains("1")) {
+                        } else if (led1.contains("1")) {
                             ss5 = "ON";
-                        }else{
+                        } else {
                             ss5 = "ERR";
                         }
 
                         if (led2.contains("0")) {
                             ss6 = "OFF";
-                        }else if (led2.contains("1")) {
+                        } else if (led2.contains("1")) {
                             ss6 = "ON";
-                        }else{
+                        } else {
                             ss6 = "ERR";
                         }
 
                         if (led3.contains("0")) {
                             ss7 = "OFF";
-                        }else if (led3.contains("1")) {
+                        } else if (led3.contains("1")) {
                             ss7 = "ON";
-                        }else{
+                        } else {
                             ss7 = "ERR";
                         }
 
                         if (led4.contains("0")) {
                             ss8 = "OFF";
-                        }else if (led4.contains("1")) {
+                        } else if (led4.contains("1")) {
                             ss8 = "ON";
-                        }else{
+                        } else {
                             ss8 = "ERR";
                         }
 
@@ -711,13 +687,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         ledText4.setText(ss8);
 
 
-
                     }
                 }
-
-
-
-
 
 
                 ih++;
