@@ -74,11 +74,12 @@
                     android:background="@drawable/btn_time_shape"
                     android:gravity="center"
                     android:textColor="@color/colorBlack"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:hint="ID"/>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="30dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -87,7 +88,9 @@
                     android:background="@drawable/btn_time_shape"
                     android:gravity="center"
                     android:textColor="@color/colorBlack"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:hint="Pasworld"
+                    android:inputType="textPassword"/>
             </LinearLayout>
 
 

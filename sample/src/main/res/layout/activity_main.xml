@@ -852,7 +852,9 @@
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical"
                                                 android:padding="5dp">
-
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="10dp"/>
                                                 <!-- 기준광량 입력부분 -->
                                                 <Button
                                                     android:id="@+id/set_light"
@@ -860,6 +862,10 @@
                                                     android:layout_height="match_parent"
                                                     android:background="@drawable/btn_time_shape"
                                                     android:textColor="@color/colorBlack" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="10dp"/>
                                             </LinearLayout>
 
                                             <LinearLayout
@@ -870,6 +876,9 @@
                                                 android:orientation="vertical"
                                                 android:padding="5dp">
 
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="10dp"/>
                                                 <!-- LED 유지 시간 입력부분 -->
                                                 <Button
                                                     android:id="@+id/set_LED"
@@ -888,6 +897,9 @@
                                                 android:orientation="vertical"
                                                 android:padding="15dp">
 
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="10dp"/>
                                                 <Button
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
@@ -954,6 +966,9 @@
                                                 android:orientation="vertical"
                                                 android:padding="15dp">
 
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="10dp"/>
                                                 <Button
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
