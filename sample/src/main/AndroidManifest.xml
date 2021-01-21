@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
+        tools:ignore="LockedOrientationActivity"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -19,7 +20,8 @@
         tools:replace="android:icon">
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".login">
+        <activity android:name=".login"/>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
