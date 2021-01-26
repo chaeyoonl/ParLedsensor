@@ -40,8 +40,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/colorWhite"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -52,8 +51,9 @@
                         <TextView
                             android:id="@+id/tryText9"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:background="@drawable/date_list"
                             android:gravity="center"
                             android:text="PAR1"
                             android:textAlignment="center"
@@ -67,9 +67,10 @@
                             app:layout_constraintVertical_bias="0.131" />
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/chfText"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="PAR1"
@@ -92,9 +93,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/tryText8"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="PAR2"
@@ -109,9 +111,10 @@
                             app:layout_constraintVertical_bias="0.217" />
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/usdText"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="PAR2"
@@ -134,9 +137,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/tryText7"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="PAR3"
@@ -151,9 +155,10 @@
                             app:layout_constraintVertical_bias="0.305" />
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/jpyText"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="PAR3"
@@ -176,9 +181,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/tryText6"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="PAR4"
@@ -193,9 +199,10 @@
                             app:layout_constraintVertical_bias="0.387" />
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/tryText"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="PAR4"
@@ -218,9 +225,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/tryText5"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="LED1"
@@ -235,9 +243,10 @@
                             app:layout_constraintVertical_bias="0.473" />
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/cadText"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="LED1"
@@ -260,9 +269,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/tryText3"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="LED2"
@@ -277,9 +287,10 @@
                             app:layout_constraintVertical_bias="0.555" />
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/ledText2"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="LED2"
@@ -302,9 +313,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/tryText4"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="LED3"
@@ -319,9 +331,10 @@
                             app:layout_constraintVertical_bias="0.638" />
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/ledText3"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="LED3"
@@ -344,9 +357,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/tryText2"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="LED4"
@@ -361,9 +375,10 @@
                             app:layout_constraintVertical_bias="0.723" />
 
                         <TextView
+                            android:background="@drawable/date_list"
                             android:id="@+id/ledText4"
                             android:layout_width="163dp"
-                            android:layout_height="47dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="LED4"
@@ -409,9 +424,51 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="8.5"
+                        android:layout_weight="5.5"
                         android:background="@color/colorWhite"
                         android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:background="@color/colorWhite"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn_year"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="년"
+                                android:gravity="center"
+                                android:background="@drawable/year_back"/>
+
+                            <Button
+                                android:id="@+id/btn_month"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="월"
+                                android:gravity="center"
+                                android:background="@drawable/year_back"/>
+
+                            <Button
+                                android:id="@+id/btn_day"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="일"
+                                android:gravity="center"
+                                android:background="@drawable/year_back"/>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/colorWhite"
+                            android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/btnShowCalendar"
@@ -419,6 +476,7 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/buttonshape"
                             android:text="Show Calendar" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -428,11 +486,126 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-                        <TextView
+
+                        <ScrollView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="text"
-                            android:textColor="@color/colorBlack" />
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/show_date_par_date_first"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:text="text"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/colorBlack"
+                                    android:layout_weight="7"
+                                    android:background="@drawable/date_list"/>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_weight="11"
+                                    android:orientation="horizontal">
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="시간"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"
+                                        android:gravity="center" />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Par1"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Par2"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Par3"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Par4"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"
+                                        android:gravity="center"/>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1">
+                                    <TextView
+                                        android:id="@+id/show_date_par_date"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="text"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"/>
+                                    <TextView
+                                        android:id="@+id/show_date_par"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="text"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"/>
+                                    <TextView
+                                        android:id="@+id/show_date_par2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="text"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"/>
+                                    <TextView
+                                        android:id="@+id/show_date_par3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="text"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"/>
+                                    <TextView
+                                        android:id="@+id/show_date_par4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="text"
+                                        android:textColor="@color/colorBlack"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/date_list"/>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </ScrollView>
+
                     </LinearLayout>
 
 
@@ -989,7 +1162,45 @@
 
 
                                     </LinearLayout>
+                                    <!--네번째 패이지-->
+                                    <LinearLayout
+                                        android:id="@+id/tab_sub4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@color/colorWhite"
+                                        android:orientation="vertical"
+                                        android:padding="16dp">
 
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="40"
+                                            android:background="@color/colorWhite"
+                                            android:orientation="vertical" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="8.5"
+                                            android:background="@color/colorWhite"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:orientation="horizontal">
+
+
+
+                                            </LinearLayout>
+
+
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
 
                                 </FrameLayout>
 

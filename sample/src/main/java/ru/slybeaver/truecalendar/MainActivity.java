@@ -1,17 +1,23 @@
 package ru.slybeaver.truecalendar;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.DatePicker;
+import android.widget.NumberPicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -44,7 +50,17 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Calendar;
 
+
+
+
+
+
+
+
 public class MainActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
+
+    int check_day = 0;
+
     int h = 0, mi = 0;
     int h2 = 0, mi2 = 0;
     int h3 = 0, mi3 = 0;
@@ -63,6 +79,24 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     TextView ledText3;
     TextView ledText4;
 
+    TextView show_date_par_date_first;
+    TextView show_date_par_date;
+    TextView show_date_par;
+    TextView show_date_par2;
+    TextView show_date_par3;
+    TextView show_date_par4;
+
+    String strMonth = "01";
+
+    Button btnYearMonthPicker;
+
+    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth){
+            Log.d("YearMonthPickerTest", "year = " + year + ", month = " + monthOfYear + ", day = " + dayOfMonth);
+        }
+    };
+
     String ss = "";
     String ss2 = "";
     String ss3 = "";
@@ -75,9 +109,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     String resultss = "";
 
     int ih = 0;
-    TabHost tabHost, tabHost2;
+    TabHost tabHost, tabHost2, tabHost3;
 
-    Button btnShowCalendar, btn_section, time_1, time_2, time_3, time_4, time_5, time_6, time_7, time_8, set_light, set_LED;
+    Button btnShowCalendar, btn_section, time_1, time_2, time_3, time_4, time_5, time_6, time_7, time_8, set_light, set_LED, btn_year, btn_month, btn_day;
 
     private WebView webView;
     private String url = "http://yakyong.dataponic.site/dataponic_ALC/login/check?userId=test&passwd=test";
@@ -86,6 +120,16 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
+
+
+
+
+
+
 
         //자동로그인 하기위해서 쿠키값 onResume, OnPeuse에도 있음
         CookieSyncManager.createInstance(this);
@@ -116,15 +160,33 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost2 = (TabHost) findViewById(R.id.tabhost2);
         tabHost2.setup();
 
-        TabHost.TabSpec tab_sub1 = tabHost2.newTabSpec("1").setContent(R.id.tab_sub1).setIndicator("수동");
+        TabHost.TabSpec tab_sub1 = tabHost2.newTabSpec("1").setContent(R.id.tab_sub1).setIndicator("1구역");
 
-        TabHost.TabSpec tab_sub2 = tabHost2.newTabSpec("2").setContent(R.id.tab_sub2).setIndicator("타이머");
+        TabHost.TabSpec tab_sub2 = tabHost2.newTabSpec("2").setContent(R.id.tab_sub2).setIndicator("2구역");
 
-        TabHost.TabSpec tab_sub3 = tabHost2.newTabSpec("3").setContent(R.id.tab_sub3).setIndicator("자동");
+        TabHost.TabSpec tab_sub3 = tabHost2.newTabSpec("3").setContent(R.id.tab_sub3).setIndicator("3구역");
+
+        TabHost.TabSpec tab_sub4 = tabHost2.newTabSpec("4").setContent(R.id.tab_sub4).setIndicator("4구역");
 
         tabHost2.addTab(tab_sub1);
         tabHost2.addTab(tab_sub2);
         tabHost2.addTab(tab_sub3);
+        tabHost2.addTab(tab_sub4);
+/*
+        /////////////////////////////////////
+        tabHost3 = (TabHost) findViewById(R.id.tabhost3);
+        tabHost3.setup();
+
+        TabHost.TabSpec tab_sub1_ch = tabHost2.newTabSpec("1").setContent(R.id.tab_sub1_ch).setIndicator("1구역");
+
+        TabHost.TabSpec tab_sub2_ch = tabHost2.newTabSpec("2").setContent(R.id.tab_sub2_ch).setIndicator("2구역");
+
+        TabHost.TabSpec tab_sub3_ch = tabHost2.newTabSpec("3").setContent(R.id.tab_sub3_ch).setIndicator("3구역");
+
+
+        tabHost2.addTab(tab_sub1_ch);
+        tabHost2.addTab(tab_sub2_ch);
+        tabHost2.addTab(tab_sub3_ch);*/
 
         //////////////////////////////////////
 
@@ -258,6 +320,112 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
 
+
+
+
+
+        btn_year = (Button) findViewById(R.id.btn_year);
+        btn_year.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
+                dlg.setTitle("년도 선택"); //제목
+                final String[] versionArray = new String[] {"2021년"};
+
+                dlg.setSingleChoiceItems(versionArray, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //btn_year.setText(versionArray[which]);
+                    }
+                });
+                //버튼 클릭시 동작
+                dlg.setPositiveButton("확인",new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which) {
+                        //토스트 메시지
+                        Toast.makeText(MainActivity.this,"확인을 눌르셨습니다.",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dlg.show();
+
+            }
+        });
+
+
+
+
+        btn_month = (Button) findViewById(R.id.btn_month);
+        btn_month.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
+                dlg.setTitle("2021년 월 선택"); //제목
+                final String[] versionArray = new String[] {"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"};
+
+                dlg.setSingleChoiceItems(versionArray, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,versionArray[which],Toast.LENGTH_SHORT).show();
+                        strMonth = String.valueOf(versionArray[which]);
+                        strMonth = "0" + strMonth.substring(0,1);
+                        Log.i("strMonth", strMonth);
+                    }
+                });
+                //버튼 클릭시 동작
+                dlg.setPositiveButton("확인",new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which) {
+                        //토스트 메시지
+                        Toast.makeText(MainActivity.this,"확인을 눌르셨습니다.",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this,versionArray[0],Toast.LENGTH_SHORT).show();
+                        check_day = 2;
+
+                        DownloadData downloadData5 = new DownloadData();
+                        try {
+                            //시간에 따른 parsensor값
+                            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListMon?strDate=2021" + strMonth;
+                            downloadData5.execute(url);
+                            Log.i("MyTag_check_day", url);
+                        } catch (Exception e) {
+                            Log.i("MyTag_check_day", "Fail");
+                        }
+
+
+
+                    }
+                });
+                dlg.show();
+
+
+            }
+        });
+
+
+        btn_day = (Button) findViewById(R.id.btn_day);
+        btn_day.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                new SlyCalendarDialog()
+                        .setSingle(false)
+                        .setFirstMonday(false)
+                        .setCallback(MainActivity.this)
+                        .show(getSupportFragmentManager(), "TAG_SLYCALENDAR");
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
         tryText = findViewById(R.id.tryText);
         cadText = findViewById(R.id.cadText);
         usdText = findViewById(R.id.usdText);
@@ -266,6 +434,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         ledText = findViewById(R.id.ledText2);
         ledText3 = findViewById(R.id.ledText3);
         ledText4 = findViewById(R.id.ledText4);
+
+        show_date_par_date_first = findViewById(R.id.show_date_par_date_first);
+        show_date_par_date = findViewById(R.id.show_date_par_date);
+        show_date_par = findViewById(R.id.show_date_par);
+        show_date_par2 = findViewById(R.id.show_date_par2);
+        show_date_par3 = findViewById(R.id.show_date_par3);
+        show_date_par4 = findViewById(R.id.show_date_par4);
 
         Date currentTime = Calendar.getInstance().getTime();
         String date_text = new SimpleDateFormat("yyyy년 MM월 dd일", Locale.getDefault()).format(currentTime);
@@ -342,7 +517,22 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
 
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     void showTime() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -507,6 +697,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     public void getRates(View view) {
         DownloadData downloadData = new DownloadData();
         DownloadData downloadData2 = new DownloadData();
+        DownloadData downloadData3 = new DownloadData();
+
 
         try {
             String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParData";
@@ -523,6 +715,31 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         } catch (Exception e) {
             Log.i("MyTag", "Fail");
         }
+
+
+        try {
+            //시간에 따른 parsensor값
+            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListData";
+            downloadData3.execute(url);
+        } catch (Exception e) {
+            Log.i("MyTag", "Fail");
+        }
+
+/*        if (check_day == 1) {
+            try {
+                //시간에 따른 parsensor값
+                String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?strDate=20210110&endDate=20210111";
+                downloadData3.execute(url);
+                Log.i("MyTag_check_day", "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?strDate=20210110&endDate=20210111");
+            } catch (Exception e) {
+                Log.i("MyTag", "Fail");
+            }
+
+
+
+            check_day = 0;
+        }*/
+
 
 
     }
@@ -566,6 +783,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             //Log.i("Results_string",s);
             super.onPostExecute(s);
 
+            show_date_par_date.setText("");
+            show_date_par.setText("");
+            show_date_par2.setText("");
+            show_date_par3.setText("");
+            show_date_par4.setText("");
+            Log.i("MyTag", String.valueOf(check_day));
             Log.i("MyTag", s);
             //jpyText.setText(s);
 
@@ -581,10 +804,20 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 JSONArray jsonArray = null;
                 JSONArray jsonArray2 = null;
+                JSONArray jsonArray3 = null;
+                JSONArray jsonArray4 = null;
+                JSONArray jsonArray5 = null;
+
                 if (ih == 0) {
                     jsonArray = new JSONArray(s);
-                } else {
+                } if (ih == 1) {
                     jsonArray2 = new JSONArray(s);
+                } if (ih == 2) {
+                    jsonArray3 = new JSONArray(s);
+                } if (check_day == 1) {
+                    jsonArray4 = new JSONArray(s);
+                } if (check_day == 2) {
+                    jsonArray5 = new JSONArray(s);
                 }
 
 
@@ -628,7 +861,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         Log.i("MyTag", "parser start");
                         Log.i("My Tag", ss);
                     }
-                } else {
+                } if (ih == 1) {
                     for (int i = 0; i < jsonArray2.length(); i++) {
                         JSONObject jo = jsonArray2.getJSONObject(i);
 
@@ -688,6 +921,144 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
                     }
+                } if (ih == 2) {
+                    for (int i = 0; i < jsonArray3.length(); i++) {
+
+
+
+
+                        JSONObject jo = jsonArray3.getJSONObject(i);
+
+
+                        String par1_avg = jo.getString("par1_avg");
+                        String par2_avg = jo.getString("par2_avg");
+                        String par3_avg = jo.getString("par3_avg");
+                        String par4_avg = jo.getString("par4_avg");
+                        String reg_time = jo.getString("reg_time");
+
+                        if (i == 0) {
+                            show_date_par_date_first.setText(reg_time.substring(0,10));
+                        }
+
+                        ss = reg_time.substring(11,13) + "\n";
+                        ss2 = par1_avg + "\n";
+                        ss3 = par2_avg + "\n";
+                        ss4 = par3_avg + "\n";
+                        ss5 = par4_avg + "\n";
+
+                        //ss5 = led1;
+                        //System.out.println("base:" + ss);
+
+
+                        show_date_par_date.setText(show_date_par_date.getText().toString() + ss); //시간
+                        show_date_par.setText(show_date_par.getText().toString() + ss2);    //Par1
+                        show_date_par2.setText(show_date_par2.getText().toString() + ss3);  //Par2
+                        show_date_par3.setText(show_date_par3.getText().toString() + ss4);  //Par3
+                        show_date_par4.setText(show_date_par4.getText().toString() + ss5);  //Par4
+
+                        //cadText.setText(ss5);
+                        Log.i("MyTag", "parser start");
+                        Log.i("My Tag", ss);
+
+                    }
+
+
+
+
+
+                } if (check_day == 1) {
+                    for (int i = 0; i < jsonArray4.length(); i++) {
+
+
+
+
+                        JSONObject jo = jsonArray4.getJSONObject(i);
+
+
+                        String par1_avg = jo.getString("par1_avg");
+                        String par2_avg = jo.getString("par2_avg");
+                        String par3_avg = jo.getString("par3_avg");
+                        String par4_avg = jo.getString("par4_avg");
+                        String reg_time = jo.getString("reg_time");
+
+                        if (i == 0) {
+                            show_date_par_date_first.setText(reg_time.substring(0,10));
+                        }
+
+                        ss = reg_time.substring(11,13) + "\n";
+                        ss2 = par1_avg + "\n";
+                        ss3 = par2_avg + "\n";
+                        ss4 = par3_avg + "\n";
+                        ss5 = par4_avg + "\n";
+
+                        //ss5 = led1;
+                        //System.out.println("base:" + ss);
+
+
+                        show_date_par_date.setText(show_date_par_date.getText().toString() + ss); //시간
+                        show_date_par.setText(show_date_par.getText().toString() + ss2);    //Par1
+                        show_date_par2.setText(show_date_par2.getText().toString() + ss3);  //Par2
+                        show_date_par3.setText(show_date_par3.getText().toString() + ss4);  //Par3
+                        show_date_par4.setText(show_date_par4.getText().toString() + ss5);  //Par4
+
+                        //cadText.setText(ss5);
+                        Log.i("MyTag", "parser start");
+                        Log.i("My Tag", ss);
+
+                    }
+
+
+
+
+
+
+
+                    check_day = 0;
+                } if (check_day == 2) {
+                    Log.i("check_day", "check_day clicked");
+                    for (int i = 0; i < jsonArray5.length(); i++) {
+                        Log.i("check_day", String.valueOf(jsonArray5.length()));
+
+
+
+                        JSONObject jo = jsonArray5.getJSONObject(i);
+
+
+                        String par1_avg = jo.getString("par1_sum");
+                        String par2_avg = jo.getString("par2_sum");
+                        String par3_avg = jo.getString("par3_sum");
+                        String par4_avg = jo.getString("par4_sum");
+                        String reg_time = jo.getString("reg_time");
+
+/*                        if (i == 0) {
+                            show_date_par_date_first.setText(reg_time.substring(0,10));
+                        }*/
+
+                        ss = reg_time.substring(5,10) + "\n";
+                        ss2 = par1_avg + "\n";
+                        ss3 = par2_avg + "\n";
+                        ss4 = par3_avg + "\n";
+                        ss5 = par4_avg + "\n";
+
+                        //ss5 = led1;
+                        //System.out.println("base:" + ss);
+
+                        Log.i("MyTagss", show_date_par.getText().toString() + ss2);
+                        show_date_par_date.setText(show_date_par_date.getText().toString() + ss); //시간
+                        show_date_par.setText(show_date_par.getText().toString() + ss2);    //Par1
+                        show_date_par2.setText(show_date_par2.getText().toString() + ss3);  //Par2
+                        show_date_par3.setText(show_date_par3.getText().toString() + ss4);  //Par3
+                        show_date_par4.setText(show_date_par4.getText().toString() + ss5);  //Par4
+
+                        //cadText.setText(ss5);
+                        Log.i("MyTag", "parser start");
+                        Log.i("My Tag", ss);
+
+                    }
+
+
+
+                    check_day = 0;
                 }
 
 
@@ -736,6 +1107,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         //Nothing
     }
 
+    String strDate = "", endDate = "", tempDate = "";
     @Override
     public void onDataSelected(Calendar firstDate, Calendar secondDate, int hours, int minutes) {
         if (firstDate != null) {
@@ -749,8 +1121,29 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 ).show();
 
+                //하나의 날짜만 선택된 경우
                 btnShowCalendar.setText(new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime()));
 
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime());
+                Log.i("tempDate", tempDate);
+                strDate = tempDate.substring(0,4);    //년도 잘라내기
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime());
+                strDate = strDate + tempDate.substring(6,8);    //월 잘라내기
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime());
+                strDate = strDate + tempDate.substring(10,12);    //일 잘라내기
+
+                Log.i("strDate", strDate);
+
+                check_day = 1;
+                DownloadData downloadData4 = new DownloadData();
+                try {
+                    //시간에 따른 parsensor값
+                    String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?strDate=" + strDate + "&endDate=" + strDate;
+                    downloadData4.execute(url);
+                    Log.i("MyTag_check_day", "success");
+                } catch (Exception e) {
+                    Log.i("MyTag_check_day", "Fail");
+                }
             } else {    //범위 설정이 된 상태에서 저장이 된다면..
                 Toast.makeText(
                         this,
@@ -764,11 +1157,47 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 ).show();
 
 
+                //범위가 있는 날짜가 선택된 경우
                 btnShowCalendar.setText(getString(
                         R.string.period,
                         new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime()),
                         new SimpleDateFormat("yyyy년 MM월 dd일").format(secondDate.getTime())
                 ));
+
+                //시작 날짜
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime());
+                Log.i("tempDate", tempDate);
+                strDate = tempDate.substring(0,4);    //년도 잘라내기
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime());
+                strDate = strDate + tempDate.substring(6,8);    //월 잘라내기
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(firstDate.getTime());
+                strDate = strDate + tempDate.substring(10,12);    //일 잘라내기
+
+                Log.i("strDate", strDate);
+
+
+                //끝나는 날짜
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(secondDate.getTime());
+                Log.i("tempDate", tempDate);
+                endDate = tempDate.substring(0,4);    //년도 잘라내기
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(secondDate.getTime());
+                endDate = endDate + tempDate.substring(6,8);    //월 잘라내기
+                tempDate = new SimpleDateFormat("yyyy년 MM월 dd일").format(secondDate.getTime());
+                endDate = endDate + tempDate.substring(10,12);    //일 잘라내기
+
+                Log.i("endDate", endDate);
+
+
+                check_day = 1;
+                DownloadData downloadData4 = new DownloadData();
+                try {
+                    //시간에 따른 parsensor값
+                    String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?strDate=" + strDate + "&endDate=" + endDate;
+                    downloadData4.execute(url);
+                    Log.i("MyTag_check_day", "success");
+                } catch (Exception e) {
+                    Log.i("MyTag_check_day", "Fail");
+                }
             }
         }
     }
