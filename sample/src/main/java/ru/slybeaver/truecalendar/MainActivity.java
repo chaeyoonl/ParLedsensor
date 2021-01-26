@@ -42,6 +42,7 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -86,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     TextView show_date_par3;
     TextView show_date_par4;
 
+    TextView txt_sudong;
+
+    TextView LED_on_off, LED_on_off_2, LED_on_off_3, LED_on_off_4;
+
     String strMonth = "01";
 
     Button btnYearMonthPicker;
@@ -109,9 +114,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     String resultss = "";
 
     int ih = 0;
-    TabHost tabHost, tabHost2, tabHost3;
+    TabHost tabHost, tabHost2, tabHost3, tabHost2_2, tabHost2_3, tabHost2_4;
 
-    Button btnShowCalendar, btn_section, time_1, time_2, time_3, time_4, time_5, time_6, time_7, time_8, set_light, set_LED, btn_year, btn_month, btn_day;
+    Button btnShowCalendar, btn_section, time_1, time_2, time_3, time_4, time_5, time_6, time_7, time_8, time_1_2, time_2_2, time_3_2, time_4_2, time_5_2, time_6_2, time_7_2, time_8_2, time_1_3, time_2_3, time_3_3, time_4_3, time_5_3, time_6_3, time_7_3, time_8_3, time_1_4, time_2_4, time_3_4, time_4_4, time_5_4, time_6_4, time_7_4, time_8_4, set_light, set_LED, btn_year, btn_month, btn_day, set_light_2, set_LED_2, set_light_3, set_LED_3, set_light_4, set_LED_4;
 
     private WebView webView;
     private String url = "http://yakyong.dataponic.site/dataponic_ALC/login/check?userId=test&passwd=test";
@@ -123,8 +128,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
 
+        txt_sudong = (TextView) findViewById(R.id.txt_sudong);
 
 
+        LED_on_off = (TextView) findViewById(R.id.LED_on_off);
+        LED_on_off_2 = (TextView) findViewById(R.id.LED_on_off_2);
+        LED_on_off_3 = (TextView) findViewById(R.id.LED_on_off_3);
+        LED_on_off_4 = (TextView) findViewById(R.id.LED_on_off_4);
 
 
 
@@ -160,16 +170,65 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost2 = (TabHost) findViewById(R.id.tabhost2);
         tabHost2.setup();
 
-        TabHost.TabSpec tab_sub1 = tabHost2.newTabSpec("1").setContent(R.id.tab_sub1).setIndicator("수동");
+        TabHost.TabSpec tab_sub1 = tabHost2.newTabSpec("t1").setContent(R.id.tab_sub1).setIndicator("수동");
 
-        TabHost.TabSpec tab_sub2 = tabHost2.newTabSpec("2").setContent(R.id.tab_sub2).setIndicator("타이머");
+        TabHost.TabSpec tab_sub2 = tabHost2.newTabSpec("t2").setContent(R.id.tab_sub2).setIndicator("타이머");
 
-        TabHost.TabSpec tab_sub3 = tabHost2.newTabSpec("3").setContent(R.id.tab_sub3).setIndicator("자동");
+        TabHost.TabSpec tab_sub3 = tabHost2.newTabSpec("t3").setContent(R.id.tab_sub3).setIndicator("자동");
 
 
         tabHost2.addTab(tab_sub1);
         tabHost2.addTab(tab_sub2);
         tabHost2.addTab(tab_sub3);
+
+        /////////////////////////////////////
+        tabHost2_2 = (TabHost) findViewById(R.id.tabhost2_2);
+        tabHost2_2.setup();
+
+        TabHost.TabSpec tab_sub1_2 = tabHost2_2.newTabSpec("t1").setContent(R.id.tab_sub1_2).setIndicator("수동");
+
+        TabHost.TabSpec tab_sub2_2 = tabHost2_2.newTabSpec("t2").setContent(R.id.tab_sub2_2).setIndicator("타이머");
+
+        TabHost.TabSpec tab_sub3_2 = tabHost2_2.newTabSpec("t3").setContent(R.id.tab_sub3_2).setIndicator("자동");
+
+
+        tabHost2_2.addTab(tab_sub1_2);
+        tabHost2_2.addTab(tab_sub2_2);
+        tabHost2_2.addTab(tab_sub3_2);
+
+        /////////////////////////////////////
+        tabHost2_3 = (TabHost) findViewById(R.id.tabhost2_3);
+        tabHost2_3.setup();
+
+        TabHost.TabSpec tab_sub1_3 = tabHost2_3.newTabSpec("t1").setContent(R.id.tab_sub1_3).setIndicator("수동");
+
+        TabHost.TabSpec tab_sub2_3 = tabHost2_3.newTabSpec("t2").setContent(R.id.tab_sub2_3).setIndicator("타이머");
+
+        TabHost.TabSpec tab_sub3_3 = tabHost2_3.newTabSpec("t3").setContent(R.id.tab_sub3_3).setIndicator("자동");
+
+
+        tabHost2_3.addTab(tab_sub1_3);
+        tabHost2_3.addTab(tab_sub2_3);
+        tabHost2_3.addTab(tab_sub3_3);
+
+        /////////////////////////////////////
+        tabHost2_4 = (TabHost) findViewById(R.id.tabhost2_4);
+        tabHost2_4.setup();
+
+        TabHost.TabSpec tab_sub1_4 = tabHost2_4.newTabSpec("t1").setContent(R.id.tab_sub1_4).setIndicator("수동");
+
+        TabHost.TabSpec tab_sub2_4 = tabHost2_4.newTabSpec("t2").setContent(R.id.tab_sub2_4).setIndicator("타이머");
+
+        TabHost.TabSpec tab_sub3_4 = tabHost2_4.newTabSpec("t3").setContent(R.id.tab_sub3_4).setIndicator("자동");
+
+
+        tabHost2_4.addTab(tab_sub1_4);
+        tabHost2_4.addTab(tab_sub2_4);
+        tabHost2_4.addTab(tab_sub3_4);
+
+
+
+
         /////////////////////////////////////
         tabHost3 = (TabHost) findViewById(R.id.tabhost3);
         tabHost3.setup();
@@ -187,6 +246,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost3.addTab(tab_sub2_ch);
         tabHost3.addTab(tab_sub3_ch);
         tabHost3.addTab(tab_sub4_ch);
+
+
+
 
 /*        //////////////////////////////////////
 
@@ -269,16 +331,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_4 = (Button) findViewById(R.id.time_4);
-        time_4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showTime4();
-
-            }
-
-        });
-        ///////////////////////////////////
         time_5 = (Button) findViewById(R.id.time_5);
         time_5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -308,20 +360,200 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
 
         });
-        ///////////////////////////////////
-        time_8 = (Button) findViewById(R.id.time_8);
-        time_8.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        ////////////////////////////////////
+        time_1_2 = (Button) findViewById(R.id.time_1_2);
+        time_1_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showTime8();
+                showTime_2();
+
+            }
+
+        });
+
+        ///////////////////////////////////
+        time_2_2 = (Button) findViewById(R.id.time_2_2);
+        time_2_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime2_2();
+
+            }
+
+        });
+
+        ///////////////////////////////////
+        time_3_2 = (Button) findViewById(R.id.time_3_2);
+        time_3_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime3_2();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_5_2 = (Button) findViewById(R.id.time_5_2);
+        time_5_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime5_2();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_6_2 = (Button) findViewById(R.id.time_6_2);
+        time_6_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime6_2();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_7_2 = (Button) findViewById(R.id.time_7_2);
+        time_7_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime7_2();
 
             }
 
         });
 
 
+        ////////////////////////////////////
+        time_1_3 = (Button) findViewById(R.id.time_1_3);
+        time_1_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime_3();
+
+            }
+
+        });
+
+        ///////////////////////////////////
+        time_2_3 = (Button) findViewById(R.id.time_2_3);
+        time_2_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime2_3();
+
+            }
+
+        });
+
+        ///////////////////////////////////
+        time_3_3 = (Button) findViewById(R.id.time_3_3);
+        time_3_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime3_3();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_5_3 = (Button) findViewById(R.id.time_5_3);
+        time_5_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime5_3();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_6_3 = (Button) findViewById(R.id.time_6_3);
+        time_6_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime6_3();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_7_3 = (Button) findViewById(R.id.time_7_3);
+        time_7_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime7_3();
+
+            }
+
+        });
 
 
+        ////////////////////////////////////
+        time_1_4 = (Button) findViewById(R.id.time_1_4);
+        time_1_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime_4();
+
+            }
+
+        });
+
+        ///////////////////////////////////
+        time_2_4 = (Button) findViewById(R.id.time_2_4);
+        time_2_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime2_4();
+
+            }
+
+        });
+
+        ///////////////////////////////////
+        time_3_4 = (Button) findViewById(R.id.time_3_4);
+        time_3_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime3_4();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_5_4 = (Button) findViewById(R.id.time_5_4);
+        time_5_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime5_4();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_6_4 = (Button) findViewById(R.id.time_6_4);
+        time_6_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime6_4();
+
+            }
+
+        });
+        ///////////////////////////////////
+        time_7_4 = (Button) findViewById(R.id.time_7_4);
+        time_7_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime7_4();
+
+            }
+
+        });
 
 
         btn_year = (Button) findViewById(R.id.btn_year);
@@ -465,6 +697,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         final Button btn_bulb1, btn_bulb2;
         btn_bulb1 = findViewById(R.id.btn_bulb1);
         btn_bulb2 = findViewById(R.id.btn_bulb2);
+        btn_bulb2.performClick();
 
         btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
         btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
@@ -474,6 +707,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onClick(View view) {
                 btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape);
                 btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                LED_on_off.setText("OFF");
             }
         });
 
@@ -483,9 +718,98 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onClick(View view) {
                 btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape);
                 btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                LED_on_off.setText("ON");
             }
         });
 
+        final Button btn_bulb1_2, btn_bulb2_2;
+        btn_bulb1_2 = findViewById(R.id.btn_bulb1_2);
+        btn_bulb2_2 = findViewById(R.id.btn_bulb2_2);
+        btn_bulb2_2.performClick();
+
+        btn_bulb1_2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+        btn_bulb2_2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+        btn_bulb1_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_bulb1_2.setBackgroundResource(R.drawable.btn_bulb_shape);
+                btn_bulb2_2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                LED_on_off_2.setText("OFF");
+            }
+        });
+
+
+        btn_bulb2_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_bulb2_2.setBackgroundResource(R.drawable.btn_bulb_shape);
+                btn_bulb1_2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                LED_on_off_2.setText("ON");
+            }
+        });
+
+
+        final Button btn_bulb1_3, btn_bulb2_3;
+        btn_bulb1_3 = findViewById(R.id.btn_bulb1_3);
+        btn_bulb2_3 = findViewById(R.id.btn_bulb2_3);
+        btn_bulb2_3.performClick();
+
+        btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+        btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+        btn_bulb1_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape);
+                btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                LED_on_off_3.setText("OFF");
+            }
+        });
+
+
+        btn_bulb2_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape);
+                btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                LED_on_off_3.setText("ON");
+            }
+        });
+
+        final Button btn_bulb1_4, btn_bulb2_4;
+        btn_bulb1_4 = findViewById(R.id.btn_bulb1_4);
+        btn_bulb2_4 = findViewById(R.id.btn_bulb2_4);
+        btn_bulb2_4.performClick();
+
+        btn_bulb1_4.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+        btn_bulb2_4.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+        btn_bulb1_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_bulb1_4.setBackgroundResource(R.drawable.btn_bulb_shape);
+                btn_bulb2_4.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                LED_on_off_4.setText("OFF");
+            }
+        });
+
+
+        btn_bulb2_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_bulb2_4.setBackgroundResource(R.drawable.btn_bulb_shape);
+                btn_bulb1_4.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                LED_on_off_4.setText("ON");
+            }
+        });
         ////////////////////////////
         set_light = (Button) findViewById(R.id.set_light);
         final Button main_label = (Button) findViewById(R.id.set_light);
@@ -517,6 +841,96 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
 
+        set_light_2 = (Button) findViewById(R.id.set_light_2);
+        final Button main_label_2 = (Button) findViewById(R.id.set_light_2);
+        set_light_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 커스텀 다이얼로그를 생성한다. 사용자가 만든 클래스이다.
+                CustomDialog customDialog = new CustomDialog(MainActivity.this);
+
+                // 커스텀 다이얼로그를 호출한다.
+                // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.
+                customDialog.callFunction(main_label_2);
+            }
+        });
+
+
+        set_LED_2 = (Button) findViewById(R.id.set_LED_2);
+        final Button main_labe2_2 = (Button) findViewById(R.id.set_LED_2);
+        set_LED_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // 커스텀 다이얼로그를 생성한다. 사용자가 만든 클래스이다.
+                CustomDialog customDialog = new CustomDialog(MainActivity.this);
+
+                // 커스텀 다이얼로그를 호출한다.
+                // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.
+                customDialog.callFunction(main_labe2_2);
+            }
+        });
+
+        set_light_3 = (Button) findViewById(R.id.set_light_3);
+        final Button main_label_3 = (Button) findViewById(R.id.set_light_3);
+        set_light_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 커스텀 다이얼로그를 생성한다. 사용자가 만든 클래스이다.
+                CustomDialog customDialog = new CustomDialog(MainActivity.this);
+
+                // 커스텀 다이얼로그를 호출한다.
+                // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.
+                customDialog.callFunction(main_label_3);
+            }
+        });
+
+
+        set_LED_3 = (Button) findViewById(R.id.set_LED_3);
+        final Button main_labe2_3 = (Button) findViewById(R.id.set_LED_3);
+        set_LED_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // 커스텀 다이얼로그를 생성한다. 사용자가 만든 클래스이다.
+                CustomDialog customDialog = new CustomDialog(MainActivity.this);
+
+                // 커스텀 다이얼로그를 호출한다.
+                // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.
+                customDialog.callFunction(main_labe2_3);
+            }
+        });
+
+
+        set_light_4 = (Button) findViewById(R.id.set_light_4);
+        final Button main_label_4 = (Button) findViewById(R.id.set_light_4);
+        set_light_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 커스텀 다이얼로그를 생성한다. 사용자가 만든 클래스이다.
+                CustomDialog customDialog = new CustomDialog(MainActivity.this);
+
+                // 커스텀 다이얼로그를 호출한다.
+                // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.
+                customDialog.callFunction(main_label_4);
+            }
+        });
+
+
+        set_LED_4 = (Button) findViewById(R.id.set_LED_4);
+        final Button main_labe2_4 = (Button) findViewById(R.id.set_LED_4);
+        set_LED_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // 커스텀 다이얼로그를 생성한다. 사용자가 만든 클래스이다.
+                CustomDialog customDialog = new CustomDialog(MainActivity.this);
+
+                // 커스텀 다이얼로그를 호출한다.
+                // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.
+                customDialog.callFunction(main_labe2_4);
+            }
+        });
 
 
     }
@@ -582,21 +996,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     }
 
-    void showTime4() {
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                h4 = hourOfDay;
-                mi4 = minute;
-                time_4.setText(h4 + ":" + mi4);
-            }
-        }, 21, 12, true);
-
-        timePickerDialog.setMessage("메시지");
-        timePickerDialog.show();
-
-
-    }
 
     void showTime5() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -646,13 +1045,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     }
 
-    void showTime8() {
+    void showTime_2() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                h8 = hourOfDay;
-                mi8 = minute;
-                time_8.setText(h8 + ":" + mi8);
+                h = hourOfDay;
+                mi = minute;
+                time_1_2.setText(h + ":" + mi);
             }
         }, 21, 12, true);
 
@@ -661,6 +1060,284 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
     }
+
+    void showTime2_2() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h2 = hourOfDay;
+                mi2 = minute;
+                time_2_2.setText(h2 + ":" + mi2);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime3_2() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h3 = hourOfDay;
+                mi3 = minute;
+                time_3_2.setText(h3 + ":" + mi3);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+
+    void showTime5_2() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h5 = hourOfDay;
+                mi5 = minute;
+                time_5_2.setText(h5 + ":" + mi5);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime6_2() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h6 = hourOfDay;
+                mi6 = minute;
+                time_6_2.setText(h6 + ":" + mi6);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime7_2() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h7 = hourOfDay;
+                mi7 = minute;
+                time_7_2.setText(h7 + ":" + mi7);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+
+    void showTime_3() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h = hourOfDay;
+                mi = minute;
+                time_1_3.setText(h + ":" + mi);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime2_3() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h2 = hourOfDay;
+                mi2 = minute;
+                time_2_3.setText(h2 + ":" + mi2);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime3_3() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h3 = hourOfDay;
+                mi3 = minute;
+                time_3_3.setText(h3 + ":" + mi3);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+
+    void showTime5_3() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h5 = hourOfDay;
+                mi5 = minute;
+                time_5_3.setText(h5 + ":" + mi5);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime6_3() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h6 = hourOfDay;
+                mi6 = minute;
+                time_6_3.setText(h6 + ":" + mi6);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime7_3() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h7 = hourOfDay;
+                mi7 = minute;
+                time_7_3.setText(h7 + ":" + mi7);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+
+    void showTime_4() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h = hourOfDay;
+                mi = minute;
+                time_1_4.setText(h + ":" + mi);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime2_4() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h2 = hourOfDay;
+                mi2 = minute;
+                time_2_4.setText(h2 + ":" + mi2);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime3_4() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h3 = hourOfDay;
+                mi3 = minute;
+                time_3_4.setText(h3 + ":" + mi3);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+
+    void showTime5_4() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h5 = hourOfDay;
+                mi5 = minute;
+                time_5_4.setText(h5 + ":" + mi5);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime6_4() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h6 = hourOfDay;
+                mi6 = minute;
+                time_6_4.setText(h6 + ":" + mi6);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
+    void showTime7_4() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                h7 = hourOfDay;
+                mi7 = minute;
+                time_7_4.setText(h7 + ":" + mi7);
+            }
+        }, 21, 12, true);
+
+        timePickerDialog.setMessage("메시지");
+        timePickerDialog.show();
+
+
+    }
+
 
 
     @Override
@@ -1100,6 +1777,26 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         }
     }
+
+
+/*    public View createTabContent(String tag) {
+        final TextView tv = new TextView(this);
+
+        if (tag.equals("t1")) {
+            txt_sudong.setText("수동");
+        }else if (tag.equals("t2")) {
+            txt_sudong.setText("타이머");
+        }else if (tag.equals("t3")) {
+            txt_sudong.setText("자동");
+        }
+
+
+        return tv;
+    }*/
+
+
+
+
 
 
     @Override
