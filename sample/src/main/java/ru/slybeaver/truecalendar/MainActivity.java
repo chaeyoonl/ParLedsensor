@@ -160,35 +160,35 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost2 = (TabHost) findViewById(R.id.tabhost2);
         tabHost2.setup();
 
-        TabHost.TabSpec tab_sub1 = tabHost2.newTabSpec("1").setContent(R.id.tab_sub1).setIndicator("1구역");
+        TabHost.TabSpec tab_sub1 = tabHost2.newTabSpec("1").setContent(R.id.tab_sub1).setIndicator("수동");
 
-        TabHost.TabSpec tab_sub2 = tabHost2.newTabSpec("2").setContent(R.id.tab_sub2).setIndicator("2구역");
+        TabHost.TabSpec tab_sub2 = tabHost2.newTabSpec("2").setContent(R.id.tab_sub2).setIndicator("타이머");
 
-        TabHost.TabSpec tab_sub3 = tabHost2.newTabSpec("3").setContent(R.id.tab_sub3).setIndicator("3구역");
+        TabHost.TabSpec tab_sub3 = tabHost2.newTabSpec("3").setContent(R.id.tab_sub3).setIndicator("자동");
 
-        TabHost.TabSpec tab_sub4 = tabHost2.newTabSpec("4").setContent(R.id.tab_sub4).setIndicator("4구역");
 
         tabHost2.addTab(tab_sub1);
         tabHost2.addTab(tab_sub2);
         tabHost2.addTab(tab_sub3);
-        tabHost2.addTab(tab_sub4);
-/*
         /////////////////////////////////////
         tabHost3 = (TabHost) findViewById(R.id.tabhost3);
         tabHost3.setup();
 
-        TabHost.TabSpec tab_sub1_ch = tabHost2.newTabSpec("1").setContent(R.id.tab_sub1_ch).setIndicator("1구역");
+        TabHost.TabSpec tab_sub1_ch = tabHost3.newTabSpec("1").setContent(R.id.tab_sub1_ch).setIndicator("1구역");
 
-        TabHost.TabSpec tab_sub2_ch = tabHost2.newTabSpec("2").setContent(R.id.tab_sub2_ch).setIndicator("2구역");
+        TabHost.TabSpec tab_sub2_ch = tabHost3.newTabSpec("2").setContent(R.id.tab_sub2_ch).setIndicator("2구역");
 
-        TabHost.TabSpec tab_sub3_ch = tabHost2.newTabSpec("3").setContent(R.id.tab_sub3_ch).setIndicator("3구역");
+        TabHost.TabSpec tab_sub3_ch = tabHost3.newTabSpec("3").setContent(R.id.tab_sub3_ch).setIndicator("3구역");
+
+        TabHost.TabSpec tab_sub4_ch = tabHost3.newTabSpec("4").setContent(R.id.tab_sub4_ch).setIndicator("4구역");
 
 
-        tabHost2.addTab(tab_sub1_ch);
-        tabHost2.addTab(tab_sub2_ch);
-        tabHost2.addTab(tab_sub3_ch);*/
+        tabHost3.addTab(tab_sub1_ch);
+        tabHost3.addTab(tab_sub2_ch);
+        tabHost3.addTab(tab_sub3_ch);
+        tabHost3.addTab(tab_sub4_ch);
 
-        //////////////////////////////////////
+/*        //////////////////////////////////////
 
         final int[] selectedItem = {0};
         final String[] items = new String[]{"1구역", "2구역", "3구역", "4구역"};
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
             }
-        });
+        });*/
 
         ////////////////////////////////////
         time_1 = (Button) findViewById(R.id.time_1);
