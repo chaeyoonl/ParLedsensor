@@ -506,7 +506,7 @@
                                     android:layout_height="35dp"
                                     android:layout_weight="7"
                                     android:background="@drawable/date_list"
-                                    android:text="text"
+                                    android:text=""
                                     android:textColor="@color/colorBlack"
                                     android:textSize="20dp" />
 
@@ -520,7 +520,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:layout_weight="1"
+                                        android:layout_weight="0.95"
                                         android:background="@drawable/date_list"
                                         android:gravity="center"
                                         android:text="시간"
@@ -573,7 +573,7 @@
                                         android:id="@+id/show_date_par_date"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:layout_weight="1"
+                                        android:layout_weight="0.95"
                                         android:background="@drawable/date_list"
                                         android:text="text"
                                         android:textColor="@color/colorBlack" />

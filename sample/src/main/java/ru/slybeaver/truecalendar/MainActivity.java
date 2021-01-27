@@ -1402,20 +1402,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             Log.i("MyTag", "Fail");
         }
 
-/*        if (check_day == 1) {
-            try {
-                //시간에 따른 parsensor값
-                String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?strDate=20210110&endDate=20210111";
-                downloadData3.execute(url);
-                Log.i("MyTag_check_day", "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?strDate=20210110&endDate=20210111");
-            } catch (Exception e) {
-                Log.i("MyTag", "Fail");
-            }
-
-
-
-            check_day = 0;
-        }*/
 
 
 
@@ -1467,16 +1453,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             show_date_par4.setText("");
             Log.i("MyTag", String.valueOf(check_day));
             Log.i("MyTag", s);
-            //jpyText.setText(s);
-
-            //System.out.println("Alınan data:" + s);
 
             try {
                 Log.i("Results_string", "let's see it");
                 Log.i("Results_string", s);
                 resultss += s;
                 Log.i("Results", resultss);
-                //jpyText.setText(s);
+
 
 
                 JSONArray jsonArray = null;
@@ -1498,9 +1481,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 }
 
 
-/*                String par1 = resultss.substring(resultss.lastIndexOf("par1"));
-                ss = par1;
-                usdText.setText(ss);*/
+
 
                 if (ih == 0) {
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -1511,11 +1492,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         String par3 = jo.getString("par3");
                         String par4 = jo.getString("par4");
 
-/*                    String par1= jo.getString("led1");
-                    String par2= jo.getString("led2");
-                    String par3= jo.getString("led3");
-                    String par4= jo.getString("led4");*/
-                        //String led1= jo.getString("led1");
+
 
 
                         ss = par1;
@@ -1524,8 +1501,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         ss4 = par4;
 
 
-                        //ss5 = led1;
-                        //System.out.println("base:" + ss);
+
 
 
                         chfText.setText(ss);
@@ -1534,7 +1510,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         tryText.setText(ss4);
 
 
-                        //cadText.setText(ss5);
+
                         Log.i("MyTag", "parser start");
                         Log.i("My Tag", ss);
                     }
@@ -1586,10 +1562,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
 
-/*                        ss5 = led1;
-                        ss6 = led2;
-                        ss7 = led3;
-                        ss8 = led4;*/
+
 
                         cadText.setText(ss5);
                         ledText.setText(ss6);
@@ -1617,14 +1590,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                             show_date_par_date_first.setText(reg_time.substring(0,10));
                         }
 
+
+
                         ss = reg_time.substring(11,13) + "\n";
                         ss2 = par1_avg + "\n";
                         ss3 = par2_avg + "\n";
                         ss4 = par3_avg + "\n";
                         ss5 = par4_avg + "\n";
 
-                        //ss5 = led1;
-                        //System.out.println("base:" + ss);
+
 
 
                         show_date_par_date.setText(show_date_par_date.getText().toString() + ss); //시간
@@ -1633,7 +1607,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         show_date_par3.setText(show_date_par3.getText().toString() + ss4);  //Par3
                         show_date_par4.setText(show_date_par4.getText().toString() + ss5);  //Par4
 
-                        //cadText.setText(ss5);
+
                         Log.i("MyTag", "parser start");
                         Log.i("My Tag", ss);
 
@@ -1662,14 +1636,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                             show_date_par_date_first.setText(reg_time.substring(0,10));
                         }
 
-                        ss = reg_time.substring(11,13) + "\n";
+                        ss = reg_time.substring(11,13) + "시" + "\n";
                         ss2 = par1_avg + "\n";
                         ss3 = par2_avg + "\n";
                         ss4 = par3_avg + "\n";
                         ss5 = par4_avg + "\n";
 
-                        //ss5 = led1;
-                        //System.out.println("base:" + ss);
 
 
                         show_date_par_date.setText(show_date_par_date.getText().toString() + ss); //시간
@@ -1678,7 +1650,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         show_date_par3.setText(show_date_par3.getText().toString() + ss4);  //Par3
                         show_date_par4.setText(show_date_par4.getText().toString() + ss5);  //Par4
 
-                        //cadText.setText(ss5);
+
                         Log.i("MyTag", "parser start");
                         Log.i("My Tag", ss);
 
@@ -1707,11 +1679,11 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         String par4_avg = jo.getString("par4_sum");
                         String reg_time = jo.getString("reg_time");
 
-/*                        if (i == 0) {
+                        if (i == 0) {
                             show_date_par_date_first.setText(reg_time.substring(0,10));
-                        }*/
+                        }
 
-                        ss = reg_time.substring(5,10) + "\n";
+                        ss = reg_time.substring(0,10) + "\n";
                         ss2 = par1_avg + "\n";
                         ss3 = par2_avg + "\n";
                         ss4 = par3_avg + "\n";
