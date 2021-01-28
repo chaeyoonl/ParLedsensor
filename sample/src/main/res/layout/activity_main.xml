@@ -2652,6 +2652,7 @@
                                                     android:layout_weight="0.9" />
                                             </LinearLayout>
 
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
@@ -2739,6 +2740,7 @@
 
 
                                                             <!--첫번째 패이지, 수동-->
+                                                            <!-- 수동_전구그림 부분-->
                                                             <LinearLayout
                                                                 android:id="@+id/tab_sub1_4"
                                                                 android:layout_width="match_parent"
@@ -2813,7 +2815,7 @@
 
                                                             </LinearLayout>
                                                             <!--두번째 패이지, 타이머-->
-
+                                                            <!-- 타이머_네모칸 시간입력 부분-->
 
                                                             <LinearLayout
                                                                 android:id="@+id/tab_sub2_4"
@@ -2832,6 +2834,7 @@
                                                                     android:orientation="vertical"
                                                                     android:padding="16dp">
 
+                                                                    <!--첫번째줄 버튼-->
                                                                     <Button
                                                                         android:id="@+id/time_1_4"
                                                                         android:layout_width="match_parent"
@@ -2844,7 +2847,7 @@
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
                                                                         android:layout_height="30dp" />
-
+                                                                    <!--두째줄 버튼-->
                                                                     <Button
                                                                         android:id="@+id/time_2_4"
                                                                         android:layout_width="match_parent"
@@ -2857,7 +2860,7 @@
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
                                                                         android:layout_height="30dp" />
-
+                                                                    <!--세번째줄 버튼-->
                                                                     <Button
                                                                         android:id="@+id/time_3_4"
                                                                         android:layout_width="match_parent"
@@ -2934,7 +2937,7 @@
                                                                     android:background="@color/colorWhite"
                                                                     android:orientation="vertical"
                                                                     android:padding="16dp">
-
+                                                                    <!--첫번째줄 버튼-->
                                                                     <Button
                                                                         android:id="@+id/time_5_4"
                                                                         android:layout_width="match_parent"
@@ -2947,7 +2950,7 @@
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
                                                                         android:layout_height="30dp" />
-
+                                                                    <!--두번째줄 버튼-->
                                                                     <Button
                                                                         android:id="@+id/time_6_4"
                                                                         android:layout_width="match_parent"
@@ -2960,7 +2963,7 @@
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
                                                                         android:layout_height="30dp" />
-
+                                                                    <!--세번째줄 버튼-->
                                                                     <Button
                                                                         android:id="@+id/time_7_4"
                                                                         android:layout_width="match_parent"
@@ -2991,6 +2994,7 @@
 
                                                             </LinearLayout>
                                                             <!--세번째 패이지, 자동-->
+                                                            <!-- 자동_광량 숫장 입력 부분-->
                                                             <LinearLayout
                                                                 android:id="@+id/tab_sub3_4"
                                                                 android:layout_width="match_parent"

@@ -177,6 +177,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost2.addTab(tab_sub2);
         tabHost2.addTab(tab_sub3);
 
+
+
+
 /*        tabHost2.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String s) {
@@ -195,13 +198,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 Log.v("click_st", "click");
 
-                if (tab_sub1.getTag() == "1") {
+/*                if (tab_sub1.getTag() == "1") {
                     txt_sudong.setText("수동");
                 } else if (tab_sub2.getTag() == "2") {
                     txt_sudong.setText("타이머");
                 } else if (tab_sub3.getTag() == "3") {
                     txt_sudong.setText("자동");
-                }
+                }*/
             }
         });
 
@@ -1582,44 +1585,56 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     ss = s.substring(100, 101);
                     if (ss.contains("1")) {
                         txt_sudong.setText("수동");
+                        tabHost2.setCurrentTabByTag("t1");
                     }
                     if (ss.contains("2")) {
                         txt_sudong.setText("타이머");
+                        tabHost2.setCurrentTabByTag("t2");
                     }
                     if (ss.contains("3")) {
                         txt_sudong.setText("자동");
+                        tabHost2.setCurrentTabByTag("t3");
                     }
 
 
                     ss = s.substring(118, 119);
                     if (ss.contains("1")) {
                         txt_sudong2.setText("수동");
+                        tabHost2_2.setCurrentTabByTag("t1");
                     }
                     if (ss.contains("2")) {
                         txt_sudong2.setText("타이머");
+                        tabHost2_2.setCurrentTabByTag("t2");
                     }
                     if (ss.contains("3")) {
                         txt_sudong2.setText("자동");
+                        tabHost2_2.setCurrentTabByTag("t3");
                     }
                     ss = s.substring(136, 137);
                     if (ss.contains("1")) {
                         txt_sudong3.setText("수동");
+                        tabHost2_3.setCurrentTabByTag("t1");
                     }
                     if (ss.contains("2")) {
                         txt_sudong3.setText("타이머");
+                        tabHost2_3.setCurrentTabByTag("t2");
                     }
                     if (ss.contains("3")) {
                         txt_sudong3.setText("자동");
+                        tabHost2_3.setCurrentTabByTag("t3");
                     }
                     ss = s.substring(154, 155);
                     if (ss.contains("1")) {
                         txt_sudong4.setText("수동");
+                        tabHost2_4.setCurrentTabByTag("t1");
                     }
                     if (ss.contains("2")) {
                         txt_sudong4.setText("타이머");
+                        tabHost2_4.setCurrentTabByTag("t2");
                     }
                     if (ss.contains("3")) {
                         txt_sudong4.setText("자동");
+                        tabHost2_4.setCurrentTabByTag("t3");
                     }
 
 
@@ -1642,89 +1657,192 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
                     ////////////////////////////
+                    /*
+                    1구역
+
+                     */
                     ss = s.substring(idx_1, idx_1_end);
                     if (ss.contains("off")) {
-                        LED_on_off.setText("off");
                         btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
                     }
                     if (ss.contains("on")) {
-                        LED_on_off.setText("on");
                         btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
                     }
                     if (ss.contains("&")) {
 
+                        //첫번째 줄에 출력
+                        int ss_4_1 = ss.indexOf("&");
+                        if (ss_4_1 > 1) {   //5
+                            String ss_4_1_1 = ss.substring(0, 2) + ":" + ss.substring(2, 4);   //0,4
+                            String ss_4_1_2 = ss.substring(5, 7) + ":" + ss.substring(7, 9);   //5,9
+
+                            time_1.setText(ss_4_1_1);
+                            time_5.setText(ss_4_1_2);
+                        }
+
+                        //두번째 줄에 출력
+                        int ss_4_2 = ss.indexOf("&", 5);
+                        if (ss_4_2 > 1) {   //15
+                            String ss_4_2_1 = ss.substring(11, 13) + ":" + ss.substring(13, 15); //11,15
+                            String ss_4_2_2 = ss.substring(16, 18) + ":" + ss.substring(18, 20); //16,20
+
+                            time_2.setText(ss_4_2_1);
+                            time_6.setText(ss_4_2_2);
+                        }
+
+                        //세번째 줄에 출력
+                        int ss_4_3 = ss.indexOf("&", 20);
+                        if (ss_4_3 > 1) {
+                            String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
+                            String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
+
+                            time_3.setText(ss_4_3_1);
+                            time_7.setText(ss_4_3_2);
+                        }
                     }
 
 
                     //////////////////////
+                    /*
+                    2구역
+
+                     */
                     ss = s.substring(idx_2, idx_2_end);
                     if (ss.contains("off")) {
-                        LED_on_off_2.setText("off");
                         btn_bulb1_2.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb2_2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
                     }
                     if (ss.contains("on")) {
-                        LED_on_off_2.setText("on");
                         btn_bulb2_2.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb1_2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
                     }
                     if (ss.contains("&")) {
 
+                        //첫번째 줄에 출력
+                        int ss_4_1 = ss.indexOf("&");
+                        if (ss_4_1 > 1) {   //5
+                            String ss_4_1_1 = ss.substring(0, 2) + ":" + ss.substring(2, 4);   //0,4
+                            String ss_4_1_2 = ss.substring(5, 7) + ":" + ss.substring(7, 9);   //5,9
+
+                            time_1_2.setText(ss_4_1_1);
+                            time_5_2.setText(ss_4_1_2);
+                        }
+
+                        //두번째 줄에 출력
+                        int ss_4_2 = ss.indexOf("&", 5);
+                        if (ss_4_2 > 1) {   //15
+                            String ss_4_2_1 = ss.substring(11, 13) + ":" + ss.substring(13, 15); //11,15
+                            String ss_4_2_2 = ss.substring(16, 18) + ":" + ss.substring(18, 20); //16,20
+
+                            time_2_2.setText(ss_4_2_1);
+                            time_6_2.setText(ss_4_2_2);
+                        }
+
+                        //세번째 줄에 출력
+                        int ss_4_3 = ss.indexOf("&", 20);
+                        if (ss_4_3 > 1) {
+                            String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
+                            String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
+
+                            time_3_2.setText(ss_4_3_1);
+                            time_7_2.setText(ss_4_3_2);
+                        }
                     }
 
 
                     //////////////////////////
+                    /*
+                    3구역
+
+                     */
                     ss = s.substring(idx_3, idx_3_end);
                     if (ss.contains("off")) {
-                        LED_on_off_3.setText("off");
                         btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
                     }
                     if (ss.contains("on")) {
-                        LED_on_off_3.setText("on");
                         btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
                     }
                     if (ss.contains("&")) {
 
+                        //첫번째 줄에 출력
+                        int ss_4_1 = ss.indexOf("&");
+                        if (ss_4_1 > 1) {   //5
+                            String ss_4_1_1 = ss.substring(0, 2) + ":" + ss.substring(2, 4);   //0,4
+                            String ss_4_1_2 = ss.substring(5, 7) + ":" + ss.substring(7, 9);   //5,9
+
+                            time_1_3.setText(ss_4_1_1);
+                            time_5_3.setText(ss_4_1_2);
+                        }
+
+                        //두번째 줄에 출력
+                        int ss_4_2 = ss.indexOf("&", 5);
+                        if (ss_4_2 > 1) {   //15
+                            String ss_4_2_1 = ss.substring(11, 13) + ":" + ss.substring(13, 15); //11,15
+                            String ss_4_2_2 = ss.substring(16, 18) + ":" + ss.substring(18, 20); //16,20
+
+                            time_2_3.setText(ss_4_2_1);
+                            time_6_3.setText(ss_4_2_2);
+                        }
+
+                        //세번째 줄에 출력
+                        int ss_4_3 = ss.indexOf("&", 20);
+                        if (ss_4_3 > 1) {
+                            String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
+                            String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
+
+                            time_3_3.setText(ss_4_3_1);
+                            time_7_3.setText(ss_4_3_2);
+                        }
                     }
 
                     //////////////////////////////
+                    /*
+                    4구역
+
+                     */
                     ss = s.substring(idx_4, idx_4_end);
                     if (ss.contains("off")) {
-                        LED_on_off_4.setText("off");
                         btn_bulb1_4.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb2_4.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
                     }
                     if (ss.contains("on")) {
-                        LED_on_off_4.setText("on");
                         btn_bulb2_4.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb1_4.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
                     }
                     if (ss.contains("&")) {
 
+                        //첫번째 줄에 출력
                         int ss_4_1 = ss.indexOf("&");
                         if (ss_4_1 > 1) {   //5
-                            String ss_4_1_1 = ss.substring(0, 4);
-                            String ss_4_1_2 = ss.substring(5, 9);
-                            int ddd = 0;
+                            String ss_4_1_1 = ss.substring(0, 2) + ":" + ss.substring(2, 4);   //0,4
+                            String ss_4_1_2 = ss.substring(5, 7) + ":" + ss.substring(7, 9);   //5,9
+
+                            time_1_4.setText(ss_4_1_1);
+                            time_5_4.setText(ss_4_1_2);
                         }
 
-
+                        //두번째 줄에 출력
                         int ss_4_2 = ss.indexOf("&", 5);
                         if (ss_4_2 > 1) {   //15
-                            String ss_4_2_1 = ss.substring(11, 15);
-                            String ss_4_2_2 = ss.substring(16, 20);
-                            int dddd = 0;
+                            String ss_4_2_1 = ss.substring(11, 13) + ":" + ss.substring(13, 15); //11,15
+                            String ss_4_2_2 = ss.substring(16, 18) + ":" + ss.substring(18, 20); //16,20
+
+                            time_2_4.setText(ss_4_2_1);
+                            time_6_4.setText(ss_4_2_2);
                         }
 
+                        //세번째 줄에 출력
                         int ss_4_3 = ss.indexOf("&", 20);
                         if (ss_4_3 > 1) {
-                            String ss_4_3_1 = ss.substring(23, 27);
-                            String ss_4_3_2 = ss.substring(28, 32);
-                            int ddddd = 0;
+                            String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
+                            String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
+
+                            time_3_4.setText(ss_4_3_1);
+                            time_7_4.setText(ss_4_3_2);
                         }
                     }
 
@@ -1846,6 +1964,11 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         ledText.setText(ss6);
                         ledText3.setText(ss7);
                         ledText4.setText(ss8);
+
+                        LED_on_off.setText(ss5);
+                        LED_on_off_2.setText(ss6);
+                        LED_on_off_3.setText(ss7);
+                        LED_on_off_4.setText(ss8);
 
 /*                        LED_on_off.setText(ss5);
 
