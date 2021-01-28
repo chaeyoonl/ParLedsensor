@@ -719,65 +719,69 @@
                                             android:padding="16dp">
 
 
-
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:layout_weight="1"
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical">
+
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="LED 센서"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="보광등 현재 상태"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
+
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
+                                                    android:layout_gravity="center"
+                                                    android:layout_weight="1"
                                                     android:text="설정"
-                                                    android:textSize="20dp"
                                                     android:textColor="@color/colorBlack"
-                                                    android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:textSize="20dp" />
 
                                                 <!-- 여유 공간 -->
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:layout_weight="0.9"/>
+                                                    android:layout_weight="0.9" />
                                             </LinearLayout>
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:layout_weight="1"
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical">
+
                                                 <TextView
                                                     android:id="@+id/LED_on_off"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="ON"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="ON"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
+
                                                 <TextView
                                                     android:id="@+id/txt_sudong"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="수동/타이머/자동"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="수동/타이머/자동"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
                                                 <!-- 여유 공간 -->
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:layout_weight="0.9"/>
+                                                    android:layout_weight="0.9" />
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -897,7 +901,7 @@
                                                                             android:layout_height="50dp"
                                                                             android:layout_gravity="center"
                                                                             android:layout_weight="1"
-                                                                            android:text="ON"/>
+                                                                            android:text="ON" />
 
 
                                                                     </LinearLayout>
@@ -917,7 +921,7 @@
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
                                                                 android:orientation="horizontal"
-                                                                android:padding="16dp">
+                                                                android:padding="10dp">
                                                                 <!-- 왼쪽 -->
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
@@ -930,7 +934,7 @@
                                                                     <Button
                                                                         android:id="@+id/time_1"
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
+                                                                        android:layout_height="45dp"
                                                                         android:layout_gravity="center"
                                                                         android:background="@drawable/btn_time_shape"
                                                                         android:gravity="center"
@@ -938,12 +942,12 @@
 
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="10dp" />
 
                                                                     <Button
                                                                         android:id="@+id/time_2"
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
+                                                                        android:layout_height="45dp"
                                                                         android:layout_gravity="center"
                                                                         android:background="@drawable/btn_time_shape"
                                                                         android:gravity="center"
@@ -956,24 +960,22 @@
                                                                     <Button
                                                                         android:id="@+id/time_3"
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
+                                                                        android:layout_height="45dp"
                                                                         android:layout_gravity="center"
                                                                         android:background="@drawable/btn_time_shape"
                                                                         android:gravity="center"
+                                                                        android:textColor="@color/colorBlack" />
+
+                                                                    <Button
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="20dp"
+                                                                        android:gravity="center"
+                                                                        android:text="설정"
                                                                         android:textColor="@color/colorBlack" />
 
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
                                                                         android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
 
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
@@ -1069,14 +1071,6 @@
                                                                         android:layout_width="match_parent"
                                                                         android:layout_height="30dp" />
 
-                                                                    <Button
-                                                                        android:id="@+id/time_8"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
 
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
@@ -1352,65 +1346,69 @@
                                             android:padding="16dp">
 
 
-
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:layout_weight="1"
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical">
+
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="LED 센서"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="보광등 현재 상태"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
+
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
+                                                    android:layout_gravity="center"
+                                                    android:layout_weight="1"
                                                     android:text="설정"
-                                                    android:textSize="20dp"
                                                     android:textColor="@color/colorBlack"
-                                                    android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:textSize="20dp" />
 
                                                 <!-- 여유 공간 -->
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:layout_weight="0.9"/>
+                                                    android:layout_weight="0.9" />
                                             </LinearLayout>
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:layout_weight="1"
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical">
+
                                                 <TextView
                                                     android:id="@+id/LED_on_off_2"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="ON"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="ON"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
+
                                                 <TextView
                                                     android:id="@+id/txt_sudong2"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="수동/타이머/자동"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="수동/타이머/자동"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
                                                 <!-- 여유 공간 -->
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:layout_weight="0.9"/>
+                                                    android:layout_weight="0.9" />
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -1530,7 +1528,7 @@
                                                                             android:layout_height="50dp"
                                                                             android:layout_gravity="center"
                                                                             android:layout_weight="1"
-                                                                            android:text="ON"/>
+                                                                            android:text="ON" />
 
 
                                                                     </LinearLayout>
@@ -1986,64 +1984,69 @@
                                             android:padding="16dp">
 
 
-
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:layout_weight="1"
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical">
+
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="LED 센서"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="보광등 현재 상태"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
+
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
+                                                    android:layout_gravity="center"
+                                                    android:layout_weight="1"
                                                     android:text="설정"
-                                                    android:textSize="20dp"
                                                     android:textColor="@color/colorBlack"
-                                                    android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:textSize="20dp" />
 
                                                 <!-- 여유 공간 -->
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:layout_weight="0.9"/>
+                                                    android:layout_weight="0.9" />
                                             </LinearLayout>
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:layout_weight="1"
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical">
+
                                                 <TextView
                                                     android:id="@+id/LED_on_off_3"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="ON"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="ON"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
+
                                                 <TextView
+                                                    android:id="@+id/txt_sudong3"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="수동/타이머/자동"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="수동/타이머/자동"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
                                                 <!-- 여유 공간 -->
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:layout_weight="0.9"/>
+                                                    android:layout_weight="0.9" />
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -2163,7 +2166,7 @@
                                                                             android:layout_height="50dp"
                                                                             android:layout_gravity="center"
                                                                             android:layout_weight="1"
-                                                                            android:text="ON"/>
+                                                                            android:text="ON" />
 
 
                                                                     </LinearLayout>
@@ -2617,64 +2620,69 @@
                                             android:padding="16dp">
 
 
-
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:layout_weight="1"
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical">
+
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="LED 센서"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="보광등 현재 상태"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
+
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
+                                                    android:layout_gravity="center"
+                                                    android:layout_weight="1"
                                                     android:text="설정"
-                                                    android:textSize="20dp"
                                                     android:textColor="@color/colorBlack"
-                                                    android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:textSize="20dp" />
 
                                                 <!-- 여유 공간 -->
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:layout_weight="0.9"/>
+                                                    android:layout_weight="0.9" />
                                             </LinearLayout>
+
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:layout_weight="1"
                                                 android:background="@color/colorWhite"
                                                 android:orientation="vertical">
+
                                                 <TextView
                                                     android:id="@+id/LED_on_off_4"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="ON"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="ON"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
+
                                                 <TextView
+                                                    android:id="@+id/txt_sudong4"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:text="수동/타이머/자동"
-                                                    android:textSize="20dp"
-                                                    android:textColor="@color/colorBlack"
+                                                    android:layout_gravity="center"
                                                     android:layout_weight="1"
-                                                    android:layout_gravity="center"/>
+                                                    android:text="수동/타이머/자동"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="20dp" />
                                                 <!-- 여유 공간 -->
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
-                                                    android:layout_weight="0.9"/>
+                                                    android:layout_weight="0.9" />
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -2794,7 +2802,7 @@
                                                                             android:layout_height="50dp"
                                                                             android:layout_gravity="center"
                                                                             android:layout_weight="1"
-                                                                            android:text="ON"/>
+                                                                            android:text="ON" />
 
 
                                                                     </LinearLayout>
