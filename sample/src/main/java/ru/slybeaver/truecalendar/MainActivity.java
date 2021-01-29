@@ -21,6 +21,10 @@ import android.widget.NumberPicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -82,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     TextView show_date_par3;
     TextView show_date_par4;
 
+    TextView par_reg_time, led_reg_time;
+
     Button btn_bulb1, btn_bulb2, btn_bulb1_2, btn_bulb2_2, btn_bulb1_3, btn_bulb2_3, btn_bulb1_4, btn_bulb2_4;
 
     TextView txt_sudong, txt_sudong2, txt_sudong3, txt_sudong4;
@@ -110,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     String ss6 = "";
     String ss7 = "";
     String ss8 = "";
+    String ss9 = "";
 
     String resultss = "";
 
@@ -138,6 +145,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         LED_on_off_2 = (TextView) findViewById(R.id.LED_on_off_2);
         LED_on_off_3 = (TextView) findViewById(R.id.LED_on_off_3);
         LED_on_off_4 = (TextView) findViewById(R.id.LED_on_off_4);
+
+        par_reg_time = (TextView) findViewById(R.id.par_reg_time);
+        led_reg_time = (TextView) findViewById(R.id.led_reg_time);
 
 
         //자동로그인 하기위해서 쿠키값 onResume, OnPeuse에도 있음
@@ -182,34 +192,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
 
-
-/*        tabHost2.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            @Override
-            public void onTabChanged(String s) {
-                Log.v("", "click");
-
-
-
-
-            }
-        });*/
-
-        tabHost2.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-
-            public void onTabChanged(String str) {
-
-
-                Log.v("click_st", "click");
-
-/*                if (tab_sub1.getTag() == "1") {
-                    txt_sudong.setText("수동");
-                } else if (tab_sub2.getTag() == "2") {
-                    txt_sudong.setText("타이머");
-                } else if (tab_sub3.getTag() == "3") {
-                    txt_sudong.setText("자동");
-                }*/
-            }
-        });
 
 
         /////////////////////////////////////
@@ -300,7 +282,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             @Override
             public void onClick(View view) {
 
+                //led1_status = 1
 
+                //HttpPostData();   // 서버와 자료 주고받기
 
             }
         });
@@ -309,6 +293,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             @Override
             public void onClick(View view) {
 
+                //led1_status = 2
 
 
             }
@@ -318,6 +303,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             @Override
             public void onClick(View view) {
 
+                //led2_status = 1
 
 
             }
@@ -327,6 +313,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             @Override
             public void onClick(View view) {
 
+                //led2_status = 2
 
 
             }
@@ -336,6 +323,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             @Override
             public void onClick(View view) {
 
+                //led3_status = 1
 
 
             }
@@ -345,6 +333,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             @Override
             public void onClick(View view) {
 
+                //led3_status = 2
 
 
             }
@@ -354,6 +343,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             @Override
             public void onClick(View view) {
 
+                //led4_status = 1
 
 
             }
@@ -363,10 +353,14 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             @Override
             public void onClick(View view) {
 
+                //led4_status = 2
 
 
             }
         });
+
+
+
 
 
 
@@ -1040,6 +1034,89 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     }
 
 
+
+
+
+    //------------------------------
+    //   Http Post로 주고 받기
+    //------------------------------
+/*
+    public void HttpPostData() {
+        try {
+            //--------------------------
+            //   URL 설정하고 접속하기
+            //--------------------------
+            URL url = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData?");       // URL 설정
+            HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
+            //--------------------------
+            //   전송 모드 설정 - 기본적인 설정이다
+            //--------------------------
+            http.setDefaultUseCaches(false);
+            http.setDoInput(true);                         // 서버에서 읽기 모드 지정
+            http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
+            http.setRequestMethod("POST");         // 전송 방식은 POST
+
+            // 서버에게 웹에서 <Form>으로 값이 넘어온 것과 같은 방식으로 처리하라는 걸 알려준다
+            http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+            //--------------------------
+            //   서버로 값 전송
+            //--------------------------
+            StringBuffer buffer = new StringBuffer();
+*/
+/*            buffer.append("id").append("=").append(myId).append("&");                 // php 변수에 값 대입
+            buffer.append("pword").append("=").append(myPWord).append("&");   // php 변수 앞에 '$' 붙이지 않는다
+            buffer.append("title").append("=").append(myTitle).append("&");           // 변수 구분은 '&' 사용
+            buffer.append("subject").append("=").append(mySubject);*//*
+
+
+            buffer.append("reg_time").append("=").append("20210129161030").append("&");
+            buffer.append("eq_num").append("=").append("ABC001").append("&");
+            buffer.append("led1_status").append("=").append("1").append("&");
+            buffer.append("led2_status").append("=").append("1").append("&");
+            buffer.append("led3_status").append("=").append("1").append("&");
+            buffer.append("led4_status").append("=").append("1").append("&");
+            buffer.append("led1_info").append("=").append("off").append("&");
+            buffer.append("led2_info").append("=").append("on").append("&");
+            buffer.append("led3_info").append("=").append("on").append("&");
+            buffer.append("led4_info").append("=").append("on").append("&");
+
+            OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR");
+            PrintWriter writer = new PrintWriter(outStream);
+            writer.write(buffer.toString());
+            writer.flush();
+            //--------------------------
+            //   서버에서 전송받기
+            //--------------------------
+            InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+            BufferedReader reader = new BufferedReader(tmp);
+            StringBuilder builder = new StringBuilder();
+            String str;
+            while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
+                builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
+            }
+            //myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+            //((TextView)(findViewById(R.id.text_result))).setText(myResult);
+            //Toast.makeText(MainActivity.this, "전송 후 결과 받음", 0).show();
+        } catch (MalformedURLException e) {
+            //
+        } catch (IOException e) {
+            //
+        } // try
+    } // HttpPostData
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
     void showTime() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -1462,6 +1539,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         }
     }
 
+
+
+
+
+
+
     public void getRates(View view) {
         DownloadData downloadData = new DownloadData();
         DownloadData downloadData2 = new DownloadData();
@@ -1502,6 +1585,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         } catch (Exception e) {
             Log.i("MyTag", "Fail");
         }
+
+
+
 
 
     }
@@ -1988,18 +2074,26 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         String par2 = jo.getString("par2");
                         String par3 = jo.getString("par3");
                         String par4 = jo.getString("par4");
+                        String par_time = jo.getString("reg_time");
 
 
                         ss = par1;
                         ss2 = par2;
                         ss3 = par3;
                         ss4 = par4;
+                        ss5 = par_time;
+
 
 
                         chfText.setText(ss);
                         usdText.setText(ss2);
                         jpyText.setText(ss3);
                         tryText.setText(ss4);
+
+                        ss5 = ss5.substring(0,4) + "년" + ss5.substring(4,6) + "월" + ss5.substring(6,8) + "일" + ss5.substring(8,17);
+
+
+                        par_reg_time.setText(ss5);
 
 
                         Log.i("MyTag", "parser start");
@@ -2015,6 +2109,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         String led2 = jo.getString("led2");
                         String led3 = jo.getString("led3");
                         String led4 = jo.getString("led4");
+                        String led_times = jo.getString("reg_time");
+
+
 
                         Log.i("My Tags", led1);
                         Log.i("My Tags", led2);
@@ -2054,6 +2151,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
 
+
                         cadText.setText(ss5);
                         ledText.setText(ss6);
                         ledText3.setText(ss7);
@@ -2063,6 +2161,10 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         LED_on_off_2.setText(ss6);
                         LED_on_off_3.setText(ss7);
                         LED_on_off_4.setText(ss8);
+
+                        ss9 = led_times;
+                        ss9 = ss9.substring(0,4) + "년" + ss9.substring(4,6) + "월" + ss9.substring(6,8) + "일" + ss9.substring(8,17);
+                        led_reg_time.setText(ss9);
 
 /*                        LED_on_off.setText(ss5);
 
@@ -2315,20 +2417,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     }
 
 
-/*    public View createTabContent(String tag) {
-        final TextView tv = new TextView(this);
 
-        if (tag.equals("t1")) {
-            txt_sudong.setText("수동");
-        }else if (tag.equals("t2")) {
-            txt_sudong.setText("타이머");
-        }else if (tag.equals("t3")) {
-            txt_sudong.setText("자동");
-        }
-
-
-        return tv;
-    }*/
 
 
     @Override
