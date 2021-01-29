@@ -295,6 +295,79 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         btn_sul4_1 = (Button) findViewById(R.id.btn_sul_4_1);
         btn_sul4_2 = (Button) findViewById(R.id.btn_sul_4_2);
 
+        //1구역_수동_설정버튼 눌렀을 경우
+        btn_sul1_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+        //1구역_타이머_설정버튼 눌렀을 경우
+        btn_sul1_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+        //2구역_수동_설정버튼 눌렀을 경우
+        btn_sul2_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+        //2구역_타이머_설정버튼 눌렀을 경우
+        btn_sul2_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+        //3구역_수동_설정버튼 눌렀을 경우
+        btn_sul3_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+        //3구역_타이머_설정버튼 눌렀을 경우
+        btn_sul3_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+        //4구역_수동_설정버튼 눌렀을 경우
+        btn_sul4_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+        //4구역_타이머_설정버튼 눌렀을 경우
+        btn_sul4_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+
 
 
 /*        //////////////////////////////////////
