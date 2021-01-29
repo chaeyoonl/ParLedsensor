@@ -88,6 +88,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     TextView LED_on_off, LED_on_off_2, LED_on_off_3, LED_on_off_4;
 
+    Button btn_sul1_1, btn_sul1_2, btn_sul2_1, btn_sul2_2, btn_sul3_1, btn_sul3_2, btn_sul4_1, btn_sul4_2;
+
+
     String strMonth = "01";
 
     Button btnYearMonthPicker;
@@ -273,6 +276,24 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost3.addTab(tab_sub3_ch);
         tabHost3.addTab(tab_sub4_ch);
 
+
+
+        ///////////////////////////////
+        /*
+        설정버튼 제어부분
+         */
+
+        btn_sul1_1 = (Button) findViewById(R.id.btn_sul_1_1);
+        btn_sul1_2 = (Button) findViewById(R.id.btn_sul_1_2);
+
+        btn_sul2_1 = (Button) findViewById(R.id.btn_sul_2_1);
+        btn_sul2_2 = (Button) findViewById(R.id.btn_sul_2_2);
+
+        btn_sul3_1 = (Button) findViewById(R.id.btn_sul_3_1);
+        btn_sul3_2 = (Button) findViewById(R.id.btn_sul_3_2);
+
+        btn_sul4_1 = (Button) findViewById(R.id.btn_sul_4_1);
+        btn_sul4_2 = (Button) findViewById(R.id.btn_sul_4_2);
 
 
 

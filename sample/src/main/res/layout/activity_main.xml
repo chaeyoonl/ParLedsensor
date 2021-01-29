@@ -908,9 +908,32 @@
 
 
                                                                 </LinearLayout>
+                                                                <!-- 설정버튼 (1구역_수동)-->
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="25"
+                                                                    android:background="@color/colorWhite">
 
+                                                                    <Button
+                                                                        android:id="@+id/btn_sul_1_1"
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="match_parent"
+                                                                        android:background="@drawable/buttonshape"
+                                                                        android:gravity="center"
+                                                                        android:text="설정"
+                                                                        android:textColor="@color/colorWhite" />
+                                                                </LinearLayout>
 
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="20"
+                                                                    android:background="@color/colorWhite"
+                                                                    android:orientation="vertical" />
+                                                                <!-- 여기까지 설정버튼 추가하는 부분-->
                                                             </LinearLayout>
+
                                                             <!--두번째 패이지, 타이머-->
 
 
@@ -920,171 +943,181 @@
                                                                 android:layout_height="match_parent"
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
-                                                                android:orientation="horizontal"
-                                                                android:padding="10dp">
-                                                                <!-- 왼쪽 -->
+                                                                android:orientation="vertical"
+                                                                android:padding="16dp">
+
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1"
-                                                                    android:background="@color/colorWhite"
-                                                                    android:orientation="vertical"
-                                                                    android:padding="16dp">
-
-                                                                    <Button
-                                                                        android:id="@+id/time_1"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="45dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
+                                                                    android:layout_weight="3.7"
+                                                                    android:orientation="horizontal">
+                                                                    <!-- 왼쪽 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="10dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical"
+                                                                        android:padding="16dp">
 
-                                                                    <Button
-                                                                        android:id="@+id/time_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="45dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        <Button
+                                                                            android:id="@+id/time_1"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
 
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_2"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_3"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+
+                                                                    </LinearLayout>
+                                                                    <!-- 중간 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1.7"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical">
+
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                    </LinearLayout>
+                                                                    <!-- 오른쪽 -->
+                                                                    <LinearLayout
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical"
+                                                                        android:padding="16dp">
+
+                                                                        <Button
+                                                                            android:id="@+id/time_5"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_6"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_7"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                    </LinearLayout>
+
+                                                                </LinearLayout>
+                                                                <!-- 설정버튼 (1구역_타이머)-->
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="11.2"
+                                                                    android:background="@color/colorWhite">
 
                                                                     <Button
-                                                                        android:id="@+id/time_3"
+                                                                        android:id="@+id/btn_sul_1_2"
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="45dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <Button
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="20dp"
+                                                                        android:layout_height="match_parent"
+                                                                        android:background="@drawable/buttonshape"
                                                                         android:gravity="center"
                                                                         android:text="설정"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
+                                                                        android:textColor="@color/colorWhite" />
                                                                 </LinearLayout>
-                                                                <!-- 중간 -->
+
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1.7"
+                                                                    android:layout_weight="13"
                                                                     android:background="@color/colorWhite"
-                                                                    android:orientation="vertical">
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                </LinearLayout>
-                                                                <!-- 오른쪽 -->
-                                                                <LinearLayout
-                                                                    android:layout_width="match_parent"
-                                                                    android:layout_height="match_parent"
-                                                                    android:layout_weight="1"
-                                                                    android:background="@color/colorWhite"
-                                                                    android:orientation="vertical"
-                                                                    android:padding="16dp">
-
-                                                                    <Button
-                                                                        android:id="@+id/time_5"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_6"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_7"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-                                                                </LinearLayout>
-
+                                                                    android:orientation="vertical" />
+                                                                <!-- 여기까지 설정버튼 추가하는 부분-->
 
                                                             </LinearLayout>
+
                                                             <!--세번째 패이지, 자동-->
                                                             <LinearLayout
                                                                 android:id="@+id/tab_sub3"
                                                                 android:layout_width="match_parent"
                                                                 android:layout_height="match_parent"
-                                                                android:layout_weight="1.1"
+                                                                android:layout_weight="0.5"
                                                                 android:background="@color/colorWhite"
                                                                 android:orientation="horizontal"
                                                                 android:padding="16dp">
@@ -1536,7 +1569,30 @@
 
                                                                 </LinearLayout>
 
+                                                                <!-- 설정버튼 (2구역_수동)-->
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="25"
+                                                                    android:background="@color/colorWhite">
 
+                                                                    <Button
+                                                                        android:id="@+id/btn_sul_2_1"
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="match_parent"
+                                                                        android:background="@drawable/buttonshape"
+                                                                        android:gravity="center"
+                                                                        android:text="설정"
+                                                                        android:textColor="@color/colorWhite" />
+                                                                </LinearLayout>
+
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="20"
+                                                                    android:background="@color/colorWhite"
+                                                                    android:orientation="vertical" />
+                                                                <!-- 여기까지 설정버튼 추가하는 부분-->
                                                             </LinearLayout>
                                                             <!--두번째 패이지, 타이머-->
 
@@ -1547,173 +1603,171 @@
                                                                 android:layout_height="match_parent"
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
-                                                                android:orientation="horizontal"
+                                                                android:orientation="vertical"
                                                                 android:padding="16dp">
-                                                                <!-- 왼쪽 -->
+
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1"
-                                                                    android:background="@color/colorWhite"
-                                                                    android:orientation="vertical"
-                                                                    android:padding="16dp">
-
-                                                                    <Button
-                                                                        android:id="@+id/time_1_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
+                                                                    android:layout_weight="3.7"
+                                                                    android:orientation="horizontal">
+                                                                    <!-- 왼쪽 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical"
+                                                                        android:padding="16dp">
 
-                                                                    <Button
-                                                                        android:id="@+id/time_2_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        <Button
+                                                                            android:id="@+id/time_1_2"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
 
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_2_2"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_3_2"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+
+                                                                    </LinearLayout>
+                                                                    <!-- 중간 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1.7"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical">
 
-                                                                    <Button
-                                                                        android:id="@+id/time_3_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
 
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+
+                                                                    </LinearLayout>
+                                                                    <!-- 오른쪽 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical"
+                                                                        android:padding="16dp">
 
-                                                                    <Button
-                                                                        android:id="@+id/time_4_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        <Button
+                                                                            android:id="@+id/time_5_2"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
 
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
 
+                                                                        <Button
+                                                                            android:id="@+id/time_6_2"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_7_2"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+                                                                    </LinearLayout>
                                                                 </LinearLayout>
-                                                                <!-- 중간 -->
+                                                                <!-- 설정버튼 (2구역_타이머)-->
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1.7"
-                                                                    android:background="@color/colorWhite"
-                                                                    android:orientation="vertical">
+                                                                    android:layout_weight="11.2"
+                                                                    android:background="@color/colorWhite">
 
-                                                                    <TextView
+                                                                    <Button
+                                                                        android:id="@+id/btn_sul_2_2"
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
+                                                                        android:layout_height="match_parent"
+                                                                        android:background="@drawable/buttonshape"
                                                                         android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
+                                                                        android:text="설정"
+                                                                        android:textColor="@color/colorWhite" />
                                                                 </LinearLayout>
-                                                                <!-- 오른쪽 -->
+
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1"
+                                                                    android:layout_weight="13"
                                                                     android:background="@color/colorWhite"
-                                                                    android:orientation="vertical"
-                                                                    android:padding="16dp">
-
-                                                                    <Button
-                                                                        android:id="@+id/time_5_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_6_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_7_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_8_2"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-                                                                </LinearLayout>
-
+                                                                    android:orientation="vertical" />
+                                                                <!-- 여기까지 설정버튼 추가하는 부분-->
 
                                                             </LinearLayout>
                                                             <!--세번째 패이지, 자동-->
@@ -2173,7 +2227,30 @@
 
 
                                                                 </LinearLayout>
+                                                                <!-- 설정버튼 (3구역_수동)-->
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="25"
+                                                                    android:background="@color/colorWhite">
 
+                                                                    <Button
+                                                                        android:id="@+id/btn_sul_3_1"
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="match_parent"
+                                                                        android:background="@drawable/buttonshape"
+                                                                        android:gravity="center"
+                                                                        android:text="설정"
+                                                                        android:textColor="@color/colorWhite" />
+                                                                </LinearLayout>
+
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="20"
+                                                                    android:background="@color/colorWhite"
+                                                                    android:orientation="vertical" />
+                                                                <!-- 여기까지 설정버튼 추가하는 부분-->
 
                                                             </LinearLayout>
                                                             <!--두번째 패이지, 타이머-->
@@ -2185,173 +2262,172 @@
                                                                 android:layout_height="match_parent"
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
-                                                                android:orientation="horizontal"
+                                                                android:orientation="vertical"
                                                                 android:padding="16dp">
-                                                                <!-- 왼쪽 -->
+
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1"
-                                                                    android:background="@color/colorWhite"
-                                                                    android:orientation="vertical"
-                                                                    android:padding="16dp">
-
-                                                                    <Button
-                                                                        android:id="@+id/time_1_3"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
+                                                                    android:layout_weight="3.7"
+                                                                    android:orientation="horizontal">
+                                                                    <!-- 왼쪽 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical"
+                                                                        android:padding="16dp">
 
-                                                                    <Button
-                                                                        android:id="@+id/time_2_3"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        <Button
+                                                                            android:id="@+id/time_1_3"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
 
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_2_3"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_3_3"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+
+                                                                    </LinearLayout>
+                                                                    <!-- 중간 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1.7"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical">
 
-                                                                    <Button
-                                                                        android:id="@+id/time_3_3"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
 
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+
+                                                                    </LinearLayout>
+                                                                    <!-- 오른쪽 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical"
+                                                                        android:padding="16dp">
 
-                                                                    <Button
-                                                                        android:id="@+id/time_4_3"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        <Button
+                                                                            android:id="@+id/time_5_3"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
 
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
 
+                                                                        <Button
+                                                                            android:id="@+id/time_6_3"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                        <Button
+                                                                            android:id="@+id/time_7_3"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                    </LinearLayout>
                                                                 </LinearLayout>
-                                                                <!-- 중간 -->
+                                                                <!-- 설정버튼 (3구역_타이머)-->
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1.7"
-                                                                    android:background="@color/colorWhite"
-                                                                    android:orientation="vertical">
+                                                                    android:layout_weight="11.2"
+                                                                    android:background="@color/colorWhite">
 
-                                                                    <TextView
+                                                                    <Button
+                                                                        android:id="@+id/btn_sul_3_2"
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
+                                                                        android:layout_height="match_parent"
+                                                                        android:background="@drawable/buttonshape"
                                                                         android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
+                                                                        android:text="설정"
+                                                                        android:textColor="@color/colorWhite" />
                                                                 </LinearLayout>
-                                                                <!-- 오른쪽 -->
+
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1"
+                                                                    android:layout_weight="13"
                                                                     android:background="@color/colorWhite"
-                                                                    android:orientation="vertical"
-                                                                    android:padding="16dp">
-
-                                                                    <Button
-                                                                        android:id="@+id/time_5_3"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_6_3"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_7_3"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_8_3"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-                                                                </LinearLayout>
-
+                                                                    android:orientation="vertical" />
+                                                                <!-- 여기까지 설정버튼 추가하는 부분-->
 
                                                             </LinearLayout>
                                                             <!--세번째 패이지, 자동-->
@@ -2811,7 +2887,30 @@
 
 
                                                                 </LinearLayout>
+                                                                <!-- 설정버튼 (4구역_수동)-->
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="25"
+                                                                    android:background="@color/colorWhite">
 
+                                                                    <Button
+                                                                        android:id="@+id/btn_sul_4_1"
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="match_parent"
+                                                                        android:background="@drawable/buttonshape"
+                                                                        android:gravity="center"
+                                                                        android:text="설정"
+                                                                        android:textColor="@color/colorWhite" />
+                                                                </LinearLayout>
+
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="20"
+                                                                    android:background="@color/colorWhite"
+                                                                    android:orientation="vertical" />
+                                                                <!-- 여기까지 설정버튼 추가하는 부분-->
 
                                                             </LinearLayout>
                                                             <!--두번째 패이지, 타이머-->
@@ -2823,174 +2922,172 @@
                                                                 android:layout_height="match_parent"
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
-                                                                android:orientation="horizontal"
+                                                                android:orientation="vertical"
                                                                 android:padding="16dp">
-                                                                <!-- 왼쪽 -->
+
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1"
-                                                                    android:background="@color/colorWhite"
-                                                                    android:orientation="vertical"
-                                                                    android:padding="16dp">
-
-                                                                    <!--첫번째줄 버튼-->
-                                                                    <Button
-                                                                        android:id="@+id/time_1_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
+                                                                    android:layout_weight="3.7"
+                                                                    android:orientation="horizontal">
+                                                                    <!-- 왼쪽 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-                                                                    <!--두째줄 버튼-->
-                                                                    <Button
-                                                                        android:id="@+id/time_2_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical"
+                                                                        android:padding="16dp">
 
+                                                                        <!--첫번째줄 버튼-->
+                                                                        <Button
+                                                                            android:id="@+id/time_1_4"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+                                                                        <!--두째줄 버튼-->
+                                                                        <Button
+                                                                            android:id="@+id/time_2_4"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+                                                                        <!--세번째줄 버튼-->
+                                                                        <Button
+                                                                            android:id="@+id/time_3_4"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+
+                                                                    </LinearLayout>
+                                                                    <!-- 중간 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-                                                                    <!--세번째줄 버튼-->
-                                                                    <Button
-                                                                        android:id="@+id/time_3_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1.7"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical">
 
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                        <TextView
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="55dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:gravity="center"
+                                                                            android:text="~"
+                                                                            android:textColor="@color/colorBlack" />
+
+                                                                    </LinearLayout>
+                                                                    <!-- 오른쪽 -->
                                                                     <LinearLayout
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        android:layout_height="match_parent"
+                                                                        android:layout_weight="1"
+                                                                        android:background="@color/colorWhite"
+                                                                        android:orientation="vertical"
+                                                                        android:padding="16dp">
+                                                                        <!--첫번째줄 버튼-->
+                                                                        <Button
+                                                                            android:id="@+id/time_5_4"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
 
-                                                                    <Button
-                                                                        android:id="@+id/time_4_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+                                                                        <!--두번째줄 버튼-->
+                                                                        <Button
+                                                                            android:id="@+id/time_6_4"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
 
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+                                                                        <!--세번째줄 버튼-->
+                                                                        <Button
+                                                                            android:id="@+id/time_7_4"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="40dp"
+                                                                            android:layout_gravity="center"
+                                                                            android:background="@drawable/btn_time_shape"
+                                                                            android:gravity="center"
+                                                                            android:textColor="@color/colorBlack" />
 
+                                                                        <LinearLayout
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="10dp" />
+
+                                                                    </LinearLayout>
                                                                 </LinearLayout>
-                                                                <!-- 중간 -->
+                                                                <!-- 설정버튼 (4구역_타이머)-->
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1.7"
-                                                                    android:background="@color/colorWhite"
-                                                                    android:orientation="vertical">
+                                                                    android:layout_weight="11.2"
+                                                                    android:background="@color/colorWhite">
 
-                                                                    <TextView
+                                                                    <Button
+                                                                        android:id="@+id/btn_sul_4_2"
                                                                         android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
+                                                                        android:layout_height="match_parent"
+                                                                        android:background="@drawable/buttonshape"
                                                                         android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <TextView
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="80dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:gravity="center"
-                                                                        android:text="~"
-                                                                        android:textColor="@color/colorBlack" />
-
+                                                                        android:text="설정"
+                                                                        android:textColor="@color/colorWhite" />
                                                                 </LinearLayout>
-                                                                <!-- 오른쪽 -->
+
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="match_parent"
-                                                                    android:layout_weight="1"
+                                                                    android:layout_weight="13"
                                                                     android:background="@color/colorWhite"
-                                                                    android:orientation="vertical"
-                                                                    android:padding="16dp">
-                                                                    <!--첫번째줄 버튼-->
-                                                                    <Button
-                                                                        android:id="@+id/time_5_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-                                                                    <!--두번째줄 버튼-->
-                                                                    <Button
-                                                                        android:id="@+id/time_6_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-                                                                    <!--세번째줄 버튼-->
-                                                                    <Button
-                                                                        android:id="@+id/time_7_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-
-                                                                    <Button
-                                                                        android:id="@+id/time_8_4"
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="50dp"
-                                                                        android:layout_gravity="center"
-                                                                        android:background="@drawable/btn_time_shape"
-                                                                        android:gravity="center"
-                                                                        android:textColor="@color/colorBlack" />
-
-                                                                    <LinearLayout
-                                                                        android:layout_width="match_parent"
-                                                                        android:layout_height="30dp" />
-                                                                </LinearLayout>
-
+                                                                    android:orientation="vertical" />
+                                                                <!-- 여기까지 설정버튼 추가하는 부분-->
 
                                                             </LinearLayout>
                                                             <!--세번째 패이지, 자동-->
