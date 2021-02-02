@@ -256,10 +256,33 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         }
 
 
-        if (str_request.contains("1")) {
+        if (str_request.contains("1_1")) {
             tabHost.setCurrentTabByTag("4");
             tabHost.setup();
         }
+
+        if (str_request.contains("1_2")) {
+            tabHost.setCurrentTabByTag("4");
+            tabHost.setup();
+/*            tabHost3.setCurrentTabByTag("2");
+            tabHost3.setup();*/
+        }
+
+        if (str_request.contains("1_3")) {
+            tabHost.setCurrentTabByTag("4");
+            tabHost.setup();
+/*            tabHost3.setCurrentTabByTag("3");
+            tabHost3.setup();*/
+        }
+
+        if (str_request.contains("1_4")) {
+            tabHost.setCurrentTabByTag("4");
+            tabHost.setup();
+/*            tabHost3.setCurrentTabByTag("4");
+            tabHost3.setup();*/
+        }
+
+
         try {
             FileOutputStream outFs = openFileOutput("file.txt", Context.MODE_PRIVATE);
             str_request = "0";
@@ -481,7 +504,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 HttpPost();
 
-                onRestart_1();
+                onRestart_2();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -549,7 +572,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 HttpPost();
 
-                onRestart_1();
+                onRestart_2();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -574,7 +597,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 HttpPost();
 
-                onRestart_1();
+                onRestart_3();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -641,7 +664,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 S_led3_info = ssss;
                 HttpPost();
 
-                onRestart_1();
+                onRestart_3();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -666,7 +689,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 HttpPost();
 
-                onRestart_1();
+                onRestart_4();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -735,7 +758,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 HttpPost();
 
-                onRestart_1();
+                onRestart_4();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -1470,7 +1493,76 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         requests = 1;
         try {
             FileOutputStream outFs = openFileOutput("file.txt", Context.MODE_PRIVATE);
-            str_request = "1";
+            str_request = "1_1";
+            outFs.write(str_request.getBytes());
+            outFs.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        finish();
+
+
+    }
+
+    protected void onRestart_2() {
+
+        // TODO Auto-generated method stub
+        super.onRestart();
+        Intent i = new Intent(MainActivity.this, MainActivity.class);  //your class
+        startActivity(i);
+        requests = 1;
+        try {
+            FileOutputStream outFs = openFileOutput("file.txt", Context.MODE_PRIVATE);
+            str_request = "1_2";
+            outFs.write(str_request.getBytes());
+            outFs.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        finish();
+
+
+    }
+
+    protected void onRestart_3() {
+
+        // TODO Auto-generated method stub
+        super.onRestart();
+        Intent i = new Intent(MainActivity.this, MainActivity.class);  //your class
+        startActivity(i);
+        requests = 1;
+        try {
+            FileOutputStream outFs = openFileOutput("file.txt", Context.MODE_PRIVATE);
+            str_request = "1_3";
+            outFs.write(str_request.getBytes());
+            outFs.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        finish();
+
+
+    }
+
+    protected void onRestart_4() {
+
+        // TODO Auto-generated method stub
+        super.onRestart();
+        Intent i = new Intent(MainActivity.this, MainActivity.class);  //your class
+        startActivity(i);
+        requests = 1;
+        try {
+            FileOutputStream outFs = openFileOutput("file.txt", Context.MODE_PRIVATE);
+            str_request = "1_4";
             outFs.write(str_request.getBytes());
             outFs.close();
         } catch (FileNotFoundException e) {
