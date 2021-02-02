@@ -375,48 +375,47 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 S_led1_status = "2";
                 if (time_1.getText().toString().contains(":")) {
-                    tempss = time_1.getText().toString();
-                    tempss2 = time_5.getText().toString();
-                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
-                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
-                    //tempss2 = "261400";
+                    String tempss = time_1.getText().toString();
+                    String tempss2 = time_5.getText().toString();
+                    String ssss;
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    //S_led1_info = ssss;
+                    S_led1_info = ssss;
                     //S_led1_info = "1200%261335";
                 }
                 if (time_2.getText().toString().contains(":")) {
-                    tempss = time_2.getText().toString();
-                    tempss2 = time_6.getText().toString();
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
-                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    String tempss = time_2.getText().toString();
+                    String tempss2 = time_6.getText().toString();
+                    String ssss;
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss2 = tempss + tempss2;
+                    ssss = tempss + tempss2;
 
-
-                    ssss = ssss + ssss2;
                     Log.i("S_timer", ssss);
+
+                    S_led1_info = S_led1_info.concat(ssss);
 
                 }
                 if (time_3.getText().toString().contains(":")) {
-                    tempss = time_3.getText().toString();
-                    tempss2 = time_7.getText().toString();
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
-                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    String tempss = time_3.getText().toString();
+                    String tempss2 = time_7.getText().toString();
+                    String ssss;
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss3 = tempss + tempss2;
+                    ssss = tempss + tempss2;
 
+                    Log.i("S_timer", ssss);
 
-                    ssss = ssss + ssss3;
+                    S_led1_info = S_led1_info.concat(ssss);
 
                 }
-
-
-                S_led1_info = ssss;
-                Log.i("S_timerss", S_led2_info);
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
@@ -2448,7 +2447,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
                         //세번째 줄에 출력
-                        int ss_4_3 = ss.indexOf("&", 20);
+                        int ss_4_3 = ss.indexOf("&", 12);
                         if (ss_4_3 > 1) {
                             String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
                             String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
@@ -2506,7 +2505,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
                         //세번째 줄에 출력
-                        int ss_4_3 = ss.indexOf("&", 20);
+                        int ss_4_3 = ss.indexOf("&", 12);
                         if (ss_4_3 > 1) {
                             String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
                             String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
@@ -2566,7 +2565,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
                         //세번째 줄에 출력
-                        int ss_4_3 = ss.indexOf("&", 20);
+                        int ss_4_3 = ss.indexOf("&", 12);
                         if (ss_4_3 > 1) {
                             String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
                             String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
@@ -2621,7 +2620,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
                         //세번째 줄에 출력
-                        int ss_4_3 = ss.indexOf("&", 20);
+                        int ss_4_3 = ss.indexOf("&", 12);
                         if (ss_4_3 > 1) {
                             String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
                             String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
