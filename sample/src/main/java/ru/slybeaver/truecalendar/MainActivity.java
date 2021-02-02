@@ -3,6 +3,7 @@ package ru.slybeaver.truecalendar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -22,6 +23,9 @@ import android.widget.NumberPicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -115,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     String strMonth = "01";
 
+    String str_request = "0";
+
     String ssss, ssss2, ssss3;
     String tempss, tempss2;
 
@@ -142,6 +148,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     String ss9 = "";
 
     String resultss = "";
+
+    int requests = 0;
 
     int ih = 0;
     TabHost tabHost, tabHost2, tabHost3, tabHost2_2, tabHost2_3, tabHost2_4;
@@ -234,6 +242,34 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
         tabHost.addTab(tab4);
+
+        try {
+            FileInputStream inFs = openFileInput("file.txt");
+            byte[] txt = new byte[30];
+            inFs.read(txt);
+            str_request = new String(txt);
+            inFs.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        if (str_request.contains("1")) {
+            tabHost.setCurrentTabByTag("4");
+            tabHost.setup();
+        }
+        try {
+            FileOutputStream outFs = openFileOutput("file.txt", Context.MODE_PRIVATE);
+            str_request = "0";
+            outFs.write(str_request.getBytes());
+            outFs.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         //tabHost.setCurrentTabByTag("1");
 
@@ -351,6 +387,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 S_led1_status = "1";
 
                 HttpPost();
+
+                onRestart_1();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -375,48 +413,50 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 S_led1_status = "2";
                 if (time_1.getText().toString().contains(":")) {
-                    String tempss = time_1.getText().toString();
-                    String tempss2 = time_5.getText().toString();
-                    String ssss;
-                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_1.getText().toString();
+                    tempss2 = time_5.getText().toString();
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    //tempss2 = "261400";
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    S_led1_info = ssss;
+                    //S_led1_info = ssss;
                     //S_led1_info = "1200%261335";
                 }
                 if (time_2.getText().toString().contains(":")) {
-                    String tempss = time_2.getText().toString();
-                    String tempss2 = time_6.getText().toString();
-                    String ssss;
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_2.getText().toString();
+                    tempss2 = time_6.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss = tempss + tempss2;
+                    ssss2 = tempss + tempss2;
 
+
+                    ssss = ssss + ssss2;
                     Log.i("S_timer", ssss);
-
-                    S_led1_info = S_led1_info.concat(ssss);
 
                 }
                 if (time_3.getText().toString().contains(":")) {
-                    String tempss = time_3.getText().toString();
-                    String tempss2 = time_7.getText().toString();
-                    String ssss;
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_3.getText().toString();
+                    tempss2 = time_7.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss = tempss + tempss2;
+                    ssss3 = tempss + tempss2;
 
-                    Log.i("S_timer", ssss);
 
-                    S_led1_info = S_led1_info.concat(ssss);
+                    ssss = ssss + ssss3;
 
                 }
+
+
+                S_led1_info = ssss;
                 HttpPost();
+
+                onRestart_1();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -440,6 +480,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 S_led2_status = "1";
 
                 HttpPost();
+
+                onRestart_1();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -463,49 +505,51 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 S_led2_status = "2";
 
                 if (time_1_2.getText().toString().contains(":")) {
-                    String tempss = time_1_2.getText().toString();
-                    String tempss2 = time_5_2.getText().toString();
-                    String ssss;
-                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_1_2.getText().toString();
+                    tempss2 = time_5_2.getText().toString();
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    //tempss2 = "261400";
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    S_led2_info = ssss;
+                    //S_led1_info = ssss;
                     //S_led1_info = "1200%261335";
                 }
                 if (time_2_2.getText().toString().contains(":")) {
-                    String tempss = time_2_2.getText().toString();
-                    String tempss2 = time_6_2.getText().toString();
-                    String ssss;
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_2_2.getText().toString();
+                    tempss2 = time_6_2.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss = tempss + tempss2;
+                    ssss2 = tempss + tempss2;
 
+
+                    ssss = ssss + ssss2;
                     Log.i("S_timer", ssss);
-
-                    S_led2_info = S_led2_info.concat(ssss);
 
                 }
                 if (time_3_2.getText().toString().contains(":")) {
-                    String tempss = time_3_2.getText().toString();
-                    String tempss2 = time_7_2.getText().toString();
-                    String ssss;
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_3_2.getText().toString();
+                    tempss2 = time_7_2.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss = tempss + tempss2;
+                    ssss3 = tempss + tempss2;
 
-                    Log.i("S_timer", ssss);
 
-                    S_led2_info = S_led2_info.concat(ssss);
+                    ssss = ssss + ssss3;
 
                 }
 
+
+                S_led2_info = ssss;
+
                 HttpPost();
+
+                onRestart_1();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -529,6 +573,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 S_led3_status = "1";
 
                 HttpPost();
+
+                onRestart_1();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -552,49 +598,50 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 S_led3_status = "2";
 
                 if (time_1_3.getText().toString().contains(":")) {
-                    String tempss = time_1_3.getText().toString();
-                    String tempss2 = time_5_3.getText().toString();
-                    String ssss;
-                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_1_3.getText().toString();
+                    tempss2 = time_5_3.getText().toString();
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    //tempss2 = "261400";
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    S_led3_info = ssss;
+                    //S_led1_info = ssss;
                     //S_led1_info = "1200%261335";
                 }
                 if (time_2_3.getText().toString().contains(":")) {
-                    String tempss = time_2_3.getText().toString();
-                    String tempss2 = time_6_3.getText().toString();
-                    String ssss;
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_2_3.getText().toString();
+                    tempss2 = time_6_3.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss = tempss + tempss2;
+                    ssss2 = tempss + tempss2;
 
+
+                    ssss = ssss + ssss2;
                     Log.i("S_timer", ssss);
-
-                    S_led3_info = S_led3_info.concat(ssss);
 
                 }
                 if (time_3_3.getText().toString().contains(":")) {
-                    String tempss = time_3_3.getText().toString();
-                    String tempss2 = time_7_3.getText().toString();
-                    String ssss;
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_3_3.getText().toString();
+                    tempss2 = time_7_3.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss = tempss + tempss2;
+                    ssss3 = tempss + tempss2;
 
-                    Log.i("S_timer", ssss);
 
-                    S_led3_info = S_led3_info.concat(ssss);
+                    ssss = ssss + ssss3;
 
                 }
 
+
+                S_led3_info = ssss;
                 HttpPost();
+
+                onRestart_1();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -618,6 +665,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 S_led4_status = "1";
 
                 HttpPost();
+
+                onRestart_1();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -641,49 +690,52 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 S_led4_status = "2";
 
                 if (time_1_4.getText().toString().contains(":")) {
-                    String tempss = time_1_4.getText().toString();
-                    String tempss2 = time_5_4.getText().toString();
-                    String ssss;
-                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_1_4.getText().toString();
+                    tempss2 = time_5_4.getText().toString();
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    //tempss2 = "261400";
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    S_led4_info = ssss;
+                    //S_led1_info = ssss;
                     //S_led1_info = "1200%261335";
                 }
                 if (time_2_4.getText().toString().contains(":")) {
-                    String tempss = time_2_4.getText().toString();
-                    String tempss2 = time_6_4.getText().toString();
-                    String ssss;
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_2_4.getText().toString();
+                    tempss2 = time_6_4.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss = tempss + tempss2;
+                    ssss2 = tempss + tempss2;
 
+
+                    ssss = ssss + ssss2;
                     Log.i("S_timer", ssss);
-
-                    S_led4_info = S_led4_info.concat(ssss);
 
                 }
                 if (time_3_4.getText().toString().contains(":")) {
-                    String tempss = time_3_4.getText().toString();
-                    String tempss2 = time_7_4.getText().toString();
-                    String ssss;
-                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
-                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    tempss = time_3_4.getText().toString();
+                    tempss2 = time_7_4.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
 
-                    ssss = tempss + tempss2;
+                    ssss3 = tempss + tempss2;
 
-                    Log.i("S_timer", ssss);
 
-                    S_led4_info = S_led4_info.concat(ssss);
+                    ssss = ssss + ssss3;
 
                 }
 
+
+                S_led4_info = ssss;
+                Log.i("testtest", ssss);
+
                 HttpPost();
+
+                onRestart_1();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
 
@@ -1409,75 +1461,38 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     }
 
 
-    //------------------------------
-    //   Http Post로 주고 받기
-    //------------------------------
-/*
-    public void HttpPostData() {
+    protected void onRestart_1() {
+
+        // TODO Auto-generated method stub
+        super.onRestart();
+        Intent i = new Intent(MainActivity.this, MainActivity.class);  //your class
+        startActivity(i);
+        requests = 1;
         try {
-            //--------------------------
-            //   URL 설정하고 접속하기
-            //--------------------------
-            URL url = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData?");       // URL 설정
-            HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
-            //--------------------------
-            //   전송 모드 설정 - 기본적인 설정이다
-            //--------------------------
-            http.setDefaultUseCaches(false);
-            http.setDoInput(true);                         // 서버에서 읽기 모드 지정
-            http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
-            http.setRequestMethod("POST");         // 전송 방식은 POST
-
-            // 서버에게 웹에서 <Form>으로 값이 넘어온 것과 같은 방식으로 처리하라는 걸 알려준다
-            http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
-            //--------------------------
-            //   서버로 값 전송
-            //--------------------------
-            StringBuffer buffer = new StringBuffer();
-*/
-/*            buffer.append("id").append("=").append(myId).append("&");                 // php 변수에 값 대입
-            buffer.append("pword").append("=").append(myPWord).append("&");   // php 변수 앞에 '$' 붙이지 않는다
-            buffer.append("title").append("=").append(myTitle).append("&");           // 변수 구분은 '&' 사용
-            buffer.append("subject").append("=").append(mySubject);*//*
-
-
-            buffer.append("reg_time").append("=").append("20210129161030").append("&");
-            buffer.append("eq_num").append("=").append("ABC001").append("&");
-            buffer.append("led1_status").append("=").append("1").append("&");
-            buffer.append("led2_status").append("=").append("1").append("&");
-            buffer.append("led3_status").append("=").append("1").append("&");
-            buffer.append("led4_status").append("=").append("1").append("&");
-            buffer.append("led1_info").append("=").append("off").append("&");
-            buffer.append("led2_info").append("=").append("on").append("&");
-            buffer.append("led3_info").append("=").append("on").append("&");
-            buffer.append("led4_info").append("=").append("on").append("&");
-
-            OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR");
-            PrintWriter writer = new PrintWriter(outStream);
-            writer.write(buffer.toString());
-            writer.flush();
-            //--------------------------
-            //   서버에서 전송받기
-            //--------------------------
-            InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
-            BufferedReader reader = new BufferedReader(tmp);
-            StringBuilder builder = new StringBuilder();
-            String str;
-            while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
-                builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
-            }
-            //myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-            //((TextView)(findViewById(R.id.text_result))).setText(myResult);
-            //Toast.makeText(MainActivity.this, "전송 후 결과 받음", 0).show();
-        } catch (MalformedURLException e) {
-            //
+            FileOutputStream outFs = openFileOutput("file.txt", Context.MODE_PRIVATE);
+            str_request = "1";
+            outFs.write(str_request.getBytes());
+            outFs.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
-            //
-        } // try
-    } // HttpPostData
+            e.printStackTrace();
+        }
+
+        finish();
 
 
-*/
+    }
+
+/*    protected void onRestart_2() {
+
+        // TODO Auto-generated method stub
+        tabHost.setCurrentTabByTag("4");
+        tabHost.setup();
+
+    }*/
+
+
 
 
     String str_h = "";
@@ -2447,7 +2462,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
                         //세번째 줄에 출력
-                        int ss_4_3 = ss.indexOf("&", 12);
+                        int ss_4_3 = ss.indexOf("&", 20);
                         if (ss_4_3 > 1) {
                             String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
                             String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
@@ -2505,7 +2520,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
                         //세번째 줄에 출력
-                        int ss_4_3 = ss.indexOf("&", 12);
+                        int ss_4_3 = ss.indexOf("&", 20);
                         if (ss_4_3 > 1) {
                             String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
                             String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
@@ -2565,7 +2580,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
                         //세번째 줄에 출력
-                        int ss_4_3 = ss.indexOf("&", 12);
+                        int ss_4_3 = ss.indexOf("&", 20);
                         if (ss_4_3 > 1) {
                             String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
                             String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
@@ -2620,7 +2635,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
                         //세번째 줄에 출력
-                        int ss_4_3 = ss.indexOf("&", 12);
+                        int ss_4_3 = ss.indexOf("&", 20);
                         if (ss_4_3 > 1) {
                             String ss_4_3_1 = ss.substring(23, 25) + ":" + ss.substring(25, 27); //23,27
                             String ss_4_3_2 = ss.substring(28, 30) + ":" + ss.substring(30, 32); //28,32
@@ -3146,15 +3161,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     HashMap<String, String> map = new HashMap<>();
                     map.put("reg_time", S_reg_time);
                     map.put("eq_num", "ABC001");
-/*                    map.put("led1_status",S_led1_status);
-                    map.put("led2_status",S_led2_status);
-                    map.put("led3_status",S_led3_status);
-                    map.put("led4_status",S_led4_status);
-                    map.put("led1_info",S_led1_info);
-                    map.put("led2_info",S_led2_info);
-                    map.put("led3_info",S_led3_info);
-                    map.put("led4_info",S_led4_info);*/
-
                     map.put("led1_status", S_led1_status);
                     map.put("led2_status", S_led2_status);
                     map.put("led3_status", S_led3_status);
