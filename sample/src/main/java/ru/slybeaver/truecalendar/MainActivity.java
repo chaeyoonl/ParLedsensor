@@ -63,19 +63,15 @@ import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
-    String S_reg_time = "";
-    String S_led1_status = "";
-    String S_led2_status = "";
-    String S_led3_status = "";
-    String S_led4_status = "";
-    String S_led1_info = "";
-    String S_led2_info = "";
-    String S_led3_info = "";
-    String S_led4_info = "";
-
-
-
-
+    String S_reg_time;
+    String S_led1_status;
+    String S_led2_status;
+    String S_led3_status;
+    String S_led4_status;
+    String S_led1_info;
+    String S_led2_info;
+    String S_led3_info;
+    String S_led4_info;
 
 
     int check_day = 0;
@@ -119,6 +115,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     String strMonth = "01";
 
+    String ssss, ssss2, ssss3;
+    String tempss, tempss2;
+
+
+    String S_timer_1_1, S_timer_1_2, S_timer_2_1, S_timer_2_2, S_timer_3_1, S_timer_3_2;
+
+
     Button btnYearMonthPicker;
 
     DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
@@ -153,19 +156,42 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        time_1 = (Button) findViewById(R.id.time_1);
+        time_2 = (Button) findViewById(R.id.time_2);
+        time_3 = (Button) findViewById(R.id.time_3);
+        time_5 = (Button) findViewById(R.id.time_5);
+        time_6 = (Button) findViewById(R.id.time_6);
+        time_7 = (Button) findViewById(R.id.time_7);
+
+        time_1_2 = (Button) findViewById(R.id.time_1_2);
+        time_2_2 = (Button) findViewById(R.id.time_2_2);
+        time_3_2 = (Button) findViewById(R.id.time_3_2);
+        time_5_2 = (Button) findViewById(R.id.time_5_2);
+        time_6_2 = (Button) findViewById(R.id.time_6_2);
+        time_7_2 = (Button) findViewById(R.id.time_7_2);
+
+        time_1_3 = (Button) findViewById(R.id.time_1_3);
+        time_2_3 = (Button) findViewById(R.id.time_2_3);
+        time_3_3 = (Button) findViewById(R.id.time_3_3);
+        time_5_3 = (Button) findViewById(R.id.time_5_3);
+        time_6_3 = (Button) findViewById(R.id.time_6_3);
+        time_7_3 = (Button) findViewById(R.id.time_7_3);
+
+        time_1_4 = (Button) findViewById(R.id.time_1_4);
+        time_2_4 = (Button) findViewById(R.id.time_2_4);
+        time_3_4 = (Button) findViewById(R.id.time_3_4);
+        time_5_4 = (Button) findViewById(R.id.time_5_4);
+        time_6_4 = (Button) findViewById(R.id.time_6_4);
+        time_7_4 = (Button) findViewById(R.id.time_7_4);
 
         /////////////////////
         Date date_now = new Date(System.currentTimeMillis()); // 현재시간을 가져와 Date형으로 저장한다
         // 년월일시분초 14자리 포멧
         SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
         S_reg_time = fourteen_format.format(date_now);
-        int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-        S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+        int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+        S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
         Log.i("S_reg_time", S_reg_time);
-
-
-
-
 
 
         txt_sudong = (TextView) findViewById(R.id.txt_sudong);
@@ -225,9 +251,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost2.addTab(tab_sub1);
         tabHost2.addTab(tab_sub2);
         tabHost2.addTab(tab_sub3);
-
-
-
 
 
         /////////////////////////////////////
@@ -295,7 +318,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost3.addTab(tab_sub4_ch);
 
 
-
         ///////////////////////////////
         /*
         설정버튼 제어부분
@@ -322,14 +344,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-                S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+                S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
+
+                S_led1_status = "1";
 
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
-
 
 
                 //led1_status = 1
@@ -346,10 +369,54 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-                S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+                S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
+                S_led1_status = "2";
+                if (time_1.getText().toString().contains(":")) {
+                    tempss = time_1.getText().toString();
+                    tempss2 = time_5.getText().toString();
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+                    //tempss2 = "261400";
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    //S_led1_info = ssss;
+                    //S_led1_info = "1200%261335";
+                }
+                if (time_2.getText().toString().contains(":")) {
+                    tempss = time_2.getText().toString();
+                    tempss2 = time_6.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss2 = tempss + tempss2;
+
+
+                    ssss = ssss + ssss2;
+                    Log.i("S_timer", ssss);
+
+                }
+                if (time_3.getText().toString().contains(":")) {
+                    tempss = time_3.getText().toString();
+                    tempss2 = time_7.getText().toString();
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
+                    tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss3 = tempss + tempss2;
+
+
+                    ssss = ssss + ssss3;
+
+                }
+
+
+                S_led1_info = ssss;
+                Log.i("S_timerss", S_led2_info);
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
                 //onRestart();
@@ -367,9 +434,11 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-                S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+                S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
+
+                S_led2_status = "1";
 
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
@@ -388,9 +457,54 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-                S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+                S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
+
+                S_led2_status = "2";
+
+                if (time_1_2.getText().toString().contains(":")) {
+                    String tempss = time_1_2.getText().toString();
+                    String tempss2 = time_5_2.getText().toString();
+                    String ssss;
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led2_info = ssss;
+                    //S_led1_info = "1200%261335";
+                }
+                if (time_2_2.getText().toString().contains(":")) {
+                    String tempss = time_2_2.getText().toString();
+                    String tempss2 = time_6_2.getText().toString();
+                    String ssss;
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led2_info = S_led2_info.concat(ssss);
+
+                }
+                if (time_3_2.getText().toString().contains(":")) {
+                    String tempss = time_3_2.getText().toString();
+                    String tempss2 = time_7_2.getText().toString();
+                    String ssss;
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led2_info = S_led2_info.concat(ssss);
+
+                }
 
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
@@ -409,9 +523,11 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-                S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+                S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
+
+                S_led3_status = "1";
 
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
@@ -430,9 +546,54 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-                S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+                S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
+
+                S_led3_status = "2";
+
+                if (time_1_3.getText().toString().contains(":")) {
+                    String tempss = time_1_3.getText().toString();
+                    String tempss2 = time_5_3.getText().toString();
+                    String ssss;
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led3_info = ssss;
+                    //S_led1_info = "1200%261335";
+                }
+                if (time_2_3.getText().toString().contains(":")) {
+                    String tempss = time_2_3.getText().toString();
+                    String tempss2 = time_6_3.getText().toString();
+                    String ssss;
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led3_info = S_led3_info.concat(ssss);
+
+                }
+                if (time_3_3.getText().toString().contains(":")) {
+                    String tempss = time_3_3.getText().toString();
+                    String tempss2 = time_7_3.getText().toString();
+                    String ssss;
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led3_info = S_led3_info.concat(ssss);
+
+                }
 
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
@@ -451,9 +612,11 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-                S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+                S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
+
+                S_led4_status = "1";
 
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
@@ -472,9 +635,54 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8,10)) + 9;
-                S_reg_time = S_reg_time.substring(0,8) + Integer.toString(temp) + S_reg_time.substring(10,14);
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+                S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
+
+                S_led4_status = "2";
+
+                if (time_1_4.getText().toString().contains(":")) {
+                    String tempss = time_1_4.getText().toString();
+                    String tempss2 = time_5_4.getText().toString();
+                    String ssss;
+                    tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led4_info = ssss;
+                    //S_led1_info = "1200%261335";
+                }
+                if (time_2_4.getText().toString().contains(":")) {
+                    String tempss = time_2_4.getText().toString();
+                    String tempss2 = time_6_4.getText().toString();
+                    String ssss;
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led4_info = S_led4_info.concat(ssss);
+
+                }
+                if (time_3_4.getText().toString().contains(":")) {
+                    String tempss = time_3_4.getText().toString();
+                    String tempss2 = time_7_4.getText().toString();
+                    String ssss;
+                    tempss = ", " + tempss.substring(0, 2) + tempss.substring(3, 5) + "%";
+                    tempss2 = "26" + tempss2.substring(0, 2) + tempss2.substring(3, 5);
+
+                    ssss = tempss + tempss2;
+
+                    Log.i("S_timer", ssss);
+
+                    S_led4_info = S_led4_info.concat(ssss);
+
+                }
 
                 HttpPost();
                 //tabHost.setCurrentTabByTag("4");
@@ -540,7 +748,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });*/
 
         ////////////////////////////////////
-        time_1 = (Button) findViewById(R.id.time_1);
+
         time_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -551,7 +759,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
         ///////////////////////////////////
-        time_2 = (Button) findViewById(R.id.time_2);
+
         time_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -562,7 +770,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
         ///////////////////////////////////
-        time_3 = (Button) findViewById(R.id.time_3);
         time_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -572,7 +779,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_5 = (Button) findViewById(R.id.time_5);
         time_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -582,7 +788,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_6 = (Button) findViewById(R.id.time_6);
         time_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -592,7 +797,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_7 = (Button) findViewById(R.id.time_7);
         time_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -604,7 +808,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         ////////////////////////////////////
-        time_1_2 = (Button) findViewById(R.id.time_1_2);
+
         time_1_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -615,7 +819,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
         ///////////////////////////////////
-        time_2_2 = (Button) findViewById(R.id.time_2_2);
         time_2_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -626,7 +829,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
         ///////////////////////////////////
-        time_3_2 = (Button) findViewById(R.id.time_3_2);
         time_3_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -636,7 +838,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_5_2 = (Button) findViewById(R.id.time_5_2);
         time_5_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -646,7 +847,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_6_2 = (Button) findViewById(R.id.time_6_2);
         time_6_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -656,7 +856,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_7_2 = (Button) findViewById(R.id.time_7_2);
         time_7_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -668,7 +867,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         ////////////////////////////////////
-        time_1_3 = (Button) findViewById(R.id.time_1_3);
+
         time_1_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -679,7 +878,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
         ///////////////////////////////////
-        time_2_3 = (Button) findViewById(R.id.time_2_3);
         time_2_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -690,7 +888,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
         ///////////////////////////////////
-        time_3_3 = (Button) findViewById(R.id.time_3_3);
         time_3_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -700,7 +897,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_5_3 = (Button) findViewById(R.id.time_5_3);
         time_5_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -710,7 +906,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_6_3 = (Button) findViewById(R.id.time_6_3);
         time_6_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -720,7 +915,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_7_3 = (Button) findViewById(R.id.time_7_3);
         time_7_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -732,7 +926,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         ////////////////////////////////////
-        time_1_4 = (Button) findViewById(R.id.time_1_4);
+
         time_1_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -743,7 +937,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
         ///////////////////////////////////
-        time_2_4 = (Button) findViewById(R.id.time_2_4);
         time_2_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -754,7 +947,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         });
 
         ///////////////////////////////////
-        time_3_4 = (Button) findViewById(R.id.time_3_4);
         time_3_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -764,7 +956,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_5_4 = (Button) findViewById(R.id.time_5_4);
         time_5_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -774,7 +965,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_6_4 = (Button) findViewById(R.id.time_6_4);
         time_6_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -784,7 +974,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
         ///////////////////////////////////
-        time_7_4 = (Button) findViewById(R.id.time_7_4);
         time_7_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1192,16 +1381,16 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             connection.setRequestMethod("POST"); //전송방식
             connection.setDoOutput(true);       //데이터를 쓸 지 설정
             connection.setDoInput(true);        //데이터를 읽어올지 설정
-            connection.setRequestProperty("reg_time","20210201125010");
-            connection.setRequestProperty("eq_num","ABC001");
-            connection.setRequestProperty("led1_status","1");
-            connection.setRequestProperty("led2_status","1");
-            connection.setRequestProperty("led3_status","1");
-            connection.setRequestProperty("led4_status","1");
-            connection.setRequestProperty("led1_info","on");
-            connection.setRequestProperty("led2_info","on");
-            connection.setRequestProperty("led3_info","on");
-            connection.setRequestProperty("led4_info","on");
+            connection.setRequestProperty("reg_time", "20210201125010");
+            connection.setRequestProperty("eq_num", "ABC001");
+            connection.setRequestProperty("led1_status", "1");
+            connection.setRequestProperty("led2_status", "1");
+            connection.setRequestProperty("led3_status", "1");
+            connection.setRequestProperty("led4_status", "1");
+            connection.setRequestProperty("led1_info", "on");
+            connection.setRequestProperty("led2_info", "on");
+            connection.setRequestProperty("led3_info", "on");
+            connection.setRequestProperty("led4_info", "on");
         } catch (MalformedURLException | ProtocolException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -1219,119 +1408,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         finish();
 
     }
-
-
-    private void HttpPost(){
-
-        new AsyncTask<Void, Void, JSONObject>(){
-
-            @Override
-            protected JSONObject doInBackground(Void... voids) {
-
-                JSONObject result = null;
-                try{
-                    URL url = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData");
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-                    connection.setRequestProperty("content-type", "application/x-www-form-urlencoded");
-                    connection.setRequestMethod("POST");
-                    connection.setDoInput(true);
-                    connection.setDoOutput(true);
-                    connection.setUseCaches(false);
-                    connection.setConnectTimeout(15000);
-
-                    OutputStreamWriter wr = new OutputStreamWriter(connection.getOutputStream());
-
-                    HashMap<String, String> map = new HashMap<>();
-                    map.put("reg_time",S_reg_time);
-                    map.put("eq_num","ABC001");
-                    map.put("led1_status",S_led1_status);
-                    map.put("led2_status",S_led2_status);
-                    map.put("led3_status",S_led3_status);
-                    map.put("led4_status",S_led4_status);
-                    map.put("led1_info",S_led1_info);
-                    map.put("led2_info",S_led2_info);
-                    map.put("led3_info",S_led3_info);
-                    map.put("led4_info",S_led4_info);
-
-                    StringBuffer sbParams = new StringBuffer();
-
-
-
-                    boolean isAnd = false;
-
-                    for(String key: map.keySet()){
-
-                        if(isAnd)
-
-                            sbParams.append("&");
-
-
-
-                        sbParams.append(key).append("=").append(map.get(key));
-
-                        if(!isAnd)
-
-                            if(map.size() >= 2)
-
-                                isAnd = true;
-
-                    }
-
-
-
-                    wr.write(sbParams.toString());
-
-                    wr.flush();
-
-                    wr.close();
-
-                    int responseCode = connection.getResponseCode();
-                    if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
-                        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                        String inputLine;
-                        StringBuffer response = new StringBuffer();
-                        while ((inputLine = in.readLine()) != null) {
-                            response.append(inputLine);
-                        }
-                        in.close();
-
-                    } else {
-                        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-                        String inputLine;
-                        StringBuffer response = new StringBuffer();
-                        while ((inputLine = in.readLine()) != null) {
-                            response.append(inputLine);
-                        }
-                        in.close();
-                        result = new JSONObject(response.toString());
-                    }
-
-                } catch (ConnectException e) {
-                    //Log.e(TAG, "ConnectException");
-                    e.printStackTrace();
-
-
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-
-                return result;
-            }
-
-            @Override
-            protected void onPostExecute(JSONObject jsonObject) {
-                super.onPostExecute(jsonObject);
-            }
-
-        }.execute();
-    }
-
-
-
-
-
-
 
 
     //------------------------------
@@ -1405,14 +1481,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 */
 
 
-
-
-
-
-
-
-
-
+    String str_h = "";
+    String str_mi = "";
 
     void showTime() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -1420,7 +1490,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h = hourOfDay;
                 mi = minute;
-                time_1.setText(h + ":" + mi);
+                str_h = String.valueOf(h);
+                str_mi = String.valueOf(mi);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_1.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1436,7 +1514,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h2 = hourOfDay;
                 mi2 = minute;
-                time_2.setText(h2 + ":" + mi2);
+                str_h = String.valueOf(h2);
+                str_mi = String.valueOf(mi2);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_2.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1452,7 +1538,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h3 = hourOfDay;
                 mi3 = minute;
-                time_3.setText(h3 + ":" + mi3);
+                str_h = String.valueOf(h3);
+                str_mi = String.valueOf(mi3);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_3.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1469,7 +1563,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h5 = hourOfDay;
                 mi5 = minute;
-                time_5.setText(h5 + ":" + mi5);
+                str_h = String.valueOf(h5);
+                str_mi = String.valueOf(mi5);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_5.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1485,7 +1587,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h6 = hourOfDay;
                 mi6 = minute;
-                time_6.setText(h6 + ":" + mi6);
+                str_h = String.valueOf(h6);
+                str_mi = String.valueOf(mi6);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_6.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1501,7 +1611,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h7 = hourOfDay;
                 mi7 = minute;
-                time_7.setText(h7 + ":" + mi7);
+                str_h = String.valueOf(h7);
+                str_mi = String.valueOf(mi7);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_7.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1517,7 +1635,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h = hourOfDay;
                 mi = minute;
-                time_1_2.setText(h + ":" + mi);
+                str_h = String.valueOf(h);
+                str_mi = String.valueOf(mi);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_1_2.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1533,7 +1659,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h2 = hourOfDay;
                 mi2 = minute;
-                time_2_2.setText(h2 + ":" + mi2);
+                str_h = String.valueOf(h2);
+                str_mi = String.valueOf(mi2);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_2_2.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1549,7 +1683,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h3 = hourOfDay;
                 mi3 = minute;
-                time_3_2.setText(h3 + ":" + mi3);
+                str_h = String.valueOf(h3);
+                str_mi = String.valueOf(mi3);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_3_2.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1566,7 +1708,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h5 = hourOfDay;
                 mi5 = minute;
-                time_5_2.setText(h5 + ":" + mi5);
+                str_h = String.valueOf(h5);
+                str_mi = String.valueOf(mi5);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_5_2.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1582,7 +1732,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h6 = hourOfDay;
                 mi6 = minute;
-                time_6_2.setText(h6 + ":" + mi6);
+                str_h = String.valueOf(h6);
+                str_mi = String.valueOf(mi6);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_6_2.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1598,7 +1756,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h7 = hourOfDay;
                 mi7 = minute;
-                time_7_2.setText(h7 + ":" + mi7);
+                str_h = String.valueOf(h7);
+                str_mi = String.valueOf(mi7);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_7_2.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1615,7 +1781,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h = hourOfDay;
                 mi = minute;
-                time_1_3.setText(h + ":" + mi);
+                str_h = String.valueOf(h);
+                str_mi = String.valueOf(mi);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_1_3.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1631,7 +1805,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h2 = hourOfDay;
                 mi2 = minute;
-                time_2_3.setText(h2 + ":" + mi2);
+                str_h = String.valueOf(h2);
+                str_mi = String.valueOf(mi2);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_2_3.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1647,7 +1829,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h3 = hourOfDay;
                 mi3 = minute;
-                time_3_3.setText(h3 + ":" + mi3);
+                str_h = String.valueOf(h3);
+                str_mi = String.valueOf(mi3);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_3_3.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1664,7 +1854,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h5 = hourOfDay;
                 mi5 = minute;
-                time_5_3.setText(h5 + ":" + mi5);
+                str_h = String.valueOf(h5);
+                str_mi = String.valueOf(mi5);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_5_3.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1680,7 +1878,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h6 = hourOfDay;
                 mi6 = minute;
-                time_6_3.setText(h6 + ":" + mi6);
+                str_h = String.valueOf(h6);
+                str_mi = String.valueOf(mi6);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_6_3.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1696,7 +1902,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h7 = hourOfDay;
                 mi7 = minute;
-                time_7_3.setText(h7 + ":" + mi7);
+                str_h = String.valueOf(h7);
+                str_mi = String.valueOf(mi7);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_7_3.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1713,7 +1927,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h = hourOfDay;
                 mi = minute;
-                time_1_4.setText(h + ":" + mi);
+                str_h = String.valueOf(h);
+                str_mi = String.valueOf(mi);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_1_4.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1729,7 +1951,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h2 = hourOfDay;
                 mi2 = minute;
-                time_2_4.setText(h2 + ":" + mi2);
+                str_h = String.valueOf(h2);
+                str_mi = String.valueOf(mi2);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_2_4.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1745,7 +1975,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h3 = hourOfDay;
                 mi3 = minute;
-                time_3_4.setText(h3 + ":" + mi3);
+                str_h = String.valueOf(h3);
+                str_mi = String.valueOf(mi3);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_3_4.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1762,7 +2000,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h5 = hourOfDay;
                 mi5 = minute;
-                time_5_4.setText(h5 + ":" + mi5);
+                str_h = String.valueOf(h5);
+                str_mi = String.valueOf(mi5);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_5_4.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1778,7 +2024,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h6 = hourOfDay;
                 mi6 = minute;
-                time_6_4.setText(h6 + ":" + mi6);
+                str_h = String.valueOf(h6);
+                str_mi = String.valueOf(mi6);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_6_4.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1794,7 +2048,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h7 = hourOfDay;
                 mi7 = minute;
-                time_7_4.setText(h7 + ":" + mi7);
+                str_h = String.valueOf(h7);
+                str_mi = String.valueOf(mi7);
+                if (str_h.length() == 1) {
+                    str_h = "0" + str_h;
+                }
+                if (str_mi.length() == 1) {
+                    str_mi = "0" + str_mi;
+                }
+                time_7_4.setText(str_h + ":" + str_mi);
             }
         }, 21, 12, true);
 
@@ -1835,13 +2097,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             return true;
         }
     }
-
-
-
-
-
-
-
 
 
     public void getRates(View view) {
@@ -1886,20 +2141,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         }
 
 
-
-
-
     }
 
     private class DownloadData extends AsyncTask<String, Void, String> {
-
-
-
-
-
-
-
-
 
 
         @Override
@@ -1930,12 +2174,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             } catch (Exception e) {
                 return null;
             }
-
-
-
-
-
-
 
 
         }
@@ -2112,7 +2350,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     }
 
 
-
                     ss = s.substring(136, 137);
                     if (ss.contains("1")) {
                         txt_sudong3.setText("수동");
@@ -2129,7 +2366,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         tabHost2_3.setCurrentTabByTag("t3");
                         S_led3_status = "3";
                     }
-
 
 
                     ss = s.substring(154, 155);
@@ -2194,6 +2430,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_1.setText(ss_4_1_1);
                             time_5.setText(ss_4_1_2);
+
+                            S_led1_info = ss.substring(0, 4) + "%26" + ss.substring(5, 9);
+
                         }
 
                         //두번째 줄에 출력
@@ -2204,6 +2443,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_2.setText(ss_4_2_1);
                             time_6.setText(ss_4_2_2);
+
+                            S_led1_info = S_led1_info + ", " + ss.substring(11, 15) + "%26" + ss.substring(16, 20);
                         }
 
                         //세번째 줄에 출력
@@ -2214,8 +2455,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_3.setText(ss_4_3_1);
                             time_7.setText(ss_4_3_2);
-                        }
 
+                            S_led1_info = S_led1_info + ", " + ss.substring(23, 27) + "%26" + ss.substring(28, 32);
+                        }
 
 
                     }
@@ -2247,6 +2489,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_1_2.setText(ss_4_1_1);
                             time_5_2.setText(ss_4_1_2);
+
+                            S_led2_info = ss.substring(0, 4) + "%26" + ss.substring(5, 9);
                         }
 
                         //두번째 줄에 출력
@@ -2257,6 +2501,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_2_2.setText(ss_4_2_1);
                             time_6_2.setText(ss_4_2_2);
+
+                            S_led2_info = S_led2_info + ", " + ss.substring(11, 15) + "%26" + ss.substring(16, 20);
                         }
 
                         //세번째 줄에 출력
@@ -2267,6 +2513,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_3_2.setText(ss_4_3_1);
                             time_7_2.setText(ss_4_3_2);
+
+                            S_led2_info = S_led2_info + ", " + ss.substring(23, 27) + "%26" + ss.substring(28, 32);
                         }
                     }
 
@@ -2281,11 +2529,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         S_led3_info = "off";
                         btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+                        S_led3_info = ss.substring(0, 4) + "%26" + ss.substring(5, 9);
                     }
                     if (ss.contains("on")) {
                         S_led3_info = "on";
                         btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
+
+
                     }
                     if (ss.contains("&")) {
 
@@ -2297,6 +2549,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_1_3.setText(ss_4_1_1);
                             time_5_3.setText(ss_4_1_2);
+
+                            S_led3_info = ss.substring(0, 4) + "%26" + ss.substring(5, 9);
                         }
 
                         //두번째 줄에 출력
@@ -2307,6 +2561,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_2_3.setText(ss_4_2_1);
                             time_6_3.setText(ss_4_2_2);
+
+                            S_led3_info = S_led3_info + ", " + ss.substring(11, 15) + "%26" + ss.substring(16, 20);
                         }
 
                         //세번째 줄에 출력
@@ -2317,6 +2573,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_3_3.setText(ss_4_3_1);
                             time_7_3.setText(ss_4_3_2);
+
+                            S_led3_info = S_led3_info + ", " + ss.substring(23, 27) + "%26" + ss.substring(28, 32);
                         }
                     }
 
@@ -2346,6 +2604,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_1_4.setText(ss_4_1_1);
                             time_5_4.setText(ss_4_1_2);
+
+                            S_led4_info = ss.substring(0, 4) + "%26" + ss.substring(5, 9);
                         }
 
                         //두번째 줄에 출력
@@ -2356,6 +2616,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_2_4.setText(ss_4_2_1);
                             time_6_4.setText(ss_4_2_2);
+
+                            S_led4_info = S_led3_info + ", " + ss.substring(11, 15) + "%26" + ss.substring(16, 20);
                         }
 
                         //세번째 줄에 출력
@@ -2366,6 +2628,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                             time_3_4.setText(ss_4_3_1);
                             time_7_4.setText(ss_4_3_2);
+
+                            S_led4_info = S_led3_info + ", " + ss.substring(23, 27) + "%26" + ss.substring(28, 32);
                         }
                     }
 
@@ -2427,13 +2691,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         ss5 = par_time;
 
 
-
                         chfText.setText(ss);
                         usdText.setText(ss2);
                         jpyText.setText(ss3);
                         tryText.setText(ss4);
 
-                        ss5 = ss5.substring(0,4) + "년" + ss5.substring(4,6) + "월" + ss5.substring(6,8) + "일" + ss5.substring(8,17);
+                        ss5 = ss5.substring(0, 4) + "년" + ss5.substring(4, 6) + "월" + ss5.substring(6, 8) + "일" + ss5.substring(8, 17);
 
 
                         par_reg_time.setText(ss5);
@@ -2453,7 +2716,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         String led3 = jo.getString("led3");
                         String led4 = jo.getString("led4");
                         String led_times = jo.getString("reg_time");
-
 
 
                         Log.i("My Tags", led1);
@@ -2494,7 +2756,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
 
 
-
                         cadText.setText(ss5);
                         ledText.setText(ss6);
                         ledText3.setText(ss7);
@@ -2506,7 +2767,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         LED_on_off_4.setText(ss8);
 
                         ss9 = led_times;
-                        ss9 = ss9.substring(0,4) + "년" + ss9.substring(4,6) + "월" + ss9.substring(6,8) + "일" + ss9.substring(8,17);
+                        ss9 = ss9.substring(0, 4) + "년" + ss9.substring(4, 6) + "월" + ss9.substring(6, 8) + "일" + ss9.substring(8, 17);
                         led_reg_time.setText(ss9);
 
 /*                        LED_on_off.setText(ss5);
@@ -2760,9 +3021,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     }
 
 
-
-
-
     @Override
     public void onCancelled() {
         //Nothing
@@ -2863,5 +3121,121 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 }
             }
         }
+    }
+
+    private void HttpPost() {
+
+        new AsyncTask<Void, Void, JSONObject>() {
+
+            @Override
+            protected JSONObject doInBackground(Void... voids) {
+
+                JSONObject result = null;
+                try {
+                    URL url = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData");
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                    connection.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+                    connection.setRequestMethod("POST");
+                    connection.setDoInput(true);
+                    connection.setDoOutput(true);
+                    connection.setUseCaches(false);
+                    connection.setConnectTimeout(15000);
+
+                    OutputStreamWriter wr = new OutputStreamWriter(connection.getOutputStream());
+
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put("reg_time", S_reg_time);
+                    map.put("eq_num", "ABC001");
+/*                    map.put("led1_status",S_led1_status);
+                    map.put("led2_status",S_led2_status);
+                    map.put("led3_status",S_led3_status);
+                    map.put("led4_status",S_led4_status);
+                    map.put("led1_info",S_led1_info);
+                    map.put("led2_info",S_led2_info);
+                    map.put("led3_info",S_led3_info);
+                    map.put("led4_info",S_led4_info);*/
+
+                    map.put("led1_status", S_led1_status);
+                    map.put("led2_status", S_led2_status);
+                    map.put("led3_status", S_led3_status);
+                    map.put("led4_status", S_led4_status);
+                    map.put("led1_info", S_led1_info);
+                    map.put("led2_info", S_led2_info);
+                    map.put("led3_info", S_led3_info);
+                    map.put("led4_info", S_led4_info);
+
+                    StringBuffer sbParams = new StringBuffer();
+
+                    Log.i("world", "hihi");
+
+                    boolean isAnd = false;
+
+                    for (String key : map.keySet()) {
+
+                        if (isAnd)
+
+                            sbParams.append("&");
+
+
+                        sbParams.append(key).append("=").append(map.get(key));
+
+                        if (!isAnd)
+
+                            if (map.size() >= 2)
+
+                                isAnd = true;
+
+                    }
+
+
+                    wr.write(sbParams.toString());
+
+                    wr.flush();
+
+                    wr.close();
+
+                    int responseCode = connection.getResponseCode();
+                    if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
+                        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                        String inputLine;
+                        StringBuffer response = new StringBuffer();
+                        while ((inputLine = in.readLine()) != null) {
+                            response.append(inputLine);
+                        }
+                        in.close();
+
+                    } else {
+                        Log.e("world", "ConnectException");
+                        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
+                        String inputLine;
+                        StringBuffer response = new StringBuffer();
+                        while ((inputLine = in.readLine()) != null) {
+                            response.append(inputLine);
+                        }
+                        in.close();
+                        result = new JSONObject(response.toString());
+                    }
+
+                } catch (ConnectException e) {
+                    //Log.e(TAG, "ConnectException");
+                    e.printStackTrace();
+                    Log.e("world", "ConnectException");
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.e("world", "ConnectException");
+                }
+
+                return result;
+            }
+
+            @Override
+            protected void onPostExecute(JSONObject jsonObject) {
+                super.onPostExecute(jsonObject);
+            }
+
+        }.execute();
     }
 }
