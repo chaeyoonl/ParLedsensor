@@ -412,13 +412,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_1();
-                //tabHost.setCurrentTabByTag("4");
-                //onRestart();
 
-
-                //led1_status = 1
-
-                //HttpPostData();   // 서버와 자료 주고받기
 
             }
         });
@@ -440,14 +434,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     tempss2 = time_5.getText().toString();
                     tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
                     tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
-                    //tempss2 = "261400";
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    //S_led1_info = ssss;
-                    //S_led1_info = "1200%261335";
+
                 }
                 if (time_2.getText().toString().contains(":")) {
                     tempss = time_2.getText().toString();
@@ -480,10 +472,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_1();
-                //tabHost.setCurrentTabByTag("4");
-                //onRestart();
 
-                //led1_status = 2
 
 
             }
@@ -505,10 +494,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_2();
-                //tabHost.setCurrentTabByTag("4");
-                //onRestart();
 
-                //led2_status = 1
 
 
             }
@@ -532,14 +518,11 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     tempss2 = time_5_2.getText().toString();
                     tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
                     tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
-                    //tempss2 = "261400";
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    //S_led1_info = ssss;
-                    //S_led1_info = "1200%261335";
                 }
                 if (time_2_2.getText().toString().contains(":")) {
                     tempss = time_2_2.getText().toString();
@@ -573,10 +556,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_2();
-                //tabHost.setCurrentTabByTag("4");
-                //onRestart();
 
-                //led2_status = 2
 
 
             }
@@ -598,10 +578,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_3();
-                //tabHost.setCurrentTabByTag("4");
-                //onRestart();
 
-                //led3_status = 1
 
 
             }
@@ -625,14 +602,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     tempss2 = time_5_3.getText().toString();
                     tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
                     tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
-                    //tempss2 = "261400";
+
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    //S_led1_info = ssss;
-                    //S_led1_info = "1200%261335";
+
                 }
                 if (time_2_3.getText().toString().contains(":")) {
                     tempss = time_2_3.getText().toString();
@@ -665,10 +641,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_3();
-                //tabHost.setCurrentTabByTag("4");
-                //onRestart();
 
-                //led3_status = 2
 
 
             }
@@ -690,10 +663,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_4();
-                //tabHost.setCurrentTabByTag("4");
-                //onRestart();
 
-                //led4_status = 1
 
 
             }
@@ -717,14 +687,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     tempss2 = time_5_4.getText().toString();
                     tempss = tempss.substring(0, 2) + tempss.substring(3, 5) + "%26";
                     tempss2 = tempss2.substring(0, 2) + tempss2.substring(3, 5);
-                    //tempss2 = "261400";
+
 
                     ssss = tempss + tempss2;
 
                     Log.i("S_timer", ssss);
 
-                    //S_led1_info = ssss;
-                    //S_led1_info = "1200%261335";
+
                 }
                 if (time_2_4.getText().toString().contains(":")) {
                     tempss = time_2_4.getText().toString();
@@ -759,10 +728,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_4();
-                //tabHost.setCurrentTabByTag("4");
-                //onRestart();
 
-                //led4_status = 2
 
 
             }
@@ -771,55 +737,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
 
-
-
-/*        //////////////////////////////////////
-
-        final int[] selectedItem = {0};
-        final String[] items = new String[]{"1구역", "2구역", "3구역", "4구역"};
-
-        btn_section = (Button) findViewById(R.id.btn_section);
-        btn_section.setText(items[selectedItem[0]]);
-        btn_section.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-
-                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                dialog.setTitle("구역을 선택하시오.")
-                        .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                selectedItem[0] = which;
-
-                            }
-                        })
-                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                                Toast.makeText(MainActivity.this
-                                        , items[selectedItem[0]]
-                                        , Toast.LENGTH_SHORT).show();
-
-                                btn_section.setText(items[selectedItem[0]]);
-                            }
-                        })
-                        .setNeutralButton("취소", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(MainActivity.this
-                                        , " 취소 버튼을 눌렀습니다."
-                                        , Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                dialog.create();
-                dialog.show();
-
-
-            }
-        });*/
 
         ////////////////////////////////////
 
@@ -2311,9 +2228,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 JSONArray jsonArray5 = null;
                 JSONArray jsonArray7 = null;
 
-/*                if (txt_su == 0) {
-                    jsonArray6 = new JSONArray(s);
-                }*/
+
 
 
                 if (ih == 0) {
@@ -2636,7 +2551,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape);
                         btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
 
-                        S_led3_info = ss.substring(0, 4) + "%26" + ss.substring(5, 9);
+
                     }
                     if (ss.contains("on")) {
                         S_led3_info = "on";
@@ -2959,164 +2874,18 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 }
                 if (check_day == 1) {
-                    /*for (int i = 0; i < jsonArray4.length(); i++) {
+                    Log.i("check_day", "check_day clicked");
 
-
-
-
-                        JSONObject jo = jsonArray4.getJSONObject(i);
-
-
-                        String par1_avg = jo.getString("par1_avg");
-                        String par2_avg = jo.getString("par2_avg");
-                        String par3_avg = jo.getString("par3_avg");
-                        String par4_avg = jo.getString("par4_avg");
-                        String reg_time = jo.getString("reg_time");
-
-                        if (i == 0) {
-                            show_date_par_date_first.setText(reg_time.substring(0,10));
-                        }
-
-                        ss = reg_time.substring(11,13) + "시" + "\n";
-                        ss2 = par1_avg + "\n";
-                        ss3 = par2_avg + "\n";
-                        ss4 = par3_avg + "\n";
-                        ss5 = par4_avg + "\n";
-
-
-
-                        show_date_par_date.setText(show_date_par_date.getText().toString() + ss); //시간
-                        show_date_par.setText(show_date_par.getText().toString() + ss2);    //Par1
-                        show_date_par2.setText(show_date_par2.getText().toString() + ss3);  //Par2
-                        show_date_par3.setText(show_date_par3.getText().toString() + ss4);  //Par3
-                        show_date_par4.setText(show_date_par4.getText().toString() + ss5);  //Par4
-
-
-                        Log.i("MyTag", "parser start");
-                        Log.i("My Tag", ss);
-
-                    }
-
-
-
-
-
-
-
-                    check_day = 0;*/
                 }
                 if (check_day == 2) {
                     Log.i("check_day", "check_day clicked");
-                    /*for (int i = 0; i < jsonArray5.length(); i++) {
-                        Log.i("check_day", String.valueOf(jsonArray5.length()));
 
 
-
-                        JSONObject jo = jsonArray5.getJSONObject(i);
-
-
-                        String par1_avg = jo.getString("par1_sum");
-                        String par2_avg = jo.getString("par2_sum");
-                        String par3_avg = jo.getString("par3_sum");
-                        String par4_avg = jo.getString("par4_sum");
-                        String reg_time = jo.getString("reg_time");
-
-                        if (i == 0) {
-                            show_date_par_date_first.setText(reg_time.substring(0,10));
-                        }
-
-                        ss = reg_time.substring(0,10) + "\n";
-                        ss2 = par1_avg + "\n";
-                        ss3 = par2_avg + "\n";
-                        ss4 = par3_avg + "\n";
-                        ss5 = par4_avg + "\n";
-
-                        //ss5 = led1;
-                        //System.out.println("base:" + ss);
-
-                        Log.i("MyTagss", show_date_par.getText().toString() + ss2);
-                        show_date_par_date.setText(show_date_par_date.getText().toString() + ss); //시간
-                        show_date_par.setText(show_date_par.getText().toString() + ss2);    //Par1
-                        show_date_par2.setText(show_date_par2.getText().toString() + ss3);  //Par2
-                        show_date_par3.setText(show_date_par3.getText().toString() + ss4);  //Par3
-                        show_date_par4.setText(show_date_par4.getText().toString() + ss5);  //Par4
-
-                        //cadText.setText(ss5);
-                        Log.i("MyTag", "parser start");
-                        Log.i("My Tag", ss);
-
-                    }
-
-
-                    check_day = 0;*/
                 }
 
                 ih++;
 
-                /*if (txt_su == 1) {
-                    Log.i("MyTag", "txt_su 시작");
-                    //txt_sudong.setText("ss");
-                    int sususu = jsonArray7.length();
-                    Log.i("MyTag", String.valueOf(sususu));
-                    for (int i = 0; i < jsonArray7.length(); i++) {
-                        JSONObject jo = jsonArray7.getJSONObject(i);
 
-                        String led1_status = jo.getString("led1_status");
-                        String led2_status = jo.getString("led2_status");
-                        String led3_status = jo.getString("led3_status");
-                        String led4_status = jo.getString("led4_status");
-
-
-
-
-                        ss = led1_status;
-                        ss2 = led2_status;
-                        ss3 = led3_status;
-                        ss4 = led4_status;
-
-
-
-
-
-                        txt_sudong.setText("ss");
-                        txt_sudong2.setText(ss2);
-                        txt_sudong3.setText(ss3);
-                        txt_sudong4.setText(ss4);
-                        Log.i("txt_sudong", ss);
-
-
-                        Log.i("MyTag", "parser start");
-                        Log.i("My Tag", ss);
-                        Log.i("My Tag", "txt시작시작");
-                    }
-                }
-*/
-
-
-
-
-/*
-
-                JSONObject jsonObject = new JSONObject(s);
-                String base = jsonObject.getString("base");
-                //System.out.println("base:" + base);
-
-                String rates = jsonObject.getString("rates");
-                //System.out.print("rates:" + rates);
-
-                JSONObject jsonObject1 = new JSONObject(rates);
-                String turkishLira = jsonObject1.getString("TRY");
-                tryText.setText("TRY: " + turkishLira);
-                String usd = jsonObject1.getString("USD");
-                usdText.setText("USD: " + usd);
-                String cad = jsonObject1.getString("CAD");
-                cadText.setText("CAD: " + cad);
-                String chf = jsonObject1.getString("CHF");
-                chfText.setText("CHF: " + chf);
-                String jpy = jsonObject1.getString("JPY");
-                jpyText.setText("JPY: " + jpy);
-
-*/
 
             } catch (Exception e) {
 
