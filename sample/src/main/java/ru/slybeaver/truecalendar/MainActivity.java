@@ -1032,7 +1032,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         DownloadData downloadData5 = new DownloadData();
                         try {
                             //시간에 따른 parsensor값
-                            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListMon?strDate=2021" + strMonth;
+                            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListMon?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35&strDate=2021" + strMonth;
                             downloadData5.execute(url);
                             Log.i("MyTag_check_day", url);
                         } catch (Exception e) {
@@ -1366,7 +1366,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     {
         try {
-            urls = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData");
+            urls = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35");
 
             HttpURLConnection connection = (HttpURLConnection) urls.openConnection();
             connection.setRequestMethod("POST"); //전송방식
@@ -2130,7 +2130,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         try {
-            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParData";
+            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
             downloadData.execute(url);
 
         } catch (Exception e) {
@@ -2139,7 +2139,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         try {
 
-            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getLedData";
+            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getLedData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
             downloadData2.execute(url);
         } catch (Exception e) {
             Log.i("MyTag", "Fail");
@@ -2148,7 +2148,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         try {
             //시간에 따른 parsensor값
-            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListData";
+            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
             downloadData3.execute(url);
         } catch (Exception e) {
             Log.i("MyTag", "Fail");
@@ -2156,7 +2156,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         try {
             //시간에 따른 parsensor값
-            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getLedSetData";
+            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getLedSetData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
             downloadData6.execute(url);
             Log.i("MyTag_URL", "URL");
         } catch (Exception e) {
@@ -2934,7 +2934,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 DownloadData downloadData4 = new DownloadData();
                 try {
                     //시간에 따른 parsensor값
-                    String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?strDate=" + strDate + "&endDate=" + strDate;
+                    String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35&strDate=" + strDate + "&endDate=" + strDate;
                     downloadData4.execute(url);
                     Log.i("MyTag_check_day", "success");
                 } catch (Exception e) {
@@ -2988,7 +2988,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 DownloadData downloadData4 = new DownloadData();
                 try {
                     //시간에 따른 parsensor값
-                    String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?strDate=" + strDate + "&endDate=" + endDate;
+                    String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35&strDate=" + strDate + "&endDate=" + endDate;
                     downloadData4.execute(url);
                     Log.i("MyTag_check_day", "success");
                 } catch (Exception e) {
@@ -3007,7 +3007,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 JSONObject result = null;
                 try {
-                    URL url = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData");
+                    URL url = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                     connection.setRequestProperty("content-type", "application/x-www-form-urlencoded");
