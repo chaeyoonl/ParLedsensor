@@ -2408,7 +2408,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     Log.i("10tests", s);
 
 
-                    ss = s.substring(64, 83);
+                    ss = s.substring(13, 32);
                     txt_1_time.setText(ss);
                     txt_2_time.setText(ss);
                     txt_3_time.setText(ss);
