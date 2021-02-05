@@ -201,7 +201,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         // 년월일시분초 14자리 포멧
         SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
         S_reg_time = fourteen_format.format(date_now);
-        int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*        String teststr = S_reg_time.substring(4,6);
+        int iii = Integer.parseInt(teststr);
+        iii = iii - 9;
+        teststr = Integer.toString(iii);
+        S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+        int temp = Integer.parseInt(S_reg_time.substring(8, 10));
         S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
         Log.i("S_reg_time", S_reg_time);
 
@@ -404,6 +410,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         btn_sul4_1 = (Button) findViewById(R.id.btn_sul_4_1);
         btn_sul4_2 = (Button) findViewById(R.id.btn_sul_4_2);
 
+
+
         //1구역_수동_설정버튼 눌렀을 경우
         btn_sul1_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -413,7 +421,15 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*                String teststr = S_reg_time.substring(4,6);
+                int iii = Integer.parseInt(teststr);
+                iii = iii - 9;
+                teststr = Integer.toString(iii);
+                S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+
+
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10));
                 S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
@@ -434,7 +450,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*                String teststr = S_reg_time.substring(4,6);
+                int iii = Integer.parseInt(teststr);
+                iii = iii - 9;
+                teststr = Integer.toString(iii);
+                S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10));
                 S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
@@ -495,7 +517,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*                String teststr = S_reg_time.substring(4,6);
+                int iii = Integer.parseInt(teststr);
+                iii = iii - 9;
+                teststr = Integer.toString(iii);
+                S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10));
                 S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
@@ -517,7 +545,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*                String teststr = S_reg_time.substring(4,6);
+                int iii = Integer.parseInt(teststr);
+                iii = iii - 9;
+                teststr = Integer.toString(iii);
+                S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10));
                 S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
@@ -579,7 +613,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*                String teststr = S_reg_time.substring(4,6);
+                int iii = Integer.parseInt(teststr);
+                iii = iii - 9;
+                teststr = Integer.toString(iii);
+                S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10));
                 S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
@@ -601,7 +641,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*                String teststr = S_reg_time.substring(4,6);
+                int iii = Integer.parseInt(teststr);
+                iii = iii - 9;
+                teststr = Integer.toString(iii);
+                S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10));
                 S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
@@ -664,7 +710,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*                String teststr = S_reg_time.substring(4,6);
+                int iii = Integer.parseInt(teststr);
+                iii = iii - 9;
+                teststr = Integer.toString(iii);
+                S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10));
                 S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
@@ -686,7 +738,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 // 년월일시분초 14자리 포멧
                 SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
                 S_reg_time = fourteen_format.format(date_now);
-                int temp = Integer.parseInt(S_reg_time.substring(8, 10)) + 9;
+/*                String teststr = S_reg_time.substring(4,6);
+                int iii = Integer.parseInt(teststr);
+                iii = iii - 9;
+                teststr = Integer.toString(iii);
+                S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
+
+                int temp = Integer.parseInt(S_reg_time.substring(8, 10));
                 S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
                 Log.i("S_reg_time", S_reg_time);
 
@@ -3064,6 +3122,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     StringBuffer sbParams = new StringBuffer();
 
                     Log.i("world", "hihi");
+                    Log.i("regtimetest", S_reg_time);
 
                     boolean isAnd = false;
 
