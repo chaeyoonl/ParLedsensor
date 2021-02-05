@@ -820,7 +820,23 @@
                                             </LinearLayout>
 
                                         </LinearLayout>
-
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="2.5"
+                                            android:background="@color/colorWhite"
+                                            android:orientation="horizontal"
+                                            >
+                                            <TextView
+                                                android:gravity="center"
+                                                android:background="@drawable/btn_time_shape"
+                                                android:id="@+id/txt_1_time"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:text="text"
+                                                android:textColor="@color/colorBlack"
+                                                android:textSize="20dp"/>
+                                        </LinearLayout>
                                         <!--   나누는 부분         -->
 
                                         <LinearLayout
@@ -979,7 +995,7 @@
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
                                                                 android:orientation="vertical"
-                                                                android:padding="16dp">
+                                                                android:padding="13dp">
 
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
@@ -1444,6 +1460,7 @@
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
                                                     android:layout_weight="0.9" />
+
                                             </LinearLayout>
 
                                             <LinearLayout
@@ -1480,10 +1497,28 @@
                                             </LinearLayout>
 
                                         </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="2.5"
+                                        android:background="@color/colorWhite"
+                                        android:orientation="horizontal"
+                                        >
+                                        <TextView
+                                            android:gravity="center"
+                                            android:background="@drawable/btn_time_shape"
+                                            android:id="@+id/txt_2_time"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:text="text"
+                                            android:textColor="@color/colorBlack"
+                                            android:textSize="20dp"/>
+                                    </LinearLayout>
 
                                         <!--   나누는 부분         -->
 
                                         <LinearLayout
+
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
@@ -1639,7 +1674,7 @@
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
                                                                 android:orientation="vertical"
-                                                                android:padding="16dp">
+                                                                android:padding="13dp">
 
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
@@ -2139,10 +2174,27 @@
                                             </LinearLayout>
 
                                         </LinearLayout>
-
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="2.5"
+                                            android:background="@color/colorWhite"
+                                            android:orientation="horizontal"
+                                            >
+                                            <TextView
+                                                android:gravity="center"
+                                                android:background="@drawable/btn_time_shape"
+                                                android:id="@+id/txt_3_time"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:text="text"
+                                                android:textColor="@color/colorBlack"
+                                                android:textSize="20dp"/>
+                                        </LinearLayout>
                                         <!--   나누는 부분         -->
 
                                         <LinearLayout
+
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
@@ -2298,7 +2350,7 @@
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
                                                                 android:orientation="vertical"
-                                                                android:padding="16dp">
+                                                                android:padding="13dp">
 
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"
@@ -2739,6 +2791,7 @@
                                                 android:orientation="vertical">
 
                                                 <TextView
+
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
                                                     android:layout_gravity="center"
@@ -2798,7 +2851,23 @@
                                             </LinearLayout>
 
                                         </LinearLayout>
-
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="2.5"
+                                            android:background="@color/colorWhite"
+                                            android:orientation="horizontal"
+                                            >
+                                            <TextView
+                                                android:gravity="center"
+                                                android:background="@drawable/btn_time_shape"
+                                                android:id="@+id/txt_4_time"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:text="text"
+                                                android:textColor="@color/colorBlack"
+                                                android:textSize="20dp"/>
+                                        </LinearLayout>
                                         <!--   나누는 부분         -->
 
                                         <LinearLayout
@@ -2958,7 +3027,7 @@
                                                                 android:layout_weight="8.5"
                                                                 android:background="@color/colorWhite"
                                                                 android:orientation="vertical"
-                                                                android:padding="16dp">
+                                                                android:padding="13dp">
 
                                                                 <LinearLayout
                                                                     android:layout_width="match_parent"

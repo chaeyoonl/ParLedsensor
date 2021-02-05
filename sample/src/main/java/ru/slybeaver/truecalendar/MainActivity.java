@@ -1,5 +1,6 @@
 package ru.slybeaver.truecalendar;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -114,6 +115,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     TextView LED_on_off, LED_on_off_2, LED_on_off_3, LED_on_off_4;
 
+    TextView txt_1_time, txt_2_time, txt_3_time, txt_4_time;
+
     Button btn_sul1_1, btn_sul1_2, btn_sul2_1, btn_sul2_2, btn_sul3_1, btn_sul3_2, btn_sul4_1, btn_sul4_2;
 
 
@@ -159,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     private WebView webView;
     private String url = "http://yakyong.dataponic.site/dataponic_ALC/login/check?userId=test&passwd=test";
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -216,6 +220,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         par_reg_time = (TextView) findViewById(R.id.par_reg_time);
         led_reg_time = (TextView) findViewById(R.id.led_reg_time);
+
+        ///////////
+        txt_1_time = (TextView) findViewById(R.id.txt_1_time);
+        txt_2_time = (TextView) findViewById(R.id.txt_2_time);
+        txt_3_time = (TextView) findViewById(R.id.txt_3_time);
+        txt_4_time = (TextView) findViewById(R.id.txt_4_time);
 
 
         //자동로그인 하기위해서 쿠키값 onResume, OnPeuse에도 있음
@@ -2330,10 +2340,30 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 }
                 if (txt_su == 1) {
-                    /*jsonArray7 = new JSONArray(s);
-                    int sususu = jsonArray7.length();
-                    Log.i("MyTag_SU", String.valueOf(sususu));*/
-                    //jsonArray7 = new JSONArray(s);
+
+
+
+
+
+
+
+                    Log.i("10tests", s);
+
+
+                    ss = s.substring(64, 83);
+                    txt_1_time.setText(ss);
+                    txt_2_time.setText(ss);
+                    txt_3_time.setText(ss);
+                    txt_4_time.setText(ss);
+
+
+
+
+
+
+
+
+
                     //수동, 타이머, 자동 부분
                     ss = s.substring(100, 101);
                     if (ss.contains("1")) {
