@@ -127,6 +127,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     String ssss, ssss2, ssss3;
     String tempss, tempss2;
 
+    static int countss = 0;
+
 
     String S_timer_1_1, S_timer_1_2, S_timer_2_1, S_timer_2_2, S_timer_3_1, S_timer_3_2;
 
@@ -3098,6 +3100,9 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     URL url = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
+                    countss++;
+                    Log.i("countss", String.valueOf(countss));
+
                     connection.setRequestProperty("content-type", "application/x-www-form-urlencoded");
                     connection.setRequestMethod("POST");
                     connection.setDoInput(true);
@@ -3109,7 +3114,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                     HashMap<String, String> map = new HashMap<>();
                     map.put("reg_time", S_reg_time);
-                    map.put("eq_num", "ABC001");
+                    map.put("eq_num", "CJU001");
                     map.put("led1_status", S_led1_status);
                     map.put("led2_status", S_led2_status);
                     map.put("led3_status", S_led3_status);
@@ -3159,9 +3164,10 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                             response.append(inputLine);
                         }
                         in.close();
+                        Log.i("world", "success");
 
                     } else {
-                        Log.e("world", "ConnectException");
+                        Log.e("world", "ConnectException_1");
                         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
                         String inputLine;
                         StringBuffer response = new StringBuffer();
@@ -3175,12 +3181,12 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 } catch (ConnectException e) {
                     //Log.e(TAG, "ConnectException");
                     e.printStackTrace();
-                    Log.e("world", "ConnectException");
+                    Log.e("world", "ConnectException_2");
 
 
                 } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.e("world", "ConnectException");
+                    //e.printStackTrace();
+                    Log.e("world", "ConnectException_3");
                 }
 
                 return result;
