@@ -2744,7 +2744,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         }
                     }
 
-
+                    txt_su = 0;
                 }
 
 
