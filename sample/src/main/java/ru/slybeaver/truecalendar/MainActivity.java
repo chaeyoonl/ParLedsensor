@@ -68,7 +68,9 @@ import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
+    //앞 주소 값
     String HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/";
+    //키값
     String KeyValue = "servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
     String S_reg_time;
     String S_led1_status;
@@ -159,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     Button btnShowCalendar, btn_section, time_1, time_2, time_3, time_4, time_5, time_6, time_7, time_8, time_1_2, time_2_2, time_3_2, time_4_2, time_5_2, time_6_2, time_7_2, time_8_2, time_1_3, time_2_3, time_3_3, time_4_3, time_5_3, time_6_3, time_7_3, time_8_3, time_1_4, time_2_4, time_3_4, time_4_4, time_5_4, time_6_4, time_7_4, time_8_4, set_light, set_LED, btn_year, btn_month, btn_day, set_light_2, set_LED_2, set_light_3, set_LED_3, set_light_4, set_LED_4;
 
+    //ALC webview 부분
     private WebView webView;
     private String url = "http://yakyong.dataponic.site/dataponic_ALC/login/check?userId=test&passwd=test";
 
@@ -241,6 +244,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost = (TabHost) findViewById(R.id.tabhost1);
         tabHost.setup();
 
+        //메인, 조회, ALC, 제어 TabHost 부분
         TabHost.TabSpec tab1 = tabHost.newTabSpec("1").setContent(R.id.tab1).setIndicator("메인");
 
         TabHost.TabSpec tab2 = tabHost.newTabSpec("2").setContent(R.id.tab2).setIndicator("조회");
@@ -308,8 +312,10 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         //tabHost.setCurrentTabByTag("1");
 
         /////////////////////////////////////
+        //1구역, 수동/타이머/자동
         tabHost2 = (TabHost) findViewById(R.id.tabhost2);
         tabHost2.setup();
+
 
         final TabHost.TabSpec tab_sub1 = tabHost2.newTabSpec("t1").setContent(R.id.tab_sub1).setIndicator("수동");
 
@@ -324,6 +330,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         /////////////////////////////////////
+        //2구역, 수동/타이머/자동
         tabHost2_2 = (TabHost) findViewById(R.id.tabhost2_2);
         tabHost2_2.setup();
 
@@ -339,6 +346,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost2_2.addTab(tab_sub3_2);
 
         /////////////////////////////////////
+        //3구역, 수동/타이머/자동
         tabHost2_3 = (TabHost) findViewById(R.id.tabhost2_3);
         tabHost2_3.setup();
 
@@ -354,6 +362,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         tabHost2_3.addTab(tab_sub3_3);
 
         /////////////////////////////////////
+        //4구역, 수동/타이머/자동
         tabHost2_4 = (TabHost) findViewById(R.id.tabhost2_4);
         tabHost2_4.setup();
 
@@ -370,6 +379,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         /////////////////////////////////////
+        //1,2,3,4구역
         tabHost3 = (TabHost) findViewById(R.id.tabhost3);
         tabHost3.setup();
 
@@ -393,15 +403,19 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         설정버튼 제어부분
          */
 
+        //1구역
         btn_sul1_1 = (Button) findViewById(R.id.btn_sul_1_1);
         btn_sul1_2 = (Button) findViewById(R.id.btn_sul_1_2);
 
+        //2구역
         btn_sul2_1 = (Button) findViewById(R.id.btn_sul_2_1);
         btn_sul2_2 = (Button) findViewById(R.id.btn_sul_2_2);
 
+        //3구역
         btn_sul3_1 = (Button) findViewById(R.id.btn_sul_3_1);
         btn_sul3_2 = (Button) findViewById(R.id.btn_sul_3_2);
 
+        //4구역
         btn_sul4_1 = (Button) findViewById(R.id.btn_sul_4_1);
         btn_sul4_2 = (Button) findViewById(R.id.btn_sul_4_2);
 
@@ -790,7 +804,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         ////////////////////////////////////
-
+        //클릭시 시간 설정 함수로 넘어가는 부분_1구역
         time_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -850,7 +864,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         ////////////////////////////////////
-
+        //클릭시 시간 설정 함수로 넘어가는 부분_2구역
         time_1_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -909,7 +923,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         ////////////////////////////////////
-
+        //클릭시 시간 설정 함수로 넘어가는 부분_3구역
         time_1_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -968,7 +982,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         ////////////////////////////////////
-
+        //클릭시 시간 설정 함수로 넘어가는 부분_4구역
         time_1_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1025,7 +1039,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         });
 
-
+        //조회/년도 클릭시
         btn_year = (Button) findViewById(R.id.btn_year);
         btn_year.setOnClickListener(new View.OnClickListener() {
 
@@ -1053,7 +1067,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
 
-
+        //년도/월 클릭시
         btn_month = (Button) findViewById(R.id.btn_month);
         btn_month.setOnClickListener(new View.OnClickListener() {
 
@@ -1100,7 +1114,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
 
-
+        //조회/일 클릭시
         btn_day = (Button) findViewById(R.id.btn_day);
         btn_day.setOnClickListener(new View.OnClickListener() {
 
@@ -1114,7 +1128,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
 
-
+        //ui 변수 선언부분
         tryText = findViewById(R.id.tryText);
         cadText = findViewById(R.id.cadText);
         usdText = findViewById(R.id.usdText);
@@ -1165,6 +1179,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         btn_bulb1.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
         btn_bulb2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
 
+        //1구역 전구 버튼 클릭시
         btn_bulb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1199,6 +1214,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         btn_bulb1_2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
         btn_bulb2_2.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
 
+        //2구역 전구 버튼 클릭시
         btn_bulb1_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1232,6 +1248,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         btn_bulb1_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
         btn_bulb2_3.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
 
+        //3구역 전구 버튼 클릭시
         btn_bulb1_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1265,6 +1282,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         btn_bulb1_4.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
         btn_bulb2_4.setBackgroundResource(R.drawable.btn_bulb_shape_dark);
 
+        //4구역 전구 버튼 클릭시
         btn_bulb1_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1290,6 +1308,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
         ////////////////////////////
+        //1구역/자동 입력 부분
         set_light = (Button) findViewById(R.id.set_light);
         final Button main_label = (Button) findViewById(R.id.set_light);
         set_light.setOnClickListener(new View.OnClickListener() {
@@ -1320,6 +1339,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
 
+        //2구역/자동 입력 부분
         set_light_2 = (Button) findViewById(R.id.set_light_2);
         final Button main_label_2 = (Button) findViewById(R.id.set_light_2);
         set_light_2.setOnClickListener(new View.OnClickListener() {
@@ -1350,6 +1370,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
 
+        //3구역/자동 입력 부분
         set_light_3 = (Button) findViewById(R.id.set_light_3);
         final Button main_label_3 = (Button) findViewById(R.id.set_light_3);
         set_light_3.setOnClickListener(new View.OnClickListener() {
@@ -1380,7 +1401,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
             }
         });
 
-
+        //4구역/자동 입력 부분
         set_light_4 = (Button) findViewById(R.id.set_light_4);
         final Button main_label_4 = (Button) findViewById(R.id.set_light_4);
         set_light_4.setOnClickListener(new View.OnClickListener() {
@@ -1417,6 +1438,7 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     URL urls;
 
     {
+
         try {
             //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
             urls = new URL(HttpValue + "putLedSetData?" + KeyValue);

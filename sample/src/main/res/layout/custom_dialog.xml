@@ -11,7 +11,7 @@
         android:layout_height="60dp"
         android:background="#92CDFF"
         android:gravity="center"
-        android:text="커스텀 다이얼로그"
+        android:text="내용 입력"
         android:textColor="#ffffff"
         android:textSize="16dp" />
 
