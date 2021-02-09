@@ -132,17 +132,13 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     static int countss = 0;
 
 
-    String S_timer_1_1, S_timer_1_2, S_timer_2_1, S_timer_2_2, S_timer_3_1, S_timer_3_2;
-
-
-    Button btnYearMonthPicker;
-
     DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
             Log.d("YearMonthPickerTest", "year = " + year + ", month = " + monthOfYear + ", day = " + dayOfMonth);
         }
     };
+
 
     String ss = "";
     String ss2 = "";
@@ -205,11 +201,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         // 년월일시분초 14자리 포멧
         SimpleDateFormat fourteen_format = new SimpleDateFormat("yyyyMMddHHmmss");
         S_reg_time = fourteen_format.format(date_now);
-/*        String teststr = S_reg_time.substring(4,6);
-        int iii = Integer.parseInt(teststr);
-        iii = iii - 9;
-        teststr = Integer.toString(iii);
-        S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
 
         int temp = Integer.parseInt(S_reg_time.substring(8, 10));
         S_reg_time = S_reg_time.substring(0, 8) + Integer.toString(temp) + S_reg_time.substring(10, 14);
@@ -415,7 +406,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         btn_sul4_2 = (Button) findViewById(R.id.btn_sul_4_2);
 
 
-
         //1구역_수동_설정버튼 눌렀을 경우
         btn_sul1_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -430,7 +420,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 iii = iii - 9;
                 teststr = Integer.toString(iii);
                 S_reg_time = S_reg_time.substring(0,4) + teststr + S_reg_time.substring(6,14);*/
-
 
 
                 int temp = Integer.parseInt(S_reg_time.substring(8, 10));
@@ -510,7 +499,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 onRestart_1();
 
 
-
             }
         });
         //2구역_수동_설정버튼 눌렀을 경우
@@ -536,7 +524,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_2();
-
 
 
             }
@@ -606,7 +593,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 onRestart_2();
 
 
-
             }
         });
         //3구역_수동_설정버튼 눌렀을 경우
@@ -632,7 +618,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_3();
-
 
 
             }
@@ -703,7 +688,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 onRestart_3();
 
 
-
             }
         });
         //4구역_수동_설정버튼 눌렀을 경우
@@ -729,7 +713,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 HttpPost();
 
                 onRestart_4();
-
 
 
             }
@@ -802,12 +785,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 onRestart_4();
 
 
-
             }
         });
-
-
-
 
 
         ////////////////////////////////////
@@ -1576,8 +1555,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
     }*/
 
 
-
-
     String str_h = "";
     String str_mi = "";
 
@@ -2306,8 +2283,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 JSONArray jsonArray7 = null;
 
 
-
-
                 if (ih == 0) {
                     jsonArray = new JSONArray(s);
                 }
@@ -2409,11 +2384,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 if (txt_su == 1) {
 
 
-
-
-
-
-
                     Log.i("10tests", s);
 
 
@@ -2422,13 +2392,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                     txt_2_time.setText(ss);
                     txt_3_time.setText(ss);
                     txt_4_time.setText(ss);
-
-
-
-
-
-
-
 
 
                     //수동, 타이머, 자동 부분
@@ -2981,7 +2944,6 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 }
 
                 ih++;
-
 
 
             } catch (Exception e) {
