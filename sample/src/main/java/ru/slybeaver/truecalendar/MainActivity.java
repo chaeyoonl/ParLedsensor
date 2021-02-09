@@ -68,6 +68,8 @@ import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
+    String HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/";
+    String KeyValue = "servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
     String S_reg_time;
     String S_led1_status;
     String S_led2_status;
@@ -1102,7 +1104,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                         DownloadData downloadData5 = new DownloadData();
                         try {
                             //시간에 따른 parsensor값
-                            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListMon?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35&strDate=2021" + strMonth;
+                            //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+                            String url = HttpValue + "getParListMon?" + KeyValue + "&strDate=2021" + strMonth;
                             downloadData5.execute(url);
                             Log.i("MyTag_check_day", url);
                         } catch (Exception e) {
@@ -1436,7 +1439,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
     {
         try {
-            urls = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35");
+            //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+            urls = new URL(HttpValue + "putLedSetData?" + KeyValue);
 
             HttpURLConnection connection = (HttpURLConnection) urls.openConnection();
             connection.setRequestMethod("POST"); //전송방식
@@ -2200,7 +2204,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
 
         try {
-            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
+            //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+            String url = HttpValue + "getParData?" + KeyValue;
             downloadData.execute(url);
 
         } catch (Exception e) {
@@ -2208,8 +2213,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
         }
 
         try {
-
-            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getLedData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
+            //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+            String url = HttpValue + "getLedData?" + KeyValue;
             downloadData2.execute(url);
         } catch (Exception e) {
             Log.i("MyTag", "Fail");
@@ -2218,7 +2223,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         try {
             //시간에 따른 parsensor값
-            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
+            //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+            String url = HttpValue + "getParListData?" + KeyValue;
             downloadData3.execute(url);
         } catch (Exception e) {
             Log.i("MyTag", "Fail");
@@ -2226,7 +2232,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
         try {
             //시간에 따른 parsensor값
-            String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getLedSetData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35";
+            //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+            String url = HttpValue + "getLedSetData?" + KeyValue;
             downloadData6.execute(url);
             Log.i("MyTag_URL", "URL");
         } catch (Exception e) {
@@ -3024,7 +3031,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 DownloadData downloadData4 = new DownloadData();
                 try {
                     //시간에 따른 parsensor값
-                    String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35&strDate=" + strDate + "&endDate=" + strDate;
+                    //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+                    String url = HttpValue + "getParListDay?" + KeyValue + "&strDate=" + strDate + "&endDate=" + strDate;
                     downloadData4.execute(url);
                     Log.i("MyTag_check_day", "success");
                 } catch (Exception e) {
@@ -3078,7 +3086,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
                 DownloadData downloadData4 = new DownloadData();
                 try {
                     //시간에 따른 parsensor값
-                    String url = "http://cjpre.dataponic.co.kr:10080/preAPI/getParListDay?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35&strDate=" + strDate + "&endDate=" + endDate;
+                    //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+                    String url = HttpValue + "getParListDay?" + KeyValue + "&strDate=" + strDate + "&endDate=" + endDate;
                     downloadData4.execute(url);
                     Log.i("MyTag_check_day", "success");
                 } catch (Exception e) {
@@ -3097,7 +3106,8 @@ public class MainActivity extends AppCompatActivity implements SlyCalendarDialog
 
                 JSONObject result = null;
                 try {
-                    URL url = new URL("http://cjpre.dataponic.co.kr:10080/preAPI/putLedSetData?servicekey=3765575006d27474d35b1023b67297de0025467bb4d5566f509a5d0634c2dd35");
+                    //HttpValue = "http://cjpre.dataponic.co.kr:10080/preAPI/"
+                    URL url = new URL(HttpValue + "putLedSetData?" + KeyValue);
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                     countss++;
